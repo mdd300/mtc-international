@@ -1,0 +1,32 @@
+.pagination {
+	border-top:1px solid #DFDFDF;
+	padding-top:10px;
+	margin-right:10px;
+}
+
+.pagination ul li {
+    float:left;
+	margin-right:5px;
+	border:1px dotted #D6D8D9;
+}
+
+.pagination a {
+	color:#FFF;
+	text-decoration:none;
+	padding:0 4px;
+	display:block;
+}
+
+.pagination a:hover {
+	color:#666;
+}
+
+.pagination a.active {
+	color:#666;
+	cursor:default;
+}
+
+.pagination a.active:hover {
+	color:#FFF;
+	cursor:default;
+}

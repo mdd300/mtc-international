@@ -1,0 +1,488 @@
+//Funções para o FaceBox
+function abrir(strMensagem)
+{
+    $(document).ready(function(){
+        jQuery.facybox(strMensagem);
+         
+    })
+}
+
+/**
+ * var valEmail
+ * Regular expression for validate email
+ */
+var valEmail = /^[\w-]+(\.[\w-]+)*@(([A-Za-z\d][A-Za-z\d-]{0,61}[A-Za-z\d]\.)+[A-Za-z]{2,6}|\[\d{1,3}(\.\d{1,3}){3}\])$/;
+
+function fechaFacebox(){
+    jQuery(document).trigger('close.facybox');
+}
+
+jQuery(document).ready(function() {
+    $('a[rel*=facybox]').facybox();
+    $(".datepicker").datepicker();
+    $('input:text').setMask();
+    //Função link na tr
+    $('table tbody tr td:not(.selecao)').click(function(){
+      if($(this).parents('tr').attr('lang'))
+          location.href=$(this).parents('tr').attr('lang');
+    });
+  
+    $("#imagem").change(function () {
+        validaExtensaoImagem(this.id);
+    });
+
+    $('#estado').change(function(){
+        var estado = $(this).val();
+        $.post('admin/cadastros/ajax_cidades', {
+            estado: estado
+        },function(data){
+            if(data)
+                $('#cidade').html(data);
+        }, 'html')
+    })
+    
+    $('#marca').change(function(){
+        var marca = $(this).val();
+        $.post('admin/produtos/ajax_familias', {
+            marca: marca
+        },function(data){
+            if(data)
+                $('#familia').html(data);
+                $('#linha').html('<option value="">Selecione uma familia primeiro</option>');
+        }, 'html')
+    })
+    
+    $('#familia').change(function(){
+        var familia = $(this).val();
+        $.post('admin/produtos/ajax_linhas', {
+            familia: familia
+        },function(data){
+            if(data)
+                $('#linha').html(data);
+        }, 'html')
+    })
+})
+
+function Verifica_Data(data, obrigatorio){  
+	
+    //Se o parâmetro obrigatório for igual à zero, significa que elepode estar vazio, caso contrário, não
+    var data = document.getElementById(data);
+    var strdata = data.value;  
+    if((obrigatorio == 1) || (obrigatorio == 0 && strdata != "")){  
+        //Verifica a quantidade de digitos informada esta correta.  
+        if (strdata.length != 10){  
+            return false  
+        }  
+        //Verifica máscara da data  
+        if ("/" != strdata.substr(2,1) || "/" != strdata.substr(5,1)){  
+            return false  
+        }  
+        dia = strdata.substr(0,2)  
+        mes = strdata.substr(3,2);  
+        ano = strdata.substr(6,4);  
+        //Verifica o dia  
+        if (isNaN(dia) || dia > 31 || dia < 1){  
+            return false  
+        }  
+        if (mes == 4 || mes == 6 || mes == 9 || mes == 11){  
+            if (dia == "31"){  
+                return false  
+            }  
+        }  
+        if (mes == "02"){  
+            bissexto = ano % 4;  
+            if (bissexto == 0){  
+                if (dia > 29){  
+                    return false  
+                }  
+            }else{  
+                if (dia > 28){  
+                    return false  
+                }  
+            }  
+        }  
+        //Verifica o mês
+        if (isNaN(mes) || mes > 12 || mes < 1){  
+            return false  
+        }  
+        //Verifica o ano  
+        if (isNaN(ano)){  
+            return false  
+        }  
+    }  
+}  
+  
+function Compara_Datas(data_inicial, data_final){  
+    //Verifica se a data inicial é maior que a data final  
+    var data_inicial = document.getElementById(data_inicial);  
+    var data_final   = document.getElementById(data_final);  
+    str_data_inicial = data_inicial.value;  
+    str_data_final   = data_final.value;  
+    dia_inicial      = data_inicial.value.substr(0,2);  
+    dia_final        = data_final.value.substr(0,2);  
+    mes_inicial      = data_inicial.value.substr(3,2);  
+    mes_final        = data_final.value.substr(3,2);  
+    ano_inicial      = data_inicial.value.substr(6,4);  
+    ano_final        = data_final.value.substr(6,4);  
+    if(ano_inicial > ano_final){  
+        return false  
+    }else{  
+        if(ano_inicial == ano_final){
+            if(mes_inicial > mes_final){
+                return false
+            }else{  
+                if(mes_inicial == mes_final){  
+                    if(dia_inicial > dia_final){  
+                        return false  
+                    }  
+                }  
+            }  
+        }  
+    }  
+}
+
+function checkMail(mail){
+    var er = new RegExp(/^[A-Za-z0-9_\-\.]+@[A-Za-z0-9_\-\.]{2,}\.[A-Za-z0-9]{2,}(\.[A-Za-z0-9])?/);
+    
+    if(typeof(mail) == "string"){
+        if(er.test(mail)){
+            return true;
+        }
+    }else if(typeof(mail) == "object"){
+        if(er.test(mail.value)){
+            return true;
+        }
+    }
+    else{
+        return false;
+    }
+}
+
+function valida_login(){
+
+    var msg = "";
+	
+    if ($("#usuario_login").val() == ""){
+        msg += "<span>Informe seu nome de usuário</span><br />";
+    }
+	
+    if ($("#usuario_senha").val() == ""){
+        msg += "<span>Informe sua senha</span><br />";
+    }
+	
+    if (msg != "") {
+        msg = "<div id=\"topoValida\"><img src='"+$('base').attr('href')+"assets/images/admin/avisos/warning.png' align='absmiddle' /><b>Os seguintes problemas foram encontrados:</b><br /><br /></div>" + msg;
+        jQuery.facybox(msg);
+        return false;
+    }
+}
+
+function valida_esqueci_senha()
+{
+    var msg = "";
+	
+    if ($("#usuario_login").val() == ""){
+        msg += "<span>Informe seu nome de usuário</span><br />";
+    }
+	
+    if ($("#usuario_email").val() == ""){
+        msg += "<span>Informe seu e-mail</span><br />";
+    }
+	
+    if (msg != "") {
+        msg = "<div id=\"topoValida\"><img src='"+$('base').attr('href')+"assets/images/admin/avisos/warning.png' align='absmiddle' /><b>Os seguintes problemas foram encontrados:</b><br /><br /></div>" + msg;
+        jQuery.facybox(msg);
+        return false;
+    }
+}
+
+function VerificaEmailUsuario(usuario_email)
+{
+    if($("#usuario_email").val() != "")
+    {
+	
+        vet_dados = "usuario_email="+usuario_email;
+        retorno = checkMail(usuario_email)
+        if(retorno){
+
+            base_url  = $('base').attr('href')+"admin/usuarios/verifica_email";
+            $.ajax({
+                type: "POST",
+                url: base_url,
+                data: vet_dados,
+                success: function(msg) {
+                    $('#msg_email').fadeIn("slow");
+                    $('#msg_email').html(msg);
+                }
+            });
+	        
+            return true;
+	   	
+        }
+        else{
+	   		
+            msg = '<label for="lf">E-mail: </label><input class="lf" name="usuario_email" id="usuario_email" type="text" value="" onblur="VerificaEmailUsuario(this.value)" /><span class="validate_error">Informe um email válido!</span><span class="validate_success"></span>';
+            $('#msg_email').fadeIn("slow");
+            $('#msg_email').html(msg);
+	   		
+            return false;
+	   	
+        }
+    }
+}
+
+function VerificaLoginUsuario(usuario_login)
+{
+    if($("#usuario_login").val() != "")
+    {
+	
+        vet_dados = "usuario_login="+usuario_login;
+	   
+        base_url  = $('base').attr('href')+"admin/usuarios/verifica_login";
+        $.ajax({
+            type: "POST",
+            url: base_url,
+            data: vet_dados,
+            success: function(msg) {
+					
+                $('#msg_login').fadeIn("slow");
+                $('#msg_login').html(msg);
+					
+            }
+        });
+    }
+}
+
+function VerificaLoginUsuarioEdicao(login_usuario, id_usuario)
+{
+    if($("#usuario_login").val() != "")
+    {
+	
+        vet_dados = "usuario_login="+login_usuario+"&usuario_id="+id_usuario;
+	   
+        base_url  = $('base').attr('href')+"admin.php/usuarios/verifica_usuario_login";
+        $.ajax({
+            type: "POST",
+            url: base_url,
+            data: vet_dados,
+            success: function(msg) {
+					
+                $('#msg_login').fadeIn("slow");
+                $('#msg_login').html(msg);
+					
+            }
+        });
+    }
+}
+
+function checkMail(mail){
+    var er = new RegExp(/^[A-Za-z0-9_\-\.]+@[A-Za-z0-9_\-\.]{2,}\.[A-Za-z0-9]{2,}(\.[A-Za-z0-9])?/);
+    
+    if(typeof(mail) == "string"){
+        if(er.test(mail)){
+            return true;
+        }
+    }else if(typeof(mail) == "object"){
+        if(er.test(mail.value)){
+            return true;
+        }
+    }
+    else{
+        return false;
+    }
+}
+
+function ativa_item(id,ativo,campo_id,campo_visivel,controler){
+
+    var msg ='';
+    vet_dados = campo_id+"="+id+"&"+campo_visivel+"="+ativo;
+   
+    base_url  = $('base').attr('href')+"admin/"+controler+"/set_visivel";
+
+    $.ajax({
+        type: "POST",
+        url: base_url,
+        data: vet_dados,
+        success: function(msg) {
+            document.getElementById('ativo_'+id).innerHTML = msg;
+        }
+    });
+}
+
+function ativa_destaque(id,ativo,campo_id,campo_destaque,controler){
+
+    var msg ='';
+    vet_dados = campo_id+"="+id+"&"+campo_destaque+"="+ativo;
+
+    base_url  = $('base').attr('href')+"admin/"+controler+"/set_destaque";
+
+    $.ajax({
+        type: "POST",
+        url: base_url,
+        data: vet_dados,
+        success: function(msg) {
+            document.getElementById('destaque_'+id).innerHTML = msg;
+        }
+    });
+}
+
+function delete_item(id,campo_id,controler){
+
+    var msg ='';
+    vet_dados = campo_id+"="+id;
+    
+    base_url  = $('base').attr('href')+"admin/"+controler+"/deleta_item";
+    $.ajax({   
+        type: "POST",
+        url: base_url,
+        data: vet_dados,
+        success: function(msg) {
+            jQuery.facybox(msg);
+        }
+    });
+}
+
+/**
+ * RSV CONFIG
+ */
+ 
+function myOnComplete()
+{
+    return true;
+}
+
+function myOnError(f, errorInfo)
+{
+    $('*.validate_error').empty();
+
+    $(errorInfo).each(function() {
+        $(this).parents('p').find('.validate_error').html(this[1]);
+    });
+
+    if (errorInfo.length > 0)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+
+/**
+ * FUNÇÕES PARA AUXILIAR A VALIDAÇÃO
+ */
+
+function checkExtension(types, value) {
+    var retorno = false;
+
+    for (i = 0; i < types.length; i++) {
+        if (Right(value, types[i].length + 1).toLowerCase() == "." + types[i])
+            retorno = true;
+    }
+    
+    return retorno;
+}
+
+function Right(str, n)
+{
+    if (n <= 0) // Invalid bound, return blank string
+        return "";
+    else if (n > String(str).length) // Invalid bound, return
+        return str; // entire string
+    else { // Valid bound, return appropriate substring
+        var iLen = String(str).length;
+        return String(str).substring(iLen, iLen - n);
+    }
+}
+
+/**
+ * VALIDAÇÕES CUSTOMIZADAS
+ */
+ 
+function validaExtensaoImagem(campo)
+{
+    var field = document.getElementById(campo);
+    
+    if (field == null)
+        alert('Não achou campo ' + campo)
+    
+    if (field.value.length == 0)
+        return true;
+
+    if (checkExtension(new Array('png', 'jpg', 'jpeg', 'gif'), field.value))
+        return true;
+    
+    return [[field, "Extensão inválida."]];   
+    
+}
+
+function validaExtensaoArquivo(campo)
+{
+    var field = document.getElementById(campo);
+
+    if (field == null)
+        alert('Não achou campo ' + campo)
+
+    if (field.value.length == 0)
+        return true;
+
+    if (checkExtension(new Array('xls', 'doc', 'txt', 'rtf', 'exe', 'docx', 'xlsx', 'pdf', 'zip', 'rar', 'ppt'), field.value))
+        return true;
+
+    return [[field, "Extensão inválida."]];
+}
+
+function validaExtensaoAudio(campo)
+{
+    var field = document.getElementById(campo);
+
+    if (field == null)
+        alert('Não achou campo ' + campo)
+
+    if (field.value.length == 0)
+        return true;
+
+    if (checkExtension(new Array('mp3', 'wav', 'rm', 'ra', 'wma'), field.value))
+        return true;
+
+    return [[field, "Extensão inválida."]];
+}
+
+function atualizaFCK(fckInstances)
+{
+    fckInstances = fckInstances.split(',');
+    for (i = 0; i < fckInstances.length; i++) {
+        FCKeditorAPI.GetInstance(fckInstances[i]).UpdateLinkedField();
+    }
+}
+
+function excluirRegistros(controller, funcao){
+    var ids = '';
+
+    $('table tbody input[type=checkbox]:checked').each(function(){
+        ids += $(this).val() + ';';
+    });
+	
+    vet_dados = "ids="+ids;
+
+    base_url  = $('base').attr('href')+"admin/"+ controller +"/"+ funcao;
+    $.ajax({
+        type: "POST",
+        url: base_url,
+        dataType: "JSON",
+        data: vet_dados,
+        success: function(msg) {
+            location.href=window.location;
+        }
+    });
+}
+
+function selecionar_todos(obj){
+
+    if($(obj).attr('checked')){ // selecionar todos
+        $('table input[type=checkbox]').attr('checked', 'checked');
+    }else{ //selecionar todos
+        $('table input[type=checkbox]').attr('checked', '');
+    }
+}
