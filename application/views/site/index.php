@@ -21,7 +21,7 @@
                                 <div class="sub-heading animated fadeIn delay-3"><?= $banner->subtitulo ?></div>
                                 <?php if (!empty($banner->link)): ?>
                                     <a
-                                        href="<?= $banner->link ?>"
+                                        href="<?php echo (strstr($banner->link,'http')) ? $banner->link : site_url($banner->link); ?>"
                                         <?= $banner->target_blank == 1 ? 'target="_blank"' : '' ?>
                                         class="btn btn-more animated fadeIn delay-4 btn-18"
                                         >
