@@ -55,7 +55,7 @@
                                                 <img src="assets/images/groups_mtc/soft.png" alt="MTC Log" class="img-responsive"/>
                                             </div>
                                             <div class="info">
-                                                <div class="title">MTC Log</div>
+                                                <div class="title">MTC Soft</div>
                                             </div>
                                         </a>
                                     </div>
@@ -75,7 +75,7 @@
                                                 <img src="assets/images/groups_mtc/tools.png" alt="" class="img-responsive"/>
                                             </div>
                                             <div class="info">
-                                                <div class="title">MTC Log</div>
+                                                <div class="title">MTC Tools</div>
                                             </div>
                                         </a>
                                     </div>

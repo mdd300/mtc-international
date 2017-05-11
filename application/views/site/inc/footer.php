@@ -31,7 +31,7 @@
                                     <ul class="list-unstyled mbn">
                                         <li>
                                             <a href="#">
-                                                <h5>MTC Log</h5>
+                                                <h5>MTC Soft</h5>
                                             </a>
                                         </li>
                                         <li>
@@ -41,7 +41,7 @@
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <h5>MTC Log</h5>
+                                                <h5>MTC Tools</h5>
                                             </a>
                                         </li>
                                         <li>
