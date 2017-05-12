@@ -111,10 +111,11 @@ body {
 #wrapper .header-wrapper #header .menu > ul > li > a {
   text-transform: uppercase;
   color: #5d5e5e;
-  padding: 2px;
+  padding: 0px;
   margin: 0 5px;
   border-radius: 9999px;
   transition: border 0.3s;
+  font-size: 13px;
 }
 .page-header-scroll #wrapper .header-wrapper #header .menu > ul > li > a {
   /*color: #000;*/

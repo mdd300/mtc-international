@@ -109,6 +109,15 @@
                         </div>
                         <div class="col-md-2">
                             <div class="thumbnail text-center">
+                                <a href="admin/operacoes">
+                                    <span class="font-lg glyphicon glyphicon-heart"></span>
+                                    <div class="caption">Operações
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="thumbnail text-center">
                                 <a href="admin/topos">
                                     <span class="font-lg glyphicon glyphicon glyphicon-list-alt"></span>
                                     <div class="caption">Banners do Topo
