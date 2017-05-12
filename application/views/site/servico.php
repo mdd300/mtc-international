@@ -57,7 +57,7 @@
                                                 <div class="media">
                                                     <div class="media-left">
                                                         <a href="servicos/<?= $servicos_aside->slug ?>">
-                                                            <img width="80" src="<?php echo base_url('assets/uploads/servicos/'.$servicos_aside->imagem); ?>" alt="<?= $servicos->titulo ?>" alt="<?= $servicos_aside->titulo ?>" class="media-object">
+                                                            <img width="80" src="<?php echo base_url('assets/uploads/servicos/'.$servicos_aside->imagem); ?>" alt="<?= $servico->titulo ?>" alt="<?= $servicos_aside->titulo ?>" class="media-object">
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
