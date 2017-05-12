@@ -49,6 +49,8 @@
                         </ul>
                     </li>
                     <li><a href="noticias">Notícias</a></li>
+                    <li><a href="qualidade">Qualidade</a></li>
+                    <li><a href="tecnologia">Tecnologia</a></li>
                     <li><a href="areas-de-atuacao">Áreas de Atuação</a></li>
                     <li><a href="carreira">Carreira</a></li>
                     <li><a href="sustentabilidade">Sustentabilidade</a></li>

@@ -18,13 +18,20 @@ $tipo = $this->session->userdata('tipo');
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="main-nav">
-          <ul class="nav navbar-nav">        
-            <li><a href="admin/banners">Banners (Home)</a></li>
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="admin/banners">Banners (Home)</a></li>
+                <li><a href="admin/clientes">Clientes</a></li>
+              </ul>
+            </li>
             <li><a href="admin/quem_somos">Quem Somos</a></li>
             <li><a href="admin/areas_de_atuacao">Atuação</a></li>
-            <li><a href="admin/clientes">Clientes</a></li>
             <li><a href="admin/noticias">Notícias</a></li>
             <li><a href="admin/carreira">Carreira</a></li>
+            <li><a href="admin/qualidade">Qualidade</a></li>
+            <li><a href="admin/tecnologia">Tecnologia</a></li>
             <li><a href="admin/sustentabilidade">Sustentabilidade</a></li>
             <li><a href="admin/servicos">Serviços</a></li>
             <li><a href="admin/topos">Banners(topo)</a></li>
