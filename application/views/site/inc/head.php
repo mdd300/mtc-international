@@ -25,6 +25,9 @@
     <?php if ($active == 'contato' || $active == 'areas-de-atuacao' || $active == 'solucoes-integradas' || $active == 'cases'): ?>
         <link type="text/css" rel="stylesheet" href="assets/css/pages/contact.css">
     <?php endif ?>
+    <?php if ($active == 'noticias' || $active == 'noticia'): ?>
+        <link type="text/css" rel="stylesheet" href="assets/css/pages/news.css">
+    <?php endif ?>
     <!--if lt IE 9-->
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <link rel="icon" type="image/png" href="assets/images/favicon.png">

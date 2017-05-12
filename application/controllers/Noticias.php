@@ -6,8 +6,7 @@ class Noticias extends CI_Controller {
 		parent::__construct();
         $this->load->helper('text');
         $this->load->model('noticias_model');
-        $this->load->model('areas_de_atuacao_model');
-        $this->load->model('topos_model');
+        $this->load->model('servicos_model');
         $this->load->model('topos_model');
 	}
 
@@ -54,19 +53,8 @@ class Noticias extends CI_Controller {
         //menu & topo
         $data['topo'] = $this->topos_model->get_topo($data['active']);
         $data['topo'] = $data['topo']->imagem;
-        $data['areas_menu'] = $this->areas_de_atuacao_model->get_areas_de_atuacao();
-        $data['noticias_footer'] = $this->noticias_model->get_noticias(
-            $texto = '',
-            $data_de = NULL,
-            $data_ate = NULL,
-            $limit = 6,
-            $offset = NULL,
-            $count = NULL,
-            $menos_estaID = NULL,
-            $order = NULL,
-            $order_by = NULL
-        );
-        
+        $data['servicos_menu'] = $this->servicos_model->get_servicos();
+                
         $this->load->view('site/noticias', $data);
     }
 
@@ -118,19 +106,8 @@ class Noticias extends CI_Controller {
         //menu & topo
         $data['topo'] = $this->topos_model->get_topo($data['active']);
         $data['topo'] = $data['topo']->imagem;
-        $data['areas_menu'] = $this->areas_de_atuacao_model->get_areas_de_atuacao();
-        $data['noticias_footer'] = $this->noticias_model->get_noticias(
-            $texto = '',
-            $data_de = NULL,
-            $data_ate = NULL,
-            $limit = 6,
-            $offset = NULL,
-            $count = NULL,
-            $menos_estaID = NULL,
-            $order = NULL,
-            $order_by = NULL
-        );
-        
+        $data['servicos_menu'] = $this->servicos_model->get_servicos();
+                
         $this->load->view('site/noticias', $data);
     }
 
@@ -160,20 +137,8 @@ class Noticias extends CI_Controller {
         //menu & topo
         $data['topo'] = $this->topos_model->get_topo($data['active']);
         $data['topo'] = $data['topo']->imagem;
-        $data['areas_menu'] = $this->areas_de_atuacao_model->get_areas_de_atuacao();
-        $data['noticias_footer'] = $data['noticias'] = $this->noticias_model->get_noticias(
-            $texto = '',
-            $data_de = NULL,
-            $data_ate = NULL,
-            $limit = 6,
-            $offset = NULL,
-            $count = NULL,
-            $menos_estaID = NULL,
-            $order = NULL,
-            $order_by = NULL
-        );
-
-
+        $data['servicos_menu'] = $this->servicos_model->get_servicos();
+        
         $this->load->view('site/noticia', $data);
     }
 }

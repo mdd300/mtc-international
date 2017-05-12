@@ -64,6 +64,15 @@
                         </div>
                         <div class="col-md-2">
                             <div class="thumbnail text-center">
+                                <a href="admin/noticias">
+                                    <span class="font-lg glyphicon glyphicon-list-alt"></span>
+                                    <div class="caption">Notícias
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="thumbnail text-center">
                                 <a href="admin/clientes">
                                     <span class="font-lg glyphicon glyphicon-user"></span>
                                     <div class="caption">Clientes

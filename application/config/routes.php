@@ -68,5 +68,9 @@ $route['quem-somos']  = 'quem-somos/index';
 $route['busca']  = 'busca';
 $route['busca/']  = 'busca';
 
+$route['noticias'] = 'noticias/index';
+$route['noticias/pesquisa/(:any)'] = 'noticias/pesquisa/$1';
+$route['noticias/(:any)'] = 'noticias/show/$1';
+
 //rewrite for lps
 // $route['(:any)'] = 'landing_pages/index/$1';

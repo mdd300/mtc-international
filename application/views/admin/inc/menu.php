@@ -23,6 +23,7 @@ $tipo = $this->session->userdata('tipo');
             <li><a href="admin/quem_somos">Quem Somos</a></li>
             <li><a href="admin/areas_de_atuacao">Atuação</a></li>
             <li><a href="admin/clientes">Clientes</a></li>
+            <li><a href="admin/noticias">Notícias</a></li>
             <li><a href="admin/carreira">Carreira</a></li>
             <li><a href="admin/sustentabilidade">Sustentabilidade</a></li>
             <li><a href="admin/servicos">Serviços</a></li>
