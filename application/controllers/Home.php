@@ -17,7 +17,12 @@ class Home extends CI_Controller {
 		$data['active']   = 'home';
 		$data['banners']  = $this->banners_model->get_banners(1);
 
-		$data['servicos_menu'] = $this->servicos_model->get_servicos();
+		$data['servicos_menu'] = $this->servicos_model->get_servicos(
+			$texto = "",
+			$data_de = NULL,
+			$data_ate = NULL,
+			$limit = 9
+		);
 
 		$data['clientes'] = $this->clientes_model->get_clientes();
 		$data['clientes'] = array_chunk($data['clientes'], 4);
