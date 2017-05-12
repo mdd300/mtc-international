@@ -13,8 +13,8 @@
             <div class="container">
                 <div class="header-bg-content">
                     <ol class="breadcrumb">
-                        <li><a href="<?= base_url() ?>">Home</a></li>
-                        <li class="active"><a href="servicos">Serviços</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li class="active">Serviços</li>
                     </ol>
                     <h2 class="title">Serviços</h2>
                 </div>
@@ -22,21 +22,28 @@
         </div>
     </div>
 
-    <!-- MAIN-->
     <div id="main"><!-- CONTENT-->
         <div id="content">
-            <div id="section-news-post-detail" class="section">
+            <div id="section-services" class="section">
                 <div class="container">
                     <div class="section-content">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="news-detail">
-                                    <div class="box clearfix mbxxl">
-                                        <h2><?= $servicos->titulo ?></h2>
-                                        <?= $servicos->texto ?>
+                        <div class="col-md-9 row pb-92">
+                            <?php foreach ($servicos as $key => $servico): ?>
+                                <div class="col-md-4 col-sm-6 col-xs-6">
+                                    <div class="card hovercard">
+                                        <div class="overlay"></div>
+                                        <div class="cardheader"><img src="<?php echo base_url('assets/uploads/servicos/'.$servico->imagem); ?>" alt="" class="img-responsive"/></div>
+                                        <div class="info">
+                                            <div class="title"><a href="servicos/<?= $servico->slug ?>"><?= $servico->titulo ?></a></div>
+                                            <div class="desc"><?= $servico->resumo ?></div>
+                                            <div class="read-more"><a href="servicos/<?= $servico->slug ?>" class="btn btn-outlined">Saiba mais<i class="fa fa-plus mls"></i></a></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            <?php endforeach ?>
+                        </div>                        
+                        <div class="col-md-3 row pb-92 form-especialidades-listagem">
+                            <?php $this->load->view('site/form-leads', array('origem' => 'Serviços')); ?>
                         </div>
                     </div>
                 </div>

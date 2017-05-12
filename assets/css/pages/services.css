@@ -9,6 +9,12 @@
 3. Responsive for small device | #responsive
 -------------------------------------------------------------------*/
 /* Services Section | #services */
+#section-services.servicos-home{
+  padding-bottom: 40px;
+}
+#section-services.empresas-mtc .card {
+  margin-bottom: 0px;
+}
 #section-services .card {
   display: block;
   padding-top: 20px;

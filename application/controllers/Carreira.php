@@ -6,13 +6,14 @@ class Carreira extends CI_Controller {
         parent::__construct();
         $this->load->model('carreira_model');
         $this->load->model('topos_model');
-        $this->load->model('areas_de_atuacao_model');
+        $this->load->model('servicos_model');
     }
 
     public function index() {
         $data['active'] = 'carreira';
         $data['carreira'] = $this->carreira_model->get_carreira_site();
-        $data['areas_de_atuacao'] = $this->areas_de_atuacao_model->get_areas_de_atuacao();
+        
+        $data['servicos_menu'] = $this->servicos_model->get_servicos();
 
         $data['carreira'] || show_404();
 

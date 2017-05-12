@@ -13,8 +13,8 @@
             <div class="container">
                 <div class="header-bg-content">
                     <ol class="breadcrumb">
-                        <li><a href="#">Home</a></li>
-                        <li class="active">Áreas de Atuação</li>
+                        <li><a href="<?= base_url() ?>">Home</a></li>
+                        <li class="active"><a href="areas-de-atuacao">Áreas de Atuação</a></li>
                     </ol>
                     <h2 class="title">Áreas de Atuação</h2>
                 </div>
@@ -22,28 +22,21 @@
         </div>
     </div>
 
+    <!-- MAIN-->
     <div id="main"><!-- CONTENT-->
         <div id="content">
-            <div id="section-services" class="section">
+            <div id="section-news-post-detail" class="section">
                 <div class="container">
                     <div class="section-content">
-                        <div class="col-md-9 row pb-92">
-                            <?php foreach ($areas_de_atuacao as $key => $area): ?>
-                                <div class="col-md-4 col-sm-6 col-xs-6">
-                                    <div class="card hovercard">
-                                        <div class="overlay"></div>
-                                        <div class="cardheader"><img src="<?php echo base_url('assets/uploads/areas_de_atuacao/'.$area->imagem); ?>" alt="" class="img-responsive"/></div>
-                                        <div class="info">
-                                            <div class="title"><a href="areas-de-atuacao/<?= $area->slug ?>"><?= $area->titulo ?></a></div>
-                                            <div class="desc"><?= $area->resumo ?></div>
-                                            <div class="read-more"><a href="areas-de-atuacao/<?= $area->slug ?>" class="btn btn-outlined">Saiba mais<i class="fa fa-plus mls"></i></a></div>
-                                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="news-detail">
+                                    <div class="box clearfix mbxxl">
+                                        <h2><?= $areas_de_atuacao->titulo ?></h2>
+                                        <?= $areas_de_atuacao->texto ?>
                                     </div>
                                 </div>
-                            <?php endforeach ?>
-                        </div>                        
-                        <div class="col-md-3 row pb-92 form-especialidades-listagem">
-                            <?php $this->load->view('site/form-leads', array('origem' => 'Áreas de Atuação')); ?>
+                            </div>
                         </div>
                     </div>
                 </div>

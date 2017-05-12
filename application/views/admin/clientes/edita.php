@@ -14,19 +14,20 @@
         
         <!-- Main Content -->
         <div class="container">
-            <h1>Áreas de Atuação</h1>
+            <h1>Edição de Clientes</h1>
             <?php $this->load->view('admin/inc/messages') ?>
 
-            <form method="post" action="admin/areas_de_atuacao/salvar" id="form_areas_de_atuacao" enctype="multipart/form-data">
+            <form method="post" action="admin/clientes/atualizar" id="form_clientes" enctype="multipart/form-data">
+                <input type="hidden" name="clienteID" value="<?php echo $cliente->clienteID; ?>" />
                 <div id="acoes" class="text-right">
-                    <input class="btn btn-default" type="button" onclick="location.href = 'admin/areas_de_atuacao'" value="Cancelar" />
+                    <input class="btn btn-default" type="button" onclick="location.href = 'admin/clientes'" value="Cancelar" />
                     <input class="btn btn-success" type="submit" value="Salvar" />
                 </div>
                 
                 <?php include 'form.php' ?>
 
                 <div id="acoes" class="text-right">
-                    <input class="btn btn-default" type="button" onclick="location.href = 'admin/areas_de_atuacao'" value="Cancelar" />
+                    <input class="btn btn-default" type="button" onclick="location.href = 'admin/clientes'" value="Cancelar" />
                     <input class="btn btn-success" type="submit" value="Salvar" />
                 </div>
             </form>
@@ -34,5 +35,4 @@
         <!-- End of Main Content -->
             
         <?php $this->load->view('admin/inc/footer') ?>
-        <script>CKEDITOR.replace('texto')</script>
     </body>

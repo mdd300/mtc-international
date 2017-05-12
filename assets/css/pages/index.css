@@ -377,6 +377,9 @@
   font-size: 50px;
 }
 /* Lastest News Section | #latest-news */
+#section-latest-news.news-home {
+  padding-bottom: 40px;
+}
 #section-latest-news .box {
   position: relative;
   border: 1px solid #e5e5e5;

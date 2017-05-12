@@ -9,23 +9,22 @@
 		</div>
 		
 		<div class="container">
-			<h1>Serviços</h1>
+			<h1>Notícias</h1>
 			<?php $this->load->view('admin/inc/messages') ?>
 			
-			<form method="post" action="admin/servicos/atualizar" id="form_novidades" enctype="multipart/form-data">
-				<input type="hidden" name="id" value="<?= $servico->id ?>">
+			<form method="post" action="admin/noticias/salvar" id="form_novidades" enctype="multipart/form-data">
 					
 				<div id="acoes" class="text-right">
-					<input class="btn btn-default" type="button" onclick="location.href = 'admin/servicos'" value="Cancelar">
-					<input class="btn btn-success" type="submit" value="Salvar">
+					<input class="btn btn-default" type="button" onclick="location.href = 'admin/noticias'" value="Cancelar" />
+					<input class="btn btn-success" type="submit" value="Salvar" />
 				</div>
 				
 				<?php include 'form.php'; ?>
 			
 
 				<div id="acoes" class="text-right">
-					<input class="btn btn-default" type="button" onclick="location.href = 'admin/servicos'" value="Cancelar">
-					<input class="btn btn-success" type="submit" value="Salvar">
+					<input class="btn btn-default" type="button" onclick="location.href = 'admin/noticias'" value="Cancelar" />
+					<input class="btn btn-success" type="submit" value="Salvar" />
 				</div>
 			   
 				<!-- End of fieldset -->
@@ -35,11 +34,12 @@
 		<?php $this->load->view('admin/inc/footer') ?>
 		
 		<script>
-			CKEDITOR.replace('descricao');
+			CKEDITOR.replace('descricao')
 
 			$('.select-tags').select2({
 				tags: true
 			});
+
 		</script>
 	</body>
 </html>

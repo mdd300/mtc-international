@@ -6,12 +6,13 @@ class Sustentabilidade extends CI_Controller {
         parent::__construct();
         $this->load->model('sustentabilidade_model');
         $this->load->model('topos_model');
-        $this->load->model('areas_de_atuacao_model');
+        $this->load->model('servicos_model');
     }
 
     public function index() {
         $data['active'] = 'sustentabilidade';
-        $data['areas_de_atuacao'] = $this->areas_de_atuacao_model->get_areas_de_atuacao();
+        $data['servicos_menu'] = $this->servicos_model->get_servicos();
+        
         $data['sustentabilidade'] = $this->sustentabilidade_model->get_sustentabilidade_site();
 
         $data['sustentabilidade'] || show_404();

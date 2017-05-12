@@ -11,13 +11,13 @@ class Contato extends CI_Controller {
         
         $this->load->model('contato_model');
         $this->load->model('topos_model');
-        $this->load->model('areas_de_atuacao_model');
+        $this->load->model('servicos_model');
 	}
 
 	public function index()
     {
         $data['active'] = 'contato';
-        $data['areas_de_atuacao'] = $this->areas_de_atuacao_model->get_areas_de_atuacao();  
+        $data['servicos_menu'] = $this->servicos_model->get_servicos(); 
         
         //menu & topo
         $data['topo'] = $this->topos_model->get_topo($data['active']);

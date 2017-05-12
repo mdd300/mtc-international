@@ -10,12 +10,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Serviços</h1>
+                <h1>Notícias</h1>
 
                 <?php $this->load->view('admin/inc/messages') ?>
 
                 <h2 class="h4">Pesquisar</h2>
-                <form name="busca" id="busca" action="admin/servicos" method="post">
+                <form name="busca" id="busca" action="admin/noticias" method="post">
                     <div class="row">
                         <div class="form-group col-md-5">
                             <label for="texto">Texto:</label>
@@ -30,7 +30,7 @@
                             <a class="btn btn-default" href="javascript: void(0);" onclick="$('#busca').submit();">
                                 Buscar
                             </a>
-                            <a class="btn btn-default" href="admin/servicos/limpar">
+                            <a class="btn btn-default" href="admin/noticias/limpar">
                                 Cancelar
                             </a>
                         </div>
@@ -40,10 +40,10 @@
                 <hr>
 
                 <div id="acoes" class="text-right">
-                    <a class="btn btn-danger" href="javascript: void(0);" onclick="excluirRegistros('servicos', 'excluir_selecionados');">
+                    <a class="btn btn-danger" href="javascript: void(0);" onclick="excluirRegistros('noticias', 'excluir_selecionados');">
                         Excluir
                     </a>
-                    <a class="btn btn-default" href="admin/servicos/cria">                                    
+                    <a class="btn btn-default" href="admin/noticias/cria">                                    
                         Incluir
                     </a>
                 </div>
@@ -60,23 +60,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if ($servicos): ?>
-                            <?php foreach ($servicos as $key => $servico): ?>
+                        <?php if ($noticias): ?>
+                            <?php foreach ($noticias as $key => $noticia): ?>
                                 <tr>
                                     <td class="selecao text-center">
-                                        <input type="checkbox" name="" id="" value="<?php echo $servico->id ?>" />
+                                        <input type="checkbox" name="" id="" value="<?php echo $noticia->noticiaID ?>" />
                                     </td>
                                     <td align="center" >
-                                        <?php if ($servico->imagem): ?><img src="assets/uploads/servicos/<?php echo $servico->imagem; ?>" width="100px" /><?php endif; ?>
+                                        <?php if ($noticia->imagem): ?><img src="assets/uploads/noticias/<?php echo $noticia->imagem; ?>" width="100px" /><?php endif; ?>
                                     </td>
                                     <td align="center" >
-                                        <?php echo $servico->titulo; ?>
+                                        <?php echo $noticia->titulo; ?>
                                     </td>
                                     <td align="center" >
-                                        <?php echo $servico->data_criacao; ?>
+                                        <?php echo $noticia->data_criacao; ?>
                                     </td>
                                     <td align="center">
-                                        <a href="admin/servicos/editar/<?php echo $servico->id; ?>">Modificar</a>
+                                        <a href="admin/noticias/editar/<?php echo $noticia->noticiaID; ?>">Modificar</a>
                                     </td>
                                 </tr>        
                             <?php endforeach ?>
@@ -89,10 +89,10 @@
                 </table>
 
                 <div id="acoes" class="text-right">
-                    <a class="btn btn-danger" href="javascript: void(0);" onclick="excluirRegistros('servicos', 'excluir_selecionados');">
+                    <a class="btn btn-danger" href="javascript: void(0);" onclick="excluirRegistros('noticias', 'excluir_selecionados');">
                         Excluir
                     </a>
-                    <a class="btn btn-default" href="admin/servicos/cria">                                    
+                    <a class="btn btn-default" href="admin/noticias/cria">                                    
                         Incluir
                     </a>
                 </div>

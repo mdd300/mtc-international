@@ -1,6 +1,6 @@
 <?php
 
-class Servicos_model extends CI_Model {
+class Noticias_model extends CI_Model {
 
 	function __construct() {
 		parent::__construct();
@@ -10,30 +10,30 @@ class Servicos_model extends CI_Model {
 	}  
 
 	function fix(){
-		$servicos = $this->db->select("*")->from("servicos")->get()->result();
-		foreach($servicos as $servico):   
-			$servico->descricao = str_replace("\r\n", "<br />", $servico->descricao);
-			$id = $servico->id;
-			unset($servico->id);
+		$noticias = $this->db->select("*")->from("noticias")->get()->result();
+		foreach($noticias as $noticia):   
+			$noticia->descricao = str_replace("\r\n", "<br />", $noticia->descricao);
+			$noticiaID = $noticia->noticiaID;
+			unset($noticia->noticiaID);
 						
-			$this->atualizar($servico, array("id" => $id));
+			$this->atualizar($noticia, array("noticiaID" => $noticiaID));
 		endforeach;        
 	}
 		
-	function add_count($id) {
+	function add_count($noticiaID) {
 		$this->db->select('*');
-		$this->db->from('servicos');
-		$this->db->where('id', $id);
+		$this->db->from('noticias');
+		$this->db->where('noticiaID', $noticiaID);
 		$data['visualizacoes'] = $this->db->get()->row()->visualizacoes;
 
 		$data['visualizacoes']++;
-		$this->db->where('id',$id);
-		$this->db->update('servicos', $data);
+		$this->db->where('noticiaID',$noticiaID);
+		$this->db->update('noticias', $data);
 		
 		return $data['visualizacoes']++;
 	}
 
-	function get_servicos(
+	function get_noticias(
 		$texto = "",
 		$data_de = NULL,
 		$data_ate = NULL,
@@ -42,10 +42,11 @@ class Servicos_model extends CI_Model {
 		$count = NULL,
 		$menos_estaID = NULL,
 		$order = NULL,
-		$order_by = NULL
+		$order_by = NULL,
+		$pesquisa = FALSE
 	) {
 		$this->db->select('*');
-		$this->db->from('servicos');
+		$this->db->from('noticias');
 
 		if ($texto != '') {
 			$this->db->like('titulo', $texto);
@@ -63,19 +64,23 @@ class Servicos_model extends CI_Model {
 			$this->db->where('data_criacao <=', $t);
 		}
 
-		if (($limit) AND ($count != TRUE)) {
+		if (($limit) && ($offset) && ($count != TRUE)) {
 			$this->db->limit($limit, $offset);
+		}
+
+		if (($limit) && (is_null($offset)) && ($count != TRUE)) {
+			$this->db->limit($limit);
 		}
 		
 		if($menos_estaID){
-			$this->db->where('id !=', $menos_estaID);
+			$this->db->where('noticiaID !=', $menos_estaID);
 		}
 
 		if ($order_by != NULL && $order != NULL) {
 			$this->db->order_by($order_by, $order);
 		} else {
 			if ($order_by == NULL && $order == NULL) {
-				$this->db->order_by('titulo', 'asc');
+				$this->db->order_by('data_criacao', 'desc');
 			} else {
 				if ($order == NULL) {
 					$this->db->order_by($order_by, 'desc');
@@ -84,36 +89,40 @@ class Servicos_model extends CI_Model {
 				}
 			}
 		}
+
+		if($pesquisa){
+			$this->db->where('tipo', $pesquisa);
+		}
 		
 		$this->db->where('habilitado', 1);
-		$servicos = $this->db->get()->result();
+		$noticias = $this->db->get()->result();
 
-		// foreach($servicos as $servico):
-		// 	$servico->slug = $this->slug($servico->titulo);
-		// endforeach;
+		foreach($noticias as $noticia):
+			$noticia->slug = $this->slug($noticia->titulo);
+		endforeach;
 				 
 		if ($count != TRUE) {
-			return $servicos;
+			return $noticias;
 		} else {
-			return count($servicos);
+			return count($noticias);
 		}
 	}
 
 
-	function get_related($id){
+	function get_related($noticiaID){
 		$this->db->select('*');
-		$this->db->from('servicos');
+		$this->db->from('noticias');
 		$this->db->where('habilitado', 1);
-		$this->db->where('id !=', $id);
-		$this->db->where('`id` in (select `id` from `tags_news` where `tagID` in (select `tagID` from `tags_news` where `id` = "' . $id . '"))', NULL, FALSE);
-		$this->db->order_by('id', 'DESC');
+		$this->db->where('noticiaID !=', $noticiaID);
+		$this->db->where('`noticiaID` in (select `noticiaID` from `tags_news` where `tagID` in (select `tagID` from `tags_news` where `noticiaID` = "' . $noticiaID . '"))', NULL, FALSE);
+		$this->db->order_by('noticiaID', 'DESC');
 		$this->db->limit(4);
 
 		return $this->db->get()->result();
 	}
 
 	function upload_foto_grande($field) {
-		$dir = realpath('assets/uploads/servicos');
+		$dir = realpath('assets/uploads/noticias');
 		$config['upload_path'] = $dir;
 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
 		$config['encrypt_name'] = TRUE;
@@ -138,13 +147,13 @@ class Servicos_model extends CI_Model {
 			$config_img['maintain_ratio'] = FALSE;
 			$config_img['encrypt_name'] = TRUE;   
 
-			$config_img['width'] = 846;
-			$config_img['height'] = 368;
+			$config_img['width'] = 869;
+			$config_img['height'] = 499;
 
 			$this->image_lib->initialize($config_img);
 
 			$config['source_image'] = $dir.'/'.$dados['file_name'];
-			$this->image_lib->resize($config['source_image']);
+			$this->image_lib->crop($config['source_image']);
 			// Returns the photo name
 			return $dados['file_name'];
 		} else {
@@ -154,7 +163,7 @@ class Servicos_model extends CI_Model {
 	}
 
 	function upload_foto_pequena($field) {
-		$dir = realpath('assets/uploads/servicos');
+		$dir = realpath('assets/uploads/noticias');
 		$config['upload_path'] = $dir;
 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
 		$config['encrypt_name'] = TRUE;
@@ -178,12 +187,12 @@ class Servicos_model extends CI_Model {
 			$config_img['maintain_ratio'] = FALSE;
 			$config_img['encrypt_name'] = TRUE;   
 
-			$config_img['width'] = 368;
-			$config_img['height'] = 269;
+			$config_img['width'] = 499;
+			$config_img['height'] = 499;
 			$this->image_lib->initialize($config_img);
 
 			$config['source_image'] = $dir.'/'.$dados['file_name'];
-			$this->image_lib->resize($config['source_image']);
+			$this->image_lib->crop($config['source_image']);
 			// Returns the photo name
 			return $dados['file_name'];
 		} else {
@@ -192,38 +201,38 @@ class Servicos_model extends CI_Model {
 		}
 	}
 
-	function get_servico($id) {
+	function get_noticia($noticiaID) {
 		$this->db->select("*");
-		$this->db->from("servicos");
-		$this->db->where("id", $id);
+		$this->db->from("noticias");
+		$this->db->where("noticiaID", $noticiaID);
 
-		$servico = $this->db->get()->row();
-		return $servico;
+		$noticia = $this->db->get()->row();
+		return $noticia;
 	}
 
-	function get_servicos_slug($slug) {
+	function get_noticia_slug($slug) {
 		$this->db->select("*");
-		$this->db->from("servicos");
-		$this->db->like("slug", $slug, 'none');	
+		$this->db->from("noticias");
+		$this->db->like("slug", $slug, 'none');
 
 		
-		$servico = $this->db->get()->row();
+		$noticia = $this->db->get()->row();
 		
-		return $servico;
+		return $noticia;
 	}
 
 	function salvar($data) {
-		$this->db->insert('servicos', $data);
+		$this->db->insert('noticias', $data);
 		return $this->db->insert_id();
 	}
 
 	function atualizar($data, $dataWhere) {
-		$this->db->where('id', $dataWhere['id'])->update('servicos', $data);
+		$this->db->where('noticiaID', $dataWhere['noticiaID'])->update('noticias', $data);
 		return true;
 	}
 
-	function excluir($id) {
-		$this->db->delete('servicos', array("id" => $id));
+	function excluir($noticiaID) {
+		$this->db->delete('noticias', array("noticiaID" => $noticiaID));
 		return true;
 	}
 

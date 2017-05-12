@@ -14,10 +14,10 @@
                 <div class="header-bg-content">
                     <ol class="breadcrumb">
                         <li><a href="<?= base_url() ?>">Home</a></li>
-                        <li><a href="areas-de-atuacao">Áreas de Atuação</a></li>
-                        <li class="active"><?= $area_de_atuacao->titulo ?></li>
+                        <li><a href="servicos">Serviços</a></li>
+                        <li class="active"><?= $servico->titulo ?></li>
                     </ol>
-                    <h2 class="title"><?= $area_de_atuacao->titulo ?></h2>
+                    <h2 class="title"><?= $servico->titulo ?></h2>
                 </div>
             </div>
         </div>
@@ -33,35 +33,35 @@
                             <div class="col-md-9 col-sm-9">
                                 <div class="news-detail">
                                     <div class="box">
-                                        <div class="title action-area"><a><?= $area_de_atuacao->titulo ?></a></div>
+                                        <div class="title action-area"><a><?= $servico->titulo ?></a></div>
                                         <div class="thumb action-area">
-                                            <img src="assets/uploads/areas_de_atuacao/<?= $area_de_atuacao->imagem2 ?>" alt="<?= $area_de_atuacao->titulo ?>" class="img-responsive"/>
+                                            <img src="assets/uploads/servicos/<?= $servico->imagem2 ?>" alt="<?= $servico->titulo ?>" class="img-responsive"/>
                                         </div>
                                         <div class="content">
                                             <div class="desc">
-                                                <?= $area_de_atuacao->descricao ?>
+                                                <?= $servico->descricao ?>
                                             </div>
                                         </div>
-                                        <a href="areas-de-atuacao" class="btn btn-outlined btn-primary ">Ver Todas as Áreas de Atuação</a>
+                                        <a href="servicos" class="btn btn-outlined btn-primary ">Ver Todos os Serviços</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-3">
                                 <div class="box">
-                                    <?php if (!empty($areas_de_atuacao)): ?>
+                                    <?php if (!empty($servicos)): ?>
                                     <div class="box">
-                                        <div class="box-heading">Áreas de Atuação</div>
+                                        <div class="box-heading">Serviços</div>
                                         <div class="box-body">
                                             <nav class="list-most-commented">
-                                                <?php foreach ($areas_de_atuacao as $key => $area_de_atuacao_aside): ?>
+                                                <?php foreach ($servicos as $key => $servicos_aside): ?>
                                                 <div class="media">
                                                     <div class="media-left">
-                                                        <a href="areas-de-atuacao/<?= $area_de_atuacao_aside->slug ?>">
-                                                            <img width="80" src="<?php echo base_url('assets/uploads/areas_de_atuacao/'.$area_de_atuacao_aside->imagem); ?>" alt="<?= $area_de_atuacao->titulo ?>" alt="<?= $area_de_atuacao_aside->titulo ?>" class="media-object">
+                                                        <a href="servicos/<?= $servicos_aside->slug ?>">
+                                                            <img width="80" src="<?php echo base_url('assets/uploads/servicos/'.$servicos_aside->imagem); ?>" alt="<?= $servicos->titulo ?>" alt="<?= $servicos_aside->titulo ?>" class="media-object">
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
-                                                        <div class="media-heading"><a href="areas-de-atuacao/<?= $area_de_atuacao_aside->slug ?>" class="title"><?= $area_de_atuacao_aside->titulo ?></a></div>
+                                                        <div class="media-heading"><a href="servicos/<?= $servicos_aside->slug ?>" class="title"><?= $servicos_aside->titulo ?></a></div>
                                                     </div>
                                                 </div>
                                                 <?php endforeach ?>
