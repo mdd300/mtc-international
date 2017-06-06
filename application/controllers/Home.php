@@ -41,19 +41,6 @@ class Home extends CI_Controller {
 			$order_by = NULL
 		);
 
-		//menu & topo
-		$data['noticias_footer'] = $this->noticias_model->get_noticias(
-			$texto = '',
-			$data_de = NULL,
-			$data_ate = NULL,
-			$limit = 6,
-			$offset = NULL,
-			$count = NULL,
-			$menos_estaID = NULL,
-			$order = NULL,
-			$order_by = NULL
-		);
-
 		$this->load->view('site/index', $data);
 	}
 }
