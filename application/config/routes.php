@@ -59,8 +59,8 @@ $route['admin'] = 'admin/home/index';
 
 $route['contato']  = 'contato';
 
-$route['servicos']  = 'servicos';
-$route['servicos/(:any)']  = 'servicos/exibe/$1';
+$route['o-que-fazemos']  = 'servicos';
+$route['o-que-fazemos/(:any)']  = 'servicos/exibe/$1';
 
 $route['areas-de-atuacao']  = 'areas-de-atuacao/index';
 $route['quem-somos']  = 'quem-somos/index';

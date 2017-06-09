@@ -48,7 +48,7 @@
                             <div class="thumbnail text-center">
                                 <a href="admin/servicos">
                                     <span class="font-lg glyphicon glyphicon-heart"></span>
-                                    <div class="caption">Serviços
+                                    <div class="caption">O que fazemos
                                     </div>
                                 </a>
                             </div>

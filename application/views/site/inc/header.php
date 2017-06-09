@@ -32,16 +32,16 @@
                     <li><a href="quem-somos">Sobre Nós</a></li>
                     <li>
                         <a
-                            href="<?php echo site_url('servicos'); ?>"
+                            href="<?php echo site_url('o-que-fazemos'); ?>"
                             data-hover="dropdown"
                             class="data-toggle">
-                                Serviços<span class="arrow fa fa-angle-down"></span>
+                                O que fazemos<span class="arrow fa fa-angle-down"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <?php
                                 if($servicos_menu){ 
                                     foreach ($servicos_menu as $key => $servico){ ?>
-                                        <li><a href="servicos/<?= $servico->slug ?>"><?= $servico->titulo ?></a></li>
+                                        <li><a href="o-que-fazemos/<?= $servico->slug ?>"><?= $servico->titulo ?></a></li>
                             <?php
                                     }
                                 }

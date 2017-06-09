@@ -39,42 +39,46 @@
     <!-- MAIN-->
     <div id="main"><!-- CONTENT-->
         <div id="content">
-            <div id="section-services" class="section servicos-home">
-                <div class="container text-center">
-                    <div class="section-heading">
-                        <div class="title">Serviços</div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="section-content">
-                        <div class="list-departments">
-                            <div class="row">
-                                <div class="container">
-                                    <?php
-                                        if($servicos){
-                                            foreach ($servicos as $key => $servico){ ?>
-                                                <div class="col-md-4 col-sm-6 col-xs-6">
-                                                    <a href="servicos/<?= $servico->slug ?>" class="card hovercard alternative">
-                                                        <div class="cardheader">
-                                                            <img src="<?php echo base_url('assets/uploads/servicos/'.$servico->imagem); ?>" alt="" class="img-responsive"/>
-                                                        </div>
-                                                        <div class="info">
-                                                            <div class="title"><?= $servico->titulo ?></div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                    <?php 
-                                            }
-                                        }
-                                    ?>
+            <?php
+                if($servicos){
+            ?>
+                    <div id="section-services" class="section servicos-home">
+                        <div class="container text-center">
+                            <div class="section-heading">
+                                <div class="title">O que fazemos</div>
+                                <div class="line"></div>
+                            </div>
+                            <div class="section-content">
+                                <div class="list-departments">
+                                    <div class="row">
+                                        <div class="container">
+                                            <?php
+                                                foreach ($servicos as $key => $servico){ ?>
+                                                    <div class="col-md-4 col-sm-6 col-xs-6">
+                                                        <a href="o-que-fazemos/<?= $servico->slug ?>" class="card hovercard alternative">
+                                                            <div class="cardheader">
+                                                                <img src="<?php echo base_url('assets/uploads/servicos/'.$servico->imagem); ?>" alt="" class="img-responsive"/>
+                                                            </div>
+                                                            <div class="info">
+                                                                <div class="title"><?= $servico->titulo ?></div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            <?php 
+                                                }
+                                            ?>
+                                        </div>
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="section-heading">
+                                <a href="o-que-fazemos" class="btn btn-outlined btn-primary areas-de-atuacao">Ver Todos</a>
                             </div>
                         </div>
                     </div>
-                    <div class="section-heading">
-                        <a href="servicos" class="btn btn-outlined btn-primary areas-de-atuacao">Ver Todos os Serviços</a>
-                    </div>
-                </div>
-            </div>
+            <?php
+                }
+            ?>
             <div id="section-latest-news" class="section news-home">
                 <div class="container text-center">
                     <div class="section-heading">
