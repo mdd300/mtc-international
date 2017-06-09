@@ -39,6 +39,20 @@
     <!-- MAIN-->
     <div id="main"><!-- CONTENT-->
         <div id="content">
+            <div id="section-who-we-are" class="section quem-somos">
+                <div class="container text-center">
+                    <div class="section-heading">
+                        <div class="title">Sobre Nós</div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed consequuntur voluptatem molestiae nostrum quisquam dicta qui quod obcaecati cumque. Doloremque maiores quaerat recusandae amet ex dolor, sit sed quidem, similique.
+                    </div>
+                    <div class="section-heading button">
+                        <a href="quem-somos" class="btn btn-primary quem-somos">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
             <?php
                 if($servicos){
             ?>

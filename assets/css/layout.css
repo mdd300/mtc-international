@@ -19,6 +19,77 @@ html,
 body {
   min-height: 100%;
 }
+.section {
+  padding-top: 40px;
+  padding-bottom: 80px;
+  position: relative;
+}
+.section.quem-somos {
+  background-color: #DC661D;
+}
+.section.quem-somos .line{
+  border-color: #000;
+}
+.section.quem-somos .line::after{
+  border-top-color: #DC661D;
+}
+.section.quem-somos .text {
+  color: #fff;
+  font-size: 20px;
+}
+.section.quem-somos .button {
+  margin-top: 40px;
+}
+.section .section-heading .info {
+  font-size: 32px;
+  color: #062045;
+  width: 85%;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.section .section-heading .title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  color: #000;
+  width: 80%;
+  display: inline-block;
+  text-transform: uppercase;
+  /*font-family: 'AleoBold';*/
+}
+.section.quem-somos .section-heading .title {
+  color: #fff;
+}
+.section .section-heading .sub-title {
+  font-size: 16px;
+  font-weight: 400;
+  color: #808080;
+  width: 80%;
+  display: inline-block;
+  margin-top: 0;
+}
+.section .section-content {
+  position: relative;
+}
+.section.section-background .section-heading .title {
+  font-weight: 300;
+  color: #ffffff;
+}
+.section.section-background .section-heading .sub-title {
+  color: #ffffff;
+}
+#section-who-we-are .btn.quem-somos{
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+  text-transform: none;
+  font-size: 18px;
+  margin-left: 20px;
+}
+#section-who-we-are .btn.quem-somos:hover{
+  background-color: #fff;
+  color: #000;
+}
 #message_newsletter {
   color: #fff;
   font-size: 12px;
