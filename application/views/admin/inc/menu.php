@@ -30,7 +30,6 @@ $tipo = $this->session->userdata('tipo');
             <li><a href="admin/areas_de_atuacao">Atuação</a></li>
             <li><a href="admin/noticias">Notícias</a></li>
             <li><a href="admin/carreira">Carreira</a></li>
-            <li><a href="admin/qualidade">Qualidade</a></li>
             <li><a href="admin/tecnologia">Tecnologia</a></li>
             <li><a href="admin/operacoes">Operações</a></li>
             <li><a href="admin/sustentabilidade">Sustentabilidade</a></li>

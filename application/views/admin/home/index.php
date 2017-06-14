@@ -100,15 +100,6 @@
                         </div>
                         <div class="col-md-2">
                             <div class="thumbnail text-center">
-                                <a href="admin/qualidade">
-                                    <span class="font-lg glyphicon glyphicon-heart"></span>
-                                    <div class="caption">Qualidade
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="thumbnail text-center">
                                 <a href="admin/operacoes">
                                     <span class="font-lg glyphicon glyphicon-heart"></span>
                                     <div class="caption">Operações
