@@ -126,7 +126,7 @@
     </div>
 
     <div id="section-meet-our-doctor" class="section">
-        <div class="container">
+        <div class="container" id="clientes">
             <div class="section-heading text-center">
                 <div class="title">Clientes</div>
                 <div class="line"></div>

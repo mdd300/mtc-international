@@ -14,9 +14,7 @@
                 <div class="col-md-2">
                     <div class="social">
                         <a href="https://www.facebook.com/Grupo-MTC-268424656942036/?hc_ref=SEARCH&fref=nf" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a href="https://twitter.com/liscorp" target="_blank"><i class="fa fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/company/grupomtc" target="_blank"><i class="fa fa-linkedin"></i></a>
-                        <a href=""><i class="fa fa-youtube" target="_blank"></i></a>
                     </div>
                 </div>
             </div>
@@ -54,8 +52,20 @@
                     <li><a href="areas-de-atuacao">Áreas de Atuação</a></li>
                     <li><a href="carreira">Carreira</a></li>
                     <li><a href="sustentabilidade">Sustentabilidade</a></li>
-                    <li><a href="clientes">Clientes</a></li>
-                    <li><a href="contato">Contato</a></li>
+                    <li><a href="<?php echo site_url(); ?>#clientes">Clientes</a></li>
+                    <li>
+                        <a
+                            href="#"
+                            data-hover="dropdown"
+                            class="data-toggle">
+                                Contato<span class="arrow fa fa-angle-down"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="contato">Contato/Localização</a></li>
+                            <li><a href="trabalhe-conosco">Trabalhe Conosco</a></li>
+                            <li><a href="area-cliente">Área do Cliente</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
             <div class="social">

@@ -17,13 +17,37 @@ class Contato extends CI_Controller {
 	public function index()
     {
         $data['active'] = 'contato';
-        $data['servicos_menu'] = $this->servicos_model->get_servicos(); 
         
         //menu & topo
         $data['topo'] = $this->topos_model->get_topo($data['active']);
         $data['topo'] = $data['topo']->imagem;
+        $data['servicos_menu'] = $this->servicos_model->get_servicos(); 
         
         $this->load->view('site/contato', $data);
+    }
+
+    public function trabalhe_conosco()
+    {
+        $data['active'] = 'trabalhe-conosco';
+        
+        //menu & topo
+        $data['topo'] = $this->topos_model->get_topo($data['active']);
+        $data['topo'] = $data['topo']->imagem;
+        $data['servicos_menu'] = $this->servicos_model->get_servicos(); 
+        
+        $this->load->view('site/trabalhe-conosco', $data);
+    }
+
+    public function area_cliente()
+    {
+        $data['active'] = 'area-cliente';
+        
+        //menu & topo
+        $data['topo'] = $this->topos_model->get_topo($data['active']);
+        $data['topo'] = $data['topo']->imagem;
+        $data['servicos_menu'] = $this->servicos_model->get_servicos(); 
+        
+        $this->load->view('site/area-cliente', $data);
 	}
 
     public function send_contact()
@@ -60,7 +84,7 @@ class Contato extends CI_Controller {
         echo json_encode($return);
     }
 
-    public function send_appointment()
+    public function send_work()
     {
         $post = $this->input->post();
 
@@ -72,14 +96,17 @@ class Contato extends CI_Controller {
 
             $this->form_validation->set_rules('name', 'Nome', 'trim|required');
             $this->form_validation->set_rules('email', 'E-mail', 'trim|required|valid_email');
-            $this->form_validation->set_rules('subject', 'Assunto', 'trim|required');
+            $this->form_validation->set_rules('phone', 'Telefone', 'trim|required');
+            $this->form_validation->set_rules('joboffer', 'Vaga Pretendida', 'trim|required');
             $this->form_validation->set_rules('message', 'Mensagem', 'trim|required');
 
             if($this->form_validation->run()){
 
-                if($this->contato_model->save_contact($post, 'Consulta')){
+                $origem = (isset($post['origem'])) ? $post['origem'] : 'Trabalhe Conosco';
 
-                    $this->_send_notifications($post,'Consulta');
+                if($this->contato_model->save_contact($post, $origem)){
+
+                    $this->_send_notifications($post, 'Trabalhe Conosco');
 
                     $return = array('status' => true, 'class' => 'success', 'message' => 'Mensagem enviada com sucesso!');
                 }
@@ -92,19 +119,41 @@ class Contato extends CI_Controller {
         echo json_encode($return);
     }
 
+    
+
     private function _send_notifications($dados, $origem)
     {
+        $curriculo = $this->file_upload_model->file_upload(
+            'curriculo',
+            'curriculos',
+            'pdf|doc|docx',
+            NULL,
+            NULL
+        );
+
         $this->load->library('email');
         
         $dados = $this->input->post();
 
         $mensagem = "Nome: " . $dados['name'] . "<br />";
         $mensagem .= "E-mail: " . $dados['email'] . "<br />";
-        if(isset($dados['telephone'])){
-            $mensagem .= "Telefone: " . $dados['telephone'] . "<br>";
+        
+        if(isset($dados['phone'])){
+            $mensagem .= "Telefone: " . $dados['phone'] . "<br>";
         }
-        $mensagem .= "Assunto: " . $dados['subject'] . "<br />";
-        $mensagem .= "Mensagem: " . $dados['message'] . "<br />";           
+        if(isset($dados['subject'])){
+            $mensagem .= "Assunto: " . $dados['subject'] . "<br />";
+        }
+        if(isset($dados['joboffer'])){
+            $mensagem .= "Vaga pretendida: " . $dados['joboffer'] . "<br />";
+        }
+        if(isset($dados['message'])){
+            $mensagem .= "Mensagem: " . $dados['message'] . "<br />";
+        }
+
+        if ( !is_array($curriculo) ) {
+            $mensagem .= "<a href='" . base_url() . "assets/uploads/curriculos/" . $curriculo . "'>" . "Veja o currículo" . "</a>" . "<br />";
+        }
 
         $config['charset'] = 'utf-8';
         $config['wordwrap'] = TRUE;

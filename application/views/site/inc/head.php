@@ -22,7 +22,7 @@
         <link type="text/css" rel="stylesheet" href="assets/css/pages/index.css">
         <link type="text/css" rel="stylesheet" href="assets/css/pages/services.css">
     <?php endif ?>
-    <?php if ($active == 'contato' || $active == 'areas-de-atuacao' || $active == 'solucoes-integradas' || $active == 'cases'): ?>
+    <?php if ($active == 'contato' || $active == 'areas-de-atuacao' || $active == 'solucoes-integradas' || $active == 'cases' || $active == 'trabalhe-conosco'): ?>
         <link type="text/css" rel="stylesheet" href="assets/css/pages/contact.css">
     <?php endif ?>
     <?php if ($active == 'noticias' || $active == 'noticia'): ?>

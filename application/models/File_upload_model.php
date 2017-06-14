@@ -5,6 +5,7 @@ class File_upload_model extends CI_Model {
     function file_upload(
         $field,         //arquivo
         $path,          //a pastar, dentro de assets/uploads onde será feito o upload
+        $config = false,
         $width = NULL,  //largura (opcional)
         $height = NULL  //altura (opcional)
         )
@@ -17,7 +18,7 @@ class File_upload_model extends CI_Model {
 
         $dir = realpath('assets/uploads/' . $path);
         $config['upload_path'] = $dir;
-        $config['allowed_types'] = 'gif|jpg|png';
+        $config['allowed_types'] = ($config) ? $config : 'gif|jpg|png';
         $config['encrypt_name'] = TRUE;
         $config['maintain_ratio'] = TRUE;
         $config['max_size'] = '500000';

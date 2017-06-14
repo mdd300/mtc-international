@@ -58,6 +58,9 @@ $route['translate_uri_dashes'] = TRUE;
 $route['admin'] = 'admin/home/index';
 
 $route['contato']  = 'contato';
+$route['trabalhe-conosco']  = 'contato/trabalhe_conosco';
+$route['area-cliente']  = 'contato/area_cliente';
+$route['login-cliente']  = 'contato/login_cliente';
 
 $route['o-que-fazemos']  = 'servicos';
 $route['o-que-fazemos/(:any)']  = 'servicos/exibe/$1';
