@@ -299,6 +299,9 @@ body {
 #footer #section-footer .logo {
   margin-bottom: 30px;
 }
+#footer #section-footer .logo img{
+  max-width: 200px;
+}
 #footer #section-footer .about-us {
   font-size: 13px;
   margin-bottom: 20px;

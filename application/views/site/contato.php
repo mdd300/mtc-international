@@ -28,9 +28,9 @@
             <div id="section-contact" class="section">
                 <div class="container">
                     <div class="section-heading text-center">
-                        <div class="title">Veja nossa localização</div>
+                        <div class="title">Contato/Localização</div>
                         <div class="sub-title mbm contact-localization">
-                            Valorizamos o contato com os nossos atuais e futuros clientes e parceiros. Desta forma, estamos comprometidos a fornecer o melhor atendimento! Se você tiver alguma dúvida ou solicitação, favor preencher o formulário abaixo e um de nossos consultores irá responder à sua requisição em até 48 horas, ou, ligue para nós!
+                            Se você tiver alguma dúvida ou solicitação, favor preencher o formulário abaixo e responderemos em breve, ou ligue para nós!
                         </div>
                     </div>
                 </div>
@@ -64,19 +64,19 @@
                                                 <li>
                                                     <a href="#">
                                                         <i class="fa fa-map-marker fa-fw"></i>
-                                                        <div class="contact-info-box">Rua Artur de Azevedo 774 - Cerqueira Cesar - São Paulo/SP<br>CEP: 05404-001</div>
+                                                        <div class="contact-info-box">Rua Serra da Borborema, 168 - Jardim Maria Tereza - São Paulo/SP<br>CEP: 09930-580</div>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#">
                                                         <i class="fa fa-phone fa-fw"></i>
-                                                        <div class="contact-info-box">+55 (11) 4328.0864</div>
+                                                        <div class="contact-info-box">55 11 4092.7712 | 55 11 4092.7716</div>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#">
                                                         <i class="fa fa-envelope fa-fw"></i>
-                                                        <div class="contact-info-box">contato@lis.com.br</div>
+                                                        <div class="contact-info-box">contato@grupomtc.com.br</div>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -98,11 +98,11 @@
                 </div>
                 <script type="text/javascript">
                     function init_map() {
-                        var myOptions = {zoom: 12, scrollwheel: false, center: new google.maps.LatLng(-23.561128, -46.679426), mapTypeId: google.maps.MapTypeId.ROADMAP};
+                        var myOptions = {zoom: 12, scrollwheel: false, center: new google.maps.LatLng(-23.6716234, -46.6259868), mapTypeId: google.maps.MapTypeId.ROADMAP};
                         map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
-                        marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(-23.561128, -46.679426)});
+                        marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(-23.6716234, -46.6259868)});
                         infowindow = new google.maps.InfoWindow({content: 
-                            "<b>MTC Log</b><br>Rua Artur de Azevedo 774,<br>Cerqueira Cesar - São Paulo/SP"
+                            "<b>MTC Log</b><br>Rua Serra da Borborema 168,<br>Jardim Maria Tereza - São Paulo/SP"
                         });
                         google.maps.event.addListener(marker, "click", function () {
                             infowindow.open(map, marker);
