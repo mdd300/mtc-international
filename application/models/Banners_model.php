@@ -75,7 +75,7 @@ class banners_model extends CI_Model {
             // }
 
             $config_img['width'] = 1920;
-            $config_img['height'] = 1000;
+            $config_img['height'] = 500;
 
 
             $this->image_lib->initialize($config_img);

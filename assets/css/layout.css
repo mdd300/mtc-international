@@ -680,6 +680,10 @@ body {
 
 }
 
+.slider-wrapper {
+  padding-top: 135px;
+}
+
 .bg-grey {
   background-color: #e8e8e8;
 }
