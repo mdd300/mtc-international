@@ -27,12 +27,30 @@
     </head>
     <body>
       <div class="wrapper">
-        <form class="form-signin" action="<?php echo site_url('login-cliente'); ?>" method="POST">       
-          <h2 class="form-signin-heading text-center">Área do Cliente<br>MTC Log</h2>
+        <form id="login-cliente" class="form-signin" action="<?php echo site_url('login-cliente'); ?>" method="POST">       
+          <div class="text-center"><a href="<?= base_url() ?>"><img src="assets/images/logo.png" alt=""/></a></div>
+          <h2 class="form-signin-heading text-center">Área do Cliente</h2>
           <input type="text" class="form-control" name="usuario" placeholder="Usuário" required autofocus>
           <input type="password" class="form-control" name="senha" placeholder="Senha" required>      
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+          <div class="alert alert-danger text-center"  style="display: none" role="alert">
+            Acesso Negado!
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" disabled type="submit">Login</button>   
         </form>
       </div>       
+      <script>
+      $(document).ready(function() {
+        $('#login-cliente button').prop({
+          disabled: false
+        })
+        $('#login-cliente button').on('click', function(event) {
+          event.preventDefault();
+          $('#login-cliente .alert').show();
+          setTimeout(function(){
+              $('#login-cliente .alert').hide()
+          }, 3000);
+        });
+      });
+      </script>
     </body>
 </html>
