@@ -46,7 +46,7 @@
                         <div class="line"></div>
                     </div>
                     <div class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed consequuntur voluptatem molestiae nostrum quisquam dicta qui quod obcaecati cumque. Doloremque maiores quaerat recusandae amet ex dolor, sit sed quidem, similique.
+                        Operações Logísticas dedicadas Internas e Externas, regime de Armazéns Gerais e dedicados, Logística Reversa, implementação de WMS, transporte, serviços técnicos, reengenharia de embalagens de exportação, sub-montagem entre outros serviços.
                     </div>
                     <div class="section-heading button">
                         <a href="quem-somos" class="btn btn-primary quem-somos">Saiba Mais</a>
