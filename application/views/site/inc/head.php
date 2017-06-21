@@ -16,7 +16,6 @@
     <link type="text/css" rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="assets/libs/animate.css/animate.css">
     <link type="text/css" rel="stylesheet" href="assets/css/core.css">
-    <link type="text/css" rel="stylesheet" href="assets/css/layout.css">
     <link type="text/css" rel="stylesheet" href="assets/css/vendor.css">
     <?php if ($active == 'home'): ?>
         <link type="text/css" rel="stylesheet" href="assets/css/pages/index.css">
@@ -28,7 +27,6 @@
     <?php if ($active == 'noticias' || $active == 'noticia'): ?>
         <link type="text/css" rel="stylesheet" href="assets/css/pages/news.css">
     <?php endif ?>
-    <!--if lt IE 9-->
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <link type="text/css" rel="stylesheet" href="assets/css/layout.css">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>

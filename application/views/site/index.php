@@ -68,7 +68,7 @@
                                         <div class="container">
                                             <?php
                                                 foreach ($servicos as $key => $servico){ ?>
-                                                    <div class="col-md-4 col-sm-6 col-xs-6">
+                                                    <div class="col-md-4 col-sm-6">
                                                         <a href="o-que-fazemos/<?= $servico->slug ?>" class="card hovercard alternative">
                                                             <div class="cardheader">
                                                                 <img src="<?php echo base_url('assets/uploads/servicos/'.$servico->imagem); ?>" alt="" class="img-responsive"/>
@@ -113,7 +113,7 @@
                                         </div>
                                         <div class="info">
                                             <div class="title"><a href="noticias/<?= $noticia->slug ?>"><?= $noticia->titulo ?></a></div>
-                                            <div class="desc"><?= $noticia->resumo ?></div>
+                                            <div class="desc"><?= ellipsize($noticia->resumo, 230) ?></div>
                                         </div>
                                     </div>
                                 </div>
