@@ -24,7 +24,7 @@
     <?php if ($active == 'contato' || $active == 'areas-de-atuacao' || $active == 'solucoes-integradas' || $active == 'cases' || $active == 'trabalhe-conosco'): ?>
         <link type="text/css" rel="stylesheet" href="assets/css/pages/contact.css">
     <?php endif ?>
-    <?php if ($active == 'noticias' || $active == 'noticia'): ?>
+    <?php if ($active == 'noticias' || $active == 'noticia' || $active == 'servico' || $active == 'servicos'): ?>
         <link type="text/css" rel="stylesheet" href="assets/css/pages/news.css">
     <?php endif ?>
     <link type="text/css" rel="stylesheet" href="assets/css/layout.css">

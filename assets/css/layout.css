@@ -105,7 +105,7 @@ body {
   height: 80px;
 }
 .list-most-commented{
-  padding-left: 18px;
+  /*padding-left: 18px;*/
 }
 #section-action-areas .title.action-area{
   font-size: 30px;
@@ -120,7 +120,6 @@ body {
   color: #000;
   background-color: #fff;
   margin-top: 40px;
-  transform: translate(90%);
 }
 #section-action-areas .btn.btn-outlined.btn-primary:hover{
   background-color: #000;
@@ -256,11 +255,12 @@ body {
   background-image: url("../images/backgrounds/bg_header_1.png");
   background-repeat: no-repeat;
   background-position: center bottom;
-  height: 305px;
+  background-color: #ccc;
+  height: 215px;
 }
 #wrapper .header-bg-wrapper #header-bg .header-bg-content {
   text-align: center;
-  padding-top: 175px;
+  padding-top: 110px;
 }
 #wrapper .header-bg-wrapper #header-bg .header-bg-content .breadcrumb {
   background-color: transparent;
@@ -703,6 +703,13 @@ body.page-header-scroll #wrapper .header-wrapper #header .social a{
     border-radius: 50px;
 }
 
+.lista-servicos .card .title{
+  height: 46px;
+}
+
+.lista-servicos .card{
+  margin-bottom: 30px;
+}
 
 /* Page Header when scroll | #header-scroll */
 body.page-header-scroll #wrapper .header-wrapper #header {
@@ -938,6 +945,14 @@ body.page-header-scroll #wrapper .header-wrapper #header .menu > ul > li > a spa
     margin: 3px;
   }
 }
+@media screen and (max-width: 767px) {
+  .contact-info-box {
+    display: inline-block;
+    float: none;
+    vertical-align: middle;
+    width: calc(100% - 45px);
+  }
+}
 @media screen and (max-width: 600px) {
   #wrapper #footer #section-footer {
     padding-top: 70px !important;
@@ -959,6 +974,9 @@ body.page-header-scroll #wrapper .header-wrapper #header .menu > ul > li > a spa
   #wrapper #footer #section-footer .recent-twitter,
   #wrapper #footer #section-footer .contact-info {
     margin-bottom: 30px;
+  }
+  .section .section-heading .title {
+    font-size: 22px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1083,5 +1101,8 @@ body.page-header-scroll #wrapper .header-wrapper #header .menu > ul > li > a spa
   }
   .facebook-area {
     background: #4068ad;
+  }
+  #wrapper #main #content #section-news .container .section-content .box .box-body .list-most-commented .media {
+    width: 100%;
   }
 }

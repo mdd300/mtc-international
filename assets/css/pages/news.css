@@ -549,9 +549,6 @@
   #wrapper #main #content #section-news {
     padding-bottom: 5px;
   }
-  #wrapper #main #content #section-news .container .section-content .box .box-body .list-most-commented .media {
-    height: 85px;
-  }
   #wrapper #main #content #section-news .container .section-content .box .box-body .list-most-commented .media .media-right {
     display: inline;
   }

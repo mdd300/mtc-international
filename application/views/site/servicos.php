@@ -24,12 +24,12 @@
 
     <div id="main"><!-- CONTENT-->
         <div id="content">
-            <div id="section-services" class="section">
+            <div id="section-services" class="section lista-servicos">
                 <div class="container">
                     <div class="section-content">
                         <div class="col-md-9 row pb-92">
                             <?php foreach ($servicos as $key => $servico): ?>
-                                <div class="col-md-4 col-sm-6 col-xs-6">
+                                <div class="col-md-4 col-sm-6">
                                     <div class="card hovercard">
                                         <div class="overlay"></div>
                                         <div class="cardheader"><img src="<?php echo base_url('assets/uploads/servicos/'.$servico->imagem); ?>" alt="" class="img-responsive"/></div>

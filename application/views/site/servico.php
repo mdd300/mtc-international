@@ -30,7 +30,7 @@
                 <div class="container">
                     <div class="section-content">
                         <div class="row">
-                            <div class="col-md-9 col-sm-9">
+                            <div class="col-md-9">
                                 <div class="news-detail">
                                     <div class="box">
                                         <div class="title action-area"><a><?= $servico->titulo ?></a></div>
@@ -46,30 +46,28 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-sm-3">
+                            <div class="col-md-3">
+                                <?php if (!empty($servicos)): ?>
                                 <div class="box">
-                                    <?php if (!empty($servicos)): ?>
-                                    <div class="box">
-                                        <div class="box-heading">O que fazemos</div>
-                                        <div class="box-body">
-                                            <nav class="list-most-commented">
-                                                <?php foreach ($servicos as $key => $servicos_aside): ?>
-                                                <div class="media">
-                                                    <div class="media-left">
-                                                        <a href="o-que-fazemos/<?= $servicos_aside->slug ?>">
-                                                            <img width="80" src="<?php echo base_url('assets/uploads/servicos/'.$servicos_aside->imagem); ?>" alt="<?= $servico->titulo ?>" alt="<?= $servicos_aside->titulo ?>" class="media-object">
-                                                        </a>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <div class="media-heading"><a href="o-que-fazemos/<?= $servicos_aside->slug ?>" class="title"><?= $servicos_aside->titulo ?></a></div>
-                                                    </div>
+                                    <div class="box-heading">O que fazemos</div>
+                                    <div class="box-body">
+                                        <nav class="list-most-commented">
+                                            <?php foreach ($servicos as $key => $servicos_aside): ?>
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <a href="o-que-fazemos/<?= $servicos_aside->slug ?>">
+                                                        <img width="80" src="<?php echo base_url('assets/uploads/servicos/'.$servicos_aside->imagem); ?>" alt="<?= $servico->titulo ?>" alt="<?= $servicos_aside->titulo ?>" class="media-object">
+                                                    </a>
                                                 </div>
-                                                <?php endforeach ?>
-                                            </nav>
-                                        </div>
+                                                <div class="media-body">
+                                                    <div class="media-heading"><a href="o-que-fazemos/<?= $servicos_aside->slug ?>" class="title"><?= $servicos_aside->titulo ?></a></div>
+                                                </div>
+                                            </div>
+                                            <?php endforeach ?>
+                                        </nav>
                                     </div>
-                                    <?php endif ?>
                                 </div>
+                                <?php endif ?>
                             </div>
                         </div>
                     </div>

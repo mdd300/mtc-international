@@ -699,7 +699,7 @@ fieldset[disabled] .btn-danger.active {
   background-color: #ffffff;
 }
 .btn-outlined {
-  border: 2px solid #ffffff;
+  border: 2px solid #094543;
 }
 .btn-outlined.btn-success {
   background-color: rgba(0, 0, 0, 0.05);

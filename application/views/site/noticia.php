@@ -30,7 +30,7 @@
                 <div class="container">
                     <div class="section-content">
                         <div class="row pb-70">
-                            <div class="col-md-9 col-sm-9">
+                            <div class="col-md-9">
                                 <nav class="list-latest-news">
                                     <ul class="list-unstyled">
                                         <li>
@@ -50,7 +50,7 @@
                                     </ul>
                                 </nav>
                             </div>
-                            <div class="col-md-3 col-sm-3">
+                            <div class="col-md-3">
                                 <div class="box">
                                     <div class="box-heading">Outras Notícias</div>
                                     <div class="box-body">
