@@ -7,7 +7,7 @@
                     <div class="col-md-4 prl col-sm-4">
                         <div class="logo"><a href="<?= base_url() ?>"><img src="assets/images/logo-footer.png" alt="MTC Log" class="img-responsive"/></a></div>
                         <div class="about-us">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, reiciendis minus! Debitis sapiente itaque fugiat!
+                            Operações Logísticas dedicadas Internas e Externas, regime de Armazéns Gerais e dedicados, Logística Reversa, implementação de WMS, transporte, serviços técnicos, reengenharia de embalagens de exportação, sub-montagem entre outros serviços.
                         </div>
                         <div class="contact-info">
                             <ul class="list-unstyled mbn">
