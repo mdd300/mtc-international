@@ -196,7 +196,7 @@
                             <div class="row">
                                 <div class="container">
                                     <div class="col-md-3 col-sm-6 col-xs-6">
-                                        <a href="" class="card hovercard alternative">
+                                        <a href="http://www.mtcsoft.com.br" target="_blank" class="card hovercard alternative">
                                             <div class="cardheader">
                                                 <img src="assets/images/groups_mtc/soft.png" alt="MTC Log" class="img-responsive"/>
                                             </div>
@@ -206,7 +206,7 @@
                                         </a>
                                     </div>
                                     <div class="col-md-3 col-sm-6 col-xs-6">
-                                        <a href="" class="card hovercard alternative">
+                                        <a href="http://www.mtclog.com.br" target="_blank" class="card hovercard alternative">
                                             <div class="cardheader">
                                                 <img src="assets/images/groups_mtc/log.png" alt="" class="img-responsive"/>
                                             </div>
@@ -216,7 +216,7 @@
                                         </a>
                                     </div>
                                     <div class="col-md-3 col-sm-6 col-xs-6">
-                                        <a href="" class="card hovercard alternative">
+                                        <a href="http://www.mtctools.com.br" target="_blank" class="card hovercard alternative">
                                             <div class="cardheader">
                                                 <img src="assets/images/groups_mtc/tools.png" alt="" class="img-responsive"/>
                                             </div>
@@ -226,7 +226,7 @@
                                         </a>
                                     </div>
                                     <div class="col-md-3 col-sm-6 col-xs-6">
-                                        <a href="" class="card hovercard alternative">
+                                        <a href="http://www.mtctrat.com.br" target="_blank" class="card hovercard alternative">
                                             <div class="cardheader">
                                                 <img src="assets/images/groups_mtc/trat.png" alt="" class="img-responsive"/>
                                             </div>

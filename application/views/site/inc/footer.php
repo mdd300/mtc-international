@@ -30,22 +30,22 @@
                                 <nav class="list-recent-twitter">
                                     <ul class="list-unstyled mbn">
                                         <li>
-                                            <a href="#">
+                                            <a href="http://www.mtcsoft.com.br" target="_blank">
                                                 <h5>MTC Soft</h5>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="http://www.mtclog.com.br" target="_blank">
                                                 <h5>MTC Log</h5>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="http://www.mtctools.com.br" target="_blank">
                                                 <h5>MTC Tools</h5>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="http://www.mtctrat.com.br" target="_blank">
                                                 <h5>MTC Trat</h5>
                                             </a>
                                         </li>
