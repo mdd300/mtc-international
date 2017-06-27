@@ -20,6 +20,8 @@ class Landing_pages extends CI_Controller {
         $data['landing_page'] || show_404();
 
         $id = $data['landing_page']->id;
+        
+        $data['description'] = $data['landing_page']->description;
 
         $data['landing_pages'] = $this->landing_pages_model->get_landing_pages(
             $texto = "",
