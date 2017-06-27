@@ -5,9 +5,10 @@ class Landing_pages extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
         $this->load->helper('text');
-        $this->load->model('landing_pages_model');
         $this->load->model('topos_model');
+        $this->load->model('landing_pages_model');
         $this->load->model('areas_de_atuacao_model');
+        $this->load->model('servicos_model');
 	}
 
 	public function index($slug)
@@ -15,8 +16,6 @@ class Landing_pages extends CI_Controller {
         $data['active']   = 'landing-pages';
 
         $data['landing_page']  = $this->landing_pages_model->get_landing_page_slug($slug);
-
-        $data['areas_de_atuacao'] = $this->areas_de_atuacao_model->get_areas_de_atuacao(); 
 
         $data['landing_page'] || show_404();
 
@@ -38,6 +37,8 @@ class Landing_pages extends CI_Controller {
         //menu & topo
         $data['topo'] = $this->topos_model->get_topo($data['active']);
         $data['topo'] = $data['topo']->imagem;
+        $data['areas_de_atuacao'] = $this->areas_de_atuacao_model->get_areas_de_atuacao(); 
+        $data['servicos_menu'] = $this->servicos_model->get_servicos(); 
         
         $this->load->view('site/landing-page', $data);
     }

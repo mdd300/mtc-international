@@ -14,6 +14,14 @@
 #section-news {
   color: #808080;
 }
+.links-cloud a{
+  background-color: #DA651A;
+  color: #fff;
+  padding: 7px 12px;
+  font-weight: 600;
+  border-radius: 50px;
+  margin-right: 15px;
+}
 .get-appointment {
   width: 100%;
   position: absolute;
