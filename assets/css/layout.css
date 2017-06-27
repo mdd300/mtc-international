@@ -26,7 +26,7 @@ body {
   position: relative;
 }
 .section.quem-somos {
-  background-color: #DC661D;
+  background-color: #eee;
   padding-bottom: 30px;
   padding-top: 25px;
 }
@@ -37,7 +37,7 @@ body {
   border-top-color: #DC661D;
 }
 .section.quem-somos .text {
-  color: #fff;
+  color: #000;
   font-size: 20px;
 }
 .section.quem-somos .button {
@@ -61,7 +61,7 @@ body {
   /*font-family: 'AleoBold';*/
 }
 .section.quem-somos .section-heading .title {
-  color: #fff;
+  color: #000;
 }
 .section .section-heading .sub-title {
   font-size: 16px;
