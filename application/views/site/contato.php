@@ -76,7 +76,7 @@
                                                 <li>
                                                     <a href="#">
                                                         <i class="fa fa-envelope fa-fw"></i>
-                                                        <div class="contact-info-box">contato@grupomtc.com.br</div>
+                                                        <div class="contact-info-box">comercial@mtclog.com.br</div>
                                                     </a>
                                                 </li>
                                             </ul>
