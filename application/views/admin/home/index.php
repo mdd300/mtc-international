@@ -125,7 +125,7 @@
                                 </a>
                             </div>
                         </div>
-                        <!-- <div class="col-md-2">
+                        <div class="col-md-2">
                             <div class="thumbnail text-center">
                                 <a href="admin/landing_pages">
                                     <span class="font-lg glyphicon glyphicon-fire"></span>
@@ -133,7 +133,7 @@
                                     </div>
                                 </a>
                             </div>
-                        </div> -->
+                        </div>
                         <div class="col-md-2">
                             <div class="thumbnail text-center">
                                 <a href="admin/exportar">

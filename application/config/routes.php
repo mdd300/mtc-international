@@ -56,8 +56,12 @@ $route['translate_uri_dashes'] = TRUE;
 //dinamic urls
 
 $route['admin'] = 'admin/home/index';
+$route['home']  = 'home';
 
 $route['contato']  = 'contato';
+$route['contato/send_contact']  = 'contato/send_contact';
+$route['contato/send_work']  = 'contato/send_work';
+$route['contato/send_newsletter']  = 'contato/send_newsletter';
 $route['trabalhe-conosco']  = 'contato/trabalhe_conosco';
 $route['area-cliente']  = 'contato/area_cliente';
 $route['login-cliente']  = 'contato/login_cliente';
@@ -66,6 +70,10 @@ $route['o-que-fazemos']  = 'servicos';
 $route['o-que-fazemos/(:any)']  = 'servicos/exibe/$1';
 
 $route['areas-de-atuacao']  = 'areas-de-atuacao/index';
+$route['operacoes']  = 'operacoes/index';
+$route['sustentabilidade']  = 'sustentabilidade/index';
+$route['tecnologia']  = 'tecnologia/index';
+$route['carreira']  = 'carreira/index';
 $route['quem-somos']  = 'quem-somos/index';
 
 $route['busca']  = 'busca';
@@ -76,4 +84,4 @@ $route['noticias/pesquisa/(:any)'] = 'noticias/pesquisa/$1';
 $route['noticias/(:any)'] = 'noticias/show/$1';
 
 //rewrite for lps
-// $route['(:any)'] = 'landing_pages/index/$1';
+$route['(:any)'] = 'landing_pages/index/$1';
