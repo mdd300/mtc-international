@@ -73,7 +73,6 @@ $route['areas-de-atuacao']  = 'areas-de-atuacao/index';
 $route['operacoes']  = 'operacoes/index';
 $route['sustentabilidade']  = 'sustentabilidade/index';
 $route['tecnologia']  = 'tecnologia/index';
-$route['carreira']  = 'carreira/index';
 $route['quem-somos']  = 'quem-somos/index';
 
 $route['busca']  = 'busca';

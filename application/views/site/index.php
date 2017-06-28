@@ -160,7 +160,7 @@
         <a href="#marcas-carousel" data-slide="prev" class="left carousel-control"><span class="fa fa-arrow-left"></span></a><a href="#marcas-carousel" data-slide="next" class="right carousel-control"><span class="fa fa-arrow-right"></span></a>
     </div>
 
-    <section class="facebook-area">
+    <!-- <section class="facebook-area">
         <div class="container">
             <div class="row">                
                 <div class="col-md-4 col-md-offset-7">
@@ -181,7 +181,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <div id="main"><!-- CONTENT-->
         <div id="content">
