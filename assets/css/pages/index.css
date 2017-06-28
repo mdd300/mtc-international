@@ -376,9 +376,16 @@
   right: -60px;
   font-size: 50px;
 }
+#section-meet-our-doctor {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+#section-meet-our-doctor #clientes .line{
+  margin-top: 0 auto 5px !important;
+}
 /* Lastest News Section | #latest-news */
 #section-latest-news.news-home {
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 #section-latest-news .box {
   position: relative;

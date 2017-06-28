@@ -10,7 +10,7 @@
 -------------------------------------------------------------------*/
 /* Services Section | #services */
 #section-services.servicos-home{
-  padding-bottom: 40px;
+  padding-bottom: 5px;
 }
 #section-services.empresas-mtc .card {
   margin-bottom: 0px;
@@ -18,7 +18,7 @@
 #section-services .card {
   display: block;
   padding-top: 20px;
-  margin-bottom: 70px;
+  margin-bottom: 30px;
   border: 1px solid #e5e5e5;
 }
 #section-services .card.last {

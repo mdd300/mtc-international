@@ -21,7 +21,7 @@ body {
 }
 /* quem-somos */
 .section {
-  padding-top: 40px;
+  padding-top: 30px;
   padding-bottom: 80px;
   position: relative;
 }
@@ -34,14 +34,14 @@ body {
   border-color: #000;
 }
 .section.quem-somos .line::after{
-  border-top-color: #DC661D;
+  border-top-color: #EEEEEE;
 }
 .section.quem-somos .text {
   color: #000;
   font-size: 18px;
 }
 .section.quem-somos .button {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .section .section-heading .info {
   font-size: 32px;
@@ -481,7 +481,7 @@ body {
   position: relative;
   background: transparent;
   border-bottom: 1px solid #000;
-  margin: 0 auto 45px;
+  margin: 0 auto 25px;
   padding: 5px;
 }
 .line:after,
@@ -911,6 +911,9 @@ body.page-header-scroll #wrapper .header-wrapper #header .menu > ul > li > a spa
     min-height: 0;
   }
 
+  #section-services.empresas-mtc {
+    padding-top: 0px;
+  }
   #section-services.empresas-mtc .card {
     margin-bottom: 30px;
   }

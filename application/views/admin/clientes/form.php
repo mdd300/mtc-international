@@ -33,6 +33,6 @@
     </div>
 <?php endif ?>
 <div class="form-group">
-    <label for="imagem">Imagem (270x270px): </label>
+    <label for="imagem">Imagem (270x170px): </label>
     <input name="imagem" id="imagem" type="file" />
 </div>

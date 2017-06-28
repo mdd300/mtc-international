@@ -75,7 +75,7 @@ class clientes_model extends CI_Model {
             // }
 
             $config_img['width'] = 270;
-            $config_img['height'] = 270;
+            $config_img['height'] = 170;
 
 
             $this->image_lib->initialize($config_img);
