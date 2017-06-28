@@ -13,8 +13,6 @@ class Exportar extends CI_Controller {
 
 		$this->load->model('usuarios_model');
 		$this->load->model('contato_model');
-		$this->load->model('marcas_model');
-		$this->load->model('aplicacoes_model');
 	}
 
 	public function index($offset = NULL) {
@@ -23,9 +21,6 @@ class Exportar extends CI_Controller {
 			if ($this->session->userdata('tipo') == 2) {
 				$usuarioID = $this->session->userdata('usuarioID');
 			}
-
-			$marcas = $this->marcas_model->get_marcas();
-			$aplicacoes = $this->aplicacoes_model->get_aplicacoes();
 
 			$this->load->view('admin/exportar/index');
 

@@ -33,30 +33,10 @@
                     </div>
                     <div class="radio">
                         <label for="areas_atuacao">
-                            <input type="radio" name="origem" id="areas_atuacao" value="Áreas de Atuação">
-                            Áreas de Atuação
+                            <input type="radio" name="origem" id="areas_atuacao" value="O que fazemos">
+                            O que fazemos
                         </label>
-                    </div>
-                    <div class="radio">
-                        <label for="diferenciais">
-                            <input type="radio" name="origem" id="diferenciais" value="Diferenciais">
-                            Diferenciais
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="servicos">
-                            <input type="radio" name="origem" id="servicos" value="Serviços">
-                            Serviços
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="solucoes">
-                            <input type="radio" name="origem" id="solucoes" value="Soluções">
-                            Soluções
-                        </label>
-                    </div>
-
-                    
+                    </div>                    
                     <span class="validate_error"></span>
                     <span class="validate_success"></span>
                 </div>

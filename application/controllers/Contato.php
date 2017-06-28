@@ -10,6 +10,7 @@ class Contato extends CI_Controller {
         $this->load->helper('email');
         
         $this->load->model('contato_model');
+        $this->load->model('file_upload_model');
         $this->load->model('topos_model');
         $this->load->model('servicos_model');
 	}
@@ -123,13 +124,15 @@ class Contato extends CI_Controller {
 
     private function _send_notifications($dados, $origem)
     {
-        $curriculo = $this->file_upload_model->file_upload(
-            'curriculo',
-            'curriculos',
-            'pdf|doc|docx',
-            NULL,
-            NULL
-        );
+        if(isset($dados['curriculo'])){
+            $curriculo = $this->file_upload_model->file_upload(
+                'curriculo',
+                'curriculos',
+                'pdf|doc|docx',
+                NULL,
+                NULL
+            );            
+        }
 
         $this->load->library('email');
         
@@ -151,7 +154,7 @@ class Contato extends CI_Controller {
             $mensagem .= "Mensagem: " . $dados['message'] . "<br />";
         }
 
-        if ( !is_array($curriculo) ) {
+        if (isset($curriculo) && !is_array($curriculo) ) {
             $mensagem .= "<a href='" . base_url() . "assets/uploads/curriculos/" . $curriculo . "'>" . "Veja o currículo" . "</a>" . "<br />";
         }
 
