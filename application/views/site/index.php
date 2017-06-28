@@ -120,6 +120,9 @@
                             <?php endforeach ?>
                         </div>
                     </div>
+                    <div class="section-heading">
+                        <a href="noticias" class="btn btn-outlined btn-primary areas-de-atuacao">Mais Notícias</a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -300,11 +300,14 @@ body {
   margin-bottom: 30px;
 }
 #footer #section-footer .logo img{
-  max-width: 200px;
+  max-width: 150px;
 }
 #footer #section-footer .about-us {
   font-size: 13px;
   margin-bottom: 20px;
+}
+#footer #section-footer .about-us h4 {
+  font-weight: 800;
 }
 #footer #section-footer .contact-info > ul > li > a {
   padding: 5px 0;

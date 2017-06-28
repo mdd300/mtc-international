@@ -33,7 +33,7 @@ class Home extends CI_Controller {
 			$texto = '',
 			$data_de = NULL,
 			$data_ate = NULL,
-			$limit = 4,
+			$limit = 2,
 			$offset = NULL,
 			$count = NULL,
 			$menos_estaID = NULL,
