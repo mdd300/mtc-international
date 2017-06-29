@@ -981,6 +981,9 @@ body.page-header-scroll #wrapper .header-wrapper #header .menu > ul > li > a spa
   #wrapper #footer #section-footer .contact-info {
     margin-bottom: 30px;
   }
+  .section.quem-somos .text {
+      font-size: 17px;
+  }
   .section .section-heading .title {
     font-size: 22px;
   }
