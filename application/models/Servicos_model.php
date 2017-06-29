@@ -75,7 +75,7 @@ class Servicos_model extends CI_Model {
 			$this->db->order_by($order_by, $order);
 		} else {
 			if ($order_by == NULL && $order == NULL) {
-				$this->db->order_by('titulo', 'asc');
+				$this->db->order_by('sort', 'asc');
 			} else {
 				if ($order == NULL) {
 					$this->db->order_by($order_by, 'desc');
@@ -246,6 +246,26 @@ class Servicos_model extends CI_Model {
         $string = strtolower($string);
         return utf8_encode($string);
 	}
+
+	public function atualizar_ordem($id, $sort)
+    {
+        $this->db->set('sort', $sort);
+        $this->db->where('id', $id);
+        $this->db->update('servicos');
+        return true;
+    }
+
+    public function rearrange()
+    {
+        $result = $this->db->get('servicos')->result();
+        $x = 1;
+        foreach ($result as $banner) {
+            $this->db->where('id', $banner->id);
+            $this->db->set('sort', $x);
+            $this->db->update('servicos');
+            $x++;
+        }        
+    }
 }
 
 ?>

@@ -160,7 +160,32 @@ class Servicos extends CI_Controller {
 		}else{
 			$this->session->set_flashdata('messages', 'Notícias excluídas com sucesso.');
 		}
-	}    
+	}
+
+	public function rearrange()
+    {
+        $this->servicos_model->rearrange();
+    }
+
+    public function salvar_ordem()
+    {
+        $data = $_POST;
+
+        $lis = explode( ';' , $data['new_order_array'] );
+
+        foreach ( $lis as $key => $val ) {
+            //explode each value found by "="...
+            $pos = explode( '=' , $val );
+            
+            $id = $pos[0];
+            $sort = $pos[1];
+
+            $this->servicos_model->atualizar_ordem($id, $sort);
+        }
+        
+        redirect('admin/servicos', 'location');
+        $this->session->set_flashdata('messages', 'Itens reordenados');
+    }
 }
 
 ?>

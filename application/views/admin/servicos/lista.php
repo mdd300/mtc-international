@@ -40,6 +40,12 @@
                 <hr>
 
                 <div id="acoes" class="text-right">
+                    <form action="admin/servicos/salvar_ordem" method="POST" class="pull-left">
+                        <input type="hidden" value="" name="new_order_array" class="new_order_input">
+                        <button class="btn btn-success reorder_button" disabled>
+                            Salvar Ordem
+                        </button>
+                    </form>
                     <a class="btn btn-danger" href="javascript: void(0);" onclick="excluirRegistros('servicos', 'excluir_selecionados');">
                         Excluir
                     </a>
@@ -59,10 +65,13 @@
                             <td>Data de Publicação</td>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="text-center" id="sortable">
                         <?php if ($servicos): ?>
                             <?php foreach ($servicos as $key => $servico): ?>
-                                <tr>
+                                <tr id="<?php echo $servico->id ?>">
+                                    <td>
+                                        <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>  
+                                    </td>
                                     <td class="selecao text-center">
                                         <input type="checkbox" name="" id="" value="<?php echo $servico->id ?>" />
                                     </td>
@@ -82,7 +91,7 @@
                             <?php endforeach ?>
                         <?php else: ?>
                             <tr>
-                                <td class="col-first" colspan="4">Nenhum item cadastrado no sistema.</td>
+                                <td class="col-first" colspan="6">Nenhum item cadastrado no sistema.</td>
                             </tr>     
                         <?php endif ?>
                     </tbody>
