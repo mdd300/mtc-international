@@ -14,7 +14,7 @@
                 <div class="header-bg-content">
                     <ol class="breadcrumb">
                         <li><a href="<?= base_url() ?>">Home</a></li>
-                        <li><a href="o-que-fazemos">O que fazemos</a></li>
+                        <li><a href="servicos">Serviços</a></li>
                         <li class="active"><?= $servico->titulo ?></li>
                     </ol>
                     <h2 class="title"><?= $servico->titulo ?></h2>
@@ -42,25 +42,25 @@
                                                 <?= $servico->descricao ?>
                                             </div>
                                         </div>
-                                        <a href="o-que-fazemos" class="btn btn-outlined btn-primary ">Ver Todos</a>
+                                        <a href="servicos" class="btn btn-outlined btn-primary ">Ver Todos</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <?php if (!empty($servicos)): ?>
                                 <div class="box">
-                                    <div class="box-heading">O que fazemos</div>
+                                    <div class="box-heading">Serviços</div>
                                     <div class="box-body">
                                         <nav class="list-most-commented">
                                             <?php foreach ($servicos as $key => $servicos_aside): ?>
                                             <div class="media">
                                                 <div class="media-left">
-                                                    <a href="o-que-fazemos/<?= $servicos_aside->slug ?>">
+                                                    <a href="servicos/<?= $servicos_aside->slug ?>">
                                                         <img width="80" src="<?php echo base_url('assets/uploads/servicos/'.$servicos_aside->imagem); ?>" alt="<?= $servico->titulo ?>" alt="<?= $servicos_aside->titulo ?>" class="media-object">
                                                     </a>
                                                 </div>
                                                 <div class="media-body">
-                                                    <div class="media-heading"><a href="o-que-fazemos/<?= $servicos_aside->slug ?>" class="title"><?= $servicos_aside->titulo ?></a></div>
+                                                    <div class="media-heading"><a href="servicos/<?= $servicos_aside->slug ?>" class="title"><?= $servicos_aside->titulo ?></a></div>
                                                 </div>
                                             </div>
                                             <?php endforeach ?>
@@ -68,7 +68,7 @@
                                     </div>
                                 </div>
                                 <?php endif ?>
-                                <?php $this->load->view('site/form-leads', array('origem' => 'O que fazemos')); ?>
+                                <?php $this->load->view('site/form-leads', array('origem' => 'Serviços')); ?>
                             </div>
                         </div>
                     </div>

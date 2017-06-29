@@ -9,7 +9,7 @@
 		</div>
 		
 		<div class="container">
-			<h1>O que fazemos</h1>
+			<h1>Serviços</h1>
 			<?php $this->load->view('admin/inc/messages') ?>
 			
 			<form method="post" action="admin/servicos/atualizar" id="form_novidades" enctype="multipart/form-data">

@@ -33,8 +33,8 @@
                     </div>
                     <div class="radio">
                         <label for="areas_atuacao">
-                            <input type="radio" name="origem" id="areas_atuacao" value="O que fazemos">
-                            O que fazemos
+                            <input type="radio" name="origem" id="areas_atuacao" value="Serviços">
+                            Serviços
                         </label>
                     </div>                    
                     <span class="validate_error"></span>

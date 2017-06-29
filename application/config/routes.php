@@ -66,12 +66,13 @@ $route['trabalhe-conosco']  = 'contato/trabalhe_conosco';
 $route['area-cliente']  = 'contato/area_cliente';
 $route['login-cliente']  = 'contato/login_cliente';
 
-$route['o-que-fazemos']  = 'servicos';
-$route['o-que-fazemos/(:any)']  = 'servicos/exibe/$1';
+$route['servicos']  = 'servicos';
+$route['servicos/(:any)']  = 'servicos/exibe/$1';
 
 $route['areas-de-atuacao']  = 'areas-de-atuacao/index';
 $route['operacoes']  = 'operacoes/index';
 $route['sustentabilidade']  = 'sustentabilidade/index';
+$route['missao-visao']  = 'missao_visao/index';
 $route['tecnologia']  = 'tecnologia/index';
 $route['quem-somos']  = 'quem-somos/index';
 

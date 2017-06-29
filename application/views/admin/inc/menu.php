@@ -30,13 +30,14 @@ $tipo = $this->session->userdata('tipo');
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Textos <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="admin/quem_somos">Quem Somos</a></li>
+                <li><a href="admin/missao_visao">Missão e Visão</a></li>
                 <li><a href="admin/tecnologia">Tecnologia</a></li>
                 <li><a href="admin/operacoes">Operações</a></li>
                 <li><a href="admin/sustentabilidade">Sustentabilidade</a></li>
-                <li><a href="admin/servicos">O que fazemos</a></li>
+                <li><a href="admin/servicos">Serviços</a></li>
               </ul>
             </li>
-            <li><a href="admin/areas_de_atuacao">Atuação</a></li>
+            <!-- <li><a href="admin/areas_de_atuacao">Atuação</a></li> -->
             <li><a href="admin/noticias">Notícias</a></li>
             <li><a href="admin/topos">Banners(topo)</a></li>
             <li><a href="admin/newsletters">Newsletters</a></li>

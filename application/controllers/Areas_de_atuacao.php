@@ -10,6 +10,8 @@
     }
 
     public function index() {
+        show_404();
+
         $data['active'] = 'areas-de-atuacao';
         
         $data['servicos_menu'] = $this->servicos_model->get_servicos();

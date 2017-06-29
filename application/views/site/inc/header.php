@@ -27,19 +27,31 @@
                 <ul class="list-unstyled list-inline">
                     <!-- use active class on li to mark itens on menu as active -->
                     <li><a href="<?= base_url() ?>"><i class="fa fa-home"></i></a></li>
-                    <li><a href="quem-somos">Sobre Nós</a></li>
                     <li>
                         <a
-                            href="<?php echo site_url('o-que-fazemos'); ?>"
+                            href="<?php echo site_url('quem-somos'); ?>"
                             data-hover="dropdown"
                             class="data-toggle">
-                                O que fazemos<span class="arrow fa fa-angle-down"></span>
+                                Sobre Nós<span class="arrow fa fa-angle-down"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="quem-somos">Sobre Nós</a></li>
+                            <li><a href="missao-visao">Missão e Visão</a></li>
+                            <li><a href="sustentabilidade">Sustentabilidade</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a
+                            href="<?php echo site_url('servicos'); ?>"
+                            data-hover="dropdown"
+                            class="data-toggle">
+                                Serviços<span class="arrow fa fa-angle-down"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <?php
                                 if($servicos_menu){ 
                                     foreach ($servicos_menu as $key => $servico){ ?>
-                                        <li><a href="o-que-fazemos/<?= $servico->slug ?>"><?= $servico->titulo ?></a></li>
+                                        <li><a href="servicos/<?= $servico->slug ?>"><?= $servico->titulo ?></a></li>
                             <?php
                                     }
                                 }
@@ -49,8 +61,7 @@
                     <!-- <li><a href="noticias">Notícias</a></li> -->
                     <li><a href="tecnologia">Tecnologia</a></li>
                     <li><a href="operacoes">Operações</a></li>
-                    <li><a href="areas-de-atuacao">Áreas de Atuação</a></li>
-                    <li><a href="sustentabilidade">Sustentabilidade</a></li>
+                    <!-- <li><a href="areas-de-atuacao">Áreas de Atuação</a></li> -->
                     <li><a href="<?php echo site_url(); ?>#clientes">Clientes</a></li>
                     <li>
                         <a

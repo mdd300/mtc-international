@@ -48,12 +48,12 @@
                             <div class="thumbnail text-center">
                                 <a href="admin/servicos">
                                     <span class="font-lg glyphicon glyphicon-heart"></span>
-                                    <div class="caption">O que fazemos
+                                    <div class="caption">Serviços
                                     </div>
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <!-- <div class="col-md-2">
                             <div class="thumbnail text-center">
                                 <a href="admin/areas_de_atuacao">
                                     <span class="font-lg glyphicon glyphicon-tags"></span>
@@ -61,7 +61,7 @@
                                     </div>
                                 </a>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-md-2">
                             <div class="thumbnail text-center">
                                 <a href="admin/noticias">

@@ -14,9 +14,9 @@
                 <div class="header-bg-content">
                     <ol class="breadcrumb">
                         <li><a href="#">Home</a></li>
-                        <li class="active">O que fazemos</li>
+                        <li class="active">Serviços</li>
                     </ol>
-                    <h2 class="title">O que fazemos</h2>
+                    <h2 class="title">Serviços</h2>
                 </div>
             </div>
         </div>
@@ -34,16 +34,16 @@
                                         <div class="overlay"></div>
                                         <div class="cardheader"><img src="<?php echo base_url('assets/uploads/servicos/'.$servico->imagem); ?>" alt="" class="img-responsive"/></div>
                                         <div class="info">
-                                            <div class="title"><a href="o-que-fazemos/<?= $servico->slug ?>"><?= $servico->titulo ?></a></div>
+                                            <div class="title"><a href="servicos/<?= $servico->slug ?>"><?= $servico->titulo ?></a></div>
                                             <div class="desc"><?= $servico->resumo ?></div>
-                                            <div class="read-more"><a href="o-que-fazemos/<?= $servico->slug ?>" class="btn btn-outlined">Saiba mais<i class="fa fa-plus mls"></i></a></div>
+                                            <div class="read-more"><a href="servicos/<?= $servico->slug ?>" class="btn btn-outlined">Saiba mais<i class="fa fa-plus mls"></i></a></div>
                                         </div>
                                     </div>
                                 </div>
                             <?php endforeach ?>
                         </div>                        
                         <div class="col-md-3 row pb-92 form-especialidades-listagem">
-                            <?php $this->load->view('site/form-leads', array('origem' => 'O que fazemos')); ?>
+                            <?php $this->load->view('site/form-leads', array('origem' => 'Serviços')); ?>
                         </div>
                     </div>
                 </div>
