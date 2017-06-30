@@ -201,8 +201,9 @@ body {
   /*color: #000;*/
 }
 #wrapper .header-wrapper #header .menu > ul > li > a:hover {
-  background-color: rgba(99, 99, 99, 0.8);
-  color: #fff;
+  /*background-color: rgba(99, 99, 99, 0.8);*/
+  /*color: #fff;*/
+  color: #808181;
 }
 #wrapper .header-wrapper #header .menu > ul > li > a:hover span.arrow {
   color: #ffffff;
