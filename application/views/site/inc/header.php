@@ -62,7 +62,7 @@
                     <li><a href="tecnologia">Tecnologia</a></li>
                     <li><a href="operacoes">Operações</a></li>
                     <!-- <li><a href="areas-de-atuacao">Áreas de Atuação</a></li> -->
-                    <li><a href="<?php echo site_url(); ?>#clientes">Clientes</a></li>
+                    <li><a href="clientes">Clientes</a></li>
                     <li>
                         <a
                             href="#"

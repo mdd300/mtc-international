@@ -59,6 +59,7 @@ $route['admin'] = 'admin/home/index';
 $route['home']  = 'home';
 
 $route['contato']  = 'contato';
+$route['clientes']  = 'clientes_descricao/index';
 $route['contato/send_contact']  = 'contato/send_contact';
 $route['contato/send_work']  = 'contato/send_work';
 $route['contato/send_newsletter']  = 'contato/send_newsletter';
