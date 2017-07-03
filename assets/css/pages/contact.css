@@ -28,6 +28,7 @@
 }
 .list-unstyled.contact-info-list li{
   padding-top: 20px;
+  display: table-row;
 }
 .get-appointment {
   width: 100%;

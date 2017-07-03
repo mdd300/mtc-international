@@ -58,11 +58,11 @@
                             ?>
                         </ul>
                     </li>
-                    <!-- <li><a href="noticias">Notícias</a></li> -->
                     <li><a href="tecnologia">Tecnologia</a></li>
                     <li><a href="operacoes">Operações</a></li>
                     <!-- <li><a href="areas-de-atuacao">Áreas de Atuação</a></li> -->
                     <li><a href="clientes">Clientes</a></li>
+                    <li><a href="noticias">Notícias</a></li>
                     <li>
                         <a
                             href="#"
