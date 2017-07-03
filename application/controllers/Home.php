@@ -8,6 +8,7 @@ class Home extends CI_Controller {
 		$this->load->helper('text');
 		$this->load->model('banners_model');
 		$this->load->model('servicos_model');
+		$this->load->model('operacoes_model');
 		$this->load->model('clientes_model');
 		$this->load->model('noticias_model');
 	}
@@ -28,6 +29,8 @@ class Home extends CI_Controller {
 		$data['clientes'] = array_chunk($data['clientes'], 4);
 		
 		$data['servicos'] = $this->servicos_model->get_servicos();
+		
+		$data['operacoes'] = $this->operacoes_model->get_operacoes();
 
 		$data['noticias'] = $this->noticias_model->get_noticias(
 			$texto = '',

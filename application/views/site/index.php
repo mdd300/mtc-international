@@ -92,6 +92,45 @@
                     </div>
             <?php
                 }
+                if($operacoes){
+            ?>
+                    <div id="section-services" class="section servicos-home operacoes">
+                        <div class="container text-center">
+                            <div class="section-heading">
+                                <div class="title">Operações</div>
+                                <div class="line"></div>
+                            </div>
+                            <div class="section-content">
+                                <div class="list-departments">
+                                    <div class="row">
+                                        <div class="container">
+                                            <?php
+                                                foreach ($operacoes as $key => $operacao){ ?>
+                                                    <div class="col-md-4 col-sm-6">
+                                                        <a href="operacoes" class="card hovercard alternative">
+                                                            <div class="cardheader">
+                                                                <img src="<?php echo base_url('assets/uploads/operacoes/'.$operacao->imagem); ?>" alt="" class="img-responsive"/>
+                                                            </div>
+                                                            <div class="info">
+                                                                <div class="title"><?= $operacao->titulo ?></div>
+                                                                <div class="desc"><?= ellipsize($operacao->descricao, 480) ?></div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            <?php 
+                                                }
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-heading">
+                                <a href="operacoes" class="btn btn-outlined btn-primary areas-de-atuacao">Ver Todos</a>
+                            </div>
+                        </div>
+                    </div>
+            <?php
+                }
             ?>
             <div id="section-latest-news" class="section news-home">
                 <div class="container text-center">

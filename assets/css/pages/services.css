@@ -107,6 +107,11 @@
   text-align: left;
   margin-bottom: 20px;
 }
+#section-services.operacoes .card.hovercard .info .desc,
+#section-services.operacoes .card.hovercard .info .desc p {
+  font-weight: normal;
+  text-transform: none;
+}
 #section-services .card.hovercard .info .read-more {
   position: absolute;
   left: 50%;
