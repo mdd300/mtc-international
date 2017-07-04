@@ -25,11 +25,12 @@
         <?php endif ?>
 
     </head>
-    <body>
+    <body class="area-cliente">
       <div class="wrapper">
         <form id="login-cliente" class="form-signin" action="<?php echo site_url('login-cliente'); ?>" method="POST">       
           <div class="text-center"><a href="<?= base_url() ?>"><img src="assets/images/logo.png" alt=""/></a></div>
           <h2 class="form-signin-heading text-center">Área do Cliente</h2>
+          <p>Acesso restrito à clientes. Acesse e acompanhe o status do seu serviço.</p>
           <input type="text" class="form-control" name="usuario" placeholder="Usuário" required autofocus>
           <input type="password" class="form-control" name="senha" placeholder="Senha" required>      
           <div class="alert alert-danger text-center"  style="display: none" role="alert">

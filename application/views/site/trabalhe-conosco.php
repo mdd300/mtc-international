@@ -66,19 +66,25 @@
                                                 <li>
                                                     <a href="#">
                                                         <i class="fa fa-map-marker fa-fw"></i>
-                                                        <div class="contact-info-box">Rua Serra da Borborema, 168 - Jardim Maria Tereza - São Paulo/SP<br>CEP: 09930-580</div>
+                                                        <div class="contact-info-box">
+                                                            <p><strong>Matriz</strong><br/>Rua Serra da Borborema, 168 - Jardim Maria Tereza - São Paulo/SP<br>CEP: 09930-580</p>
+                                                            <p><strong>Filial</strong><br/>Av. Luis Merenda, 365 - Campanário - São Paulo<br/>CEP:09931-390</p>
+                                                        </div>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#">
                                                         <i class="fa fa-phone fa-fw"></i>
-                                                        <div class="contact-info-box">55 11 4092.7712 | 55 11 4092.7716</div>
+                                                        <div class="contact-info-box">
+                                                            <p><strong>Matriz</strong><br/>55 11 4092.7712 | 55 11 4092.7716</p>
+                                                            <p><strong>Filial</strong><br/>55 11 4091.2116</p>    
+                                                        </div>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#">
                                                         <i class="fa fa-envelope fa-fw"></i>
-                                                        <div class="contact-info-box">contato@grupomtc.com.br</div>
+                                                        <div class="contact-info-box">comercial@mtclog.com.br</div>
                                                     </a>
                                                 </li>
                                             </ul>

@@ -82,6 +82,10 @@
   margin-top: 80px;
   margin-bottom: 80px;
 }
+body.area-cliente {
+  background: url(../../images/backgrounds/area-cliente.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
 
 .form-signin {
   max-width: 380px;
