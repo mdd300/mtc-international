@@ -9,14 +9,17 @@ class Missao_visao extends CI_Controller {
         $this->load->model('servicos_model');
     }
 
-    public function index() {
+    public function index() 
+    {
         $data['active'] = 'missao-visao';
+
         $data['missao_visao'] = $this->missao_visao_model->get_missao_visao_site();
-       $data['servicos_menu'] = $this->servicos_model->get_servicos();
+        $data['servicos_menu'] = $this->servicos_model->get_servicos();
 
         $data['missao_visao'] || show_404();
 
         $data['description'] = $data['missao_visao']->description;
+        $data['title_meta'] = $data['missao_visao']->title;
 
         //menu & topo
         $data['topo'] = $this->topos_model->get_topo($data['active']);

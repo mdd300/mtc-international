@@ -17,6 +17,9 @@ class Operacoes extends CI_Controller {
 		$data['servicos_menu'] = $this->servicos_model->get_servicos();
 
 		$data['operacoes'] = $this->operacoes_model->get_operacoes();
+
+		$data['title_meta'] = 'LOGÍSTICA PARA E-COMMERCE - Operações Logísticas Internas e externas.';
+		$data['description'] = 'MTC LOG - Logística Reversa, implementação de WMS, transporte, serviços técnicos, reengenharia de embalagens de exportação e muito mais.';
 		
 		//menu & topo
 		$data['topo'] = $this->topos_model->get_topo($data['active']);

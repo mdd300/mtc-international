@@ -18,6 +18,9 @@ class Contato extends CI_Controller {
 	public function index()
     {
         $data['active'] = 'contato';
+
+        $data['description'] = 'LOGÍSTICA PARA E-COMMERCE - Operações Logísticas Internas e externas.';
+        $data['title_meta'] = 'MTC LOG - Logística Reversa, implementação de WMS, transporte, serviços técnicos, reengenharia de embalagens de exportação e muito mais.';
         
         //menu & topo
         $data['topo'] = $this->topos_model->get_topo($data['active']);
@@ -30,6 +33,9 @@ class Contato extends CI_Controller {
     public function trabalhe_conosco()
     {
         $data['active'] = 'trabalhe-conosco';
+
+        $data['description'] = 'LOGÍSTICA PARA E-COMMERCE - Operações Logísticas Internas e externas.';
+        $data['title_meta'] = 'MTC LOG - Logística Reversa, implementação de WMS, transporte, serviços técnicos, reengenharia de embalagens de exportação e muito mais.';
         
         //menu & topo
         $data['topo'] = $this->topos_model->get_topo($data['active']);

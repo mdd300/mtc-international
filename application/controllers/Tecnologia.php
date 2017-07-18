@@ -18,6 +18,7 @@ class Tecnologia extends CI_Controller {
         $data['tecnologia'] || show_404();
 
         $data['description'] = $data['tecnologia']->description;
+        $data['title_meta'] = $data['tecnologia']->title;
 
         //menu & topo
         $data['topo'] = $this->topos_model->get_topo($data['active']);

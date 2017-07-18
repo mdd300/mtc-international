@@ -49,6 +49,8 @@ class Noticias extends CI_Controller {
         $data["links"] = $this->pagination->create_links();
         $data["total_noticias"] = $total_noticias;
 
+        $data['description'] = 'LOGÍSTICA PARA E-COMMERCE - Operações Logísticas Internas e externas.';
+        $data['title_meta'] = 'MTC LOG - Logística Reversa, implementação de WMS, transporte, serviços técnicos, reengenharia de embalagens de exportação e muito mais.';
 
         //menu & topo
         $data['topo'] = $this->topos_model->get_topo($data['active']);
@@ -102,6 +104,8 @@ class Noticias extends CI_Controller {
         $data["links"] = $this->pagination->create_links();
         $data["total_noticias"] = $total_noticias;
 
+        $data['description'] = 'LOGÍSTICA PARA E-COMMERCE - Operações Logísticas Internas e externas.';
+        $data['title_meta'] = 'MTC LOG - Logística Reversa, implementação de WMS, transporte, serviços técnicos, reengenharia de embalagens de exportação e muito mais.';
 
         //menu & topo
         $data['topo'] = $this->topos_model->get_topo($data['active']);
@@ -121,6 +125,7 @@ class Noticias extends CI_Controller {
         $data['noticia'] || show_404();
 
         $data['description'] = $data['noticia']->description;
+        $data['title_meta'] = $data['noticia']->title;
 
         $data['mais_noticias'] = $this->noticias_model->get_noticias(
             $texto = "",

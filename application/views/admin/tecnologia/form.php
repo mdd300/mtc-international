@@ -9,6 +9,11 @@
 </div>
 
 <div class="form-group">
-    <label for="description">Description: </label>
+    <label for="title">Title (meta): </label>
+    <input name="title" id="title" type="text" class="form-control" placeholder="Entre 150 e 160 caracteres" maxlength="160" value="<?= @$tecnologia_detalhes->title ?>">
+</div>
+
+<div class="form-group">
+    <label for="description">Description (meta): </label>
     <input name="description" id="description" type="text" class="form-control" placeholder="Entre 150 e 160 caracteres" maxlength="160" value="<?= @$tecnologia_detalhes->description ?>">
 </div>

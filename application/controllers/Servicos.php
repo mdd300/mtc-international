@@ -16,6 +16,9 @@ class Servicos extends CI_Controller {
 		$data['servicos_menu'] = $this->servicos_model->get_servicos();
 
 		$data['servicos'] = $this->servicos_model->get_servicos();
+
+		$data['description'] = 'LOGÍSTICA PARA E-COMMERCE - Operações Logísticas Internas e externas.';
+		$data['title'] = 'MTC LOG - Logística Reversa, implementação de WMS, transporte, serviços técnicos, reengenharia de embalagens de exportação e muito mais.';
 		
 		//menu & topo
 		$data['topo'] = $this->topos_model->get_topo($data['active']);
@@ -33,7 +36,9 @@ class Servicos extends CI_Controller {
 		$data['servico'] || show_404();
 		
 		$data['title'] = $data['servico']->titulo;
+		
 		$data['description'] = $data['servico']->description;
+		$data['title_meta'] = $data['servico']->title;
 
 		$data['servicos'] = $this->servicos_model->get_servicos(
 			$texto = "",

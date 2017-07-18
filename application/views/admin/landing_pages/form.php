@@ -36,14 +36,13 @@
     </div>
 </div>
 
-
 <div class="form-group">
-	<label for="title">Title: </label>
-	<input name="title" id="title" type="text" class="form-control" placeholder="Máximo de 70 caracters, tente manter as palavras mais importantes nos primeiros 55" maxlength="70" value="<?= @$landing_page->title ?>">
+    <label for="title">Title (meta): </label>
+    <input name="title" id="title" type="text" class="form-control" placeholder="Entre 150 e 160 caracteres" maxlength="160" value="<?= @$landing_page->title ?>">
 </div>
 
 <div class="form-group">
-	<label for="description">Description: </label>
+	<label for="description">Description (meta): </label>
 	<input name="description" id="description" type="text" class="form-control" placeholder="Entre 150 e 160 caracteres" maxlength="160" value="<?= @$landing_page->description ?>">
 </div>
 
