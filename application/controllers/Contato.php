@@ -172,8 +172,8 @@ class Contato extends CI_Controller {
         
         $this->email->initialize($config);
 
-        $this->email->from('contato@grupomtc.com.br', 'Grupo MTC');
-        $this->email->to('contato@grupomtc.com.br');
+        $this->email->from('contato@mtclog.com.br', 'Grupo MTC');
+        $this->email->to('contato@mtclog.com.br');
         $this->email->subject($subject);
         $this->email->message($mensagem);
         
@@ -184,7 +184,7 @@ class Contato extends CI_Controller {
 
         $this->email->clear(TRUE);
 
-        $this->email->from('contato@grupomtc.com.br', 'Grupo MTC');
+        $this->email->from('contato@mtclog.com.br', 'Grupo MTC');
         $this->email->to($dados['email']);
         $this->email->subject('Recebemos sua mensagem');
 
