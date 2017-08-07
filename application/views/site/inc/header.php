@@ -36,7 +36,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="quem-somos">Sobre Nós</a></li>
-                            <li><a href="missao-visao">Missão e Visão</a></li>
+                            <li><a href="missao-visao">Missão e Valores</a></li>
                             <li><a href="sustentabilidade">Sustentabilidade</a></li>
                         </ul>
                     </li>

@@ -5,7 +5,7 @@
             <div class="section-content">
                 <div class="row">
                     <div class="col-md-4 prl col-sm-4">
-                        <div class="logo"><a href="<?= base_url() ?>"><img src="assets/images/logo-footer.png" alt="MTC Log" class="img-responsive"/></a></div>
+                        <div class="logo"><a href="http://grupomtc.com.br"><img src="assets/images/logo-footer.png" alt="MTC Log" class="img-responsive"/></a></div>
                         <div class="about-us">
                             <h4>MTC Log</h4>
                         </div>
