@@ -43,3 +43,10 @@ $(function() {
     }
   });
 });
+
+//changing menu icon color on click
+$(function() {
+  $('.menu-responsive').on('click', function () {
+    $(this).toggleClass('inverse');
+  });
+});
