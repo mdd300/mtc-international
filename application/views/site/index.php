@@ -14,22 +14,22 @@
                 <div class="carousel-inner">
                     <?php foreach ($banners as $key => $banner): ?>
                         <div class="item <?= $key == 0 ? 'active' : '' ?>">
+                            <?php if (!empty($banner->link)): ?>
+                                    <a
+                                    href="<?php echo (strstr($banner->link,'http')) ? $banner->link : site_url($banner->link); ?>"
+                                    <?= $banner->target_blank == 1 ? 'target="_blank"' : '' ?>
+                                    >
+                            <?php endif ?>
                             <img src="assets/uploads/banners/<?= $banner->imagem ?>" alt="<?= $banner->titulo ?>"/>
 
                             <div class="carousel-caption">
                                 <div class="heading animated fadeIn delay-2"><?= $banner->titulo ?></div>
                                 <div class="sub-heading animated fadeIn delay-3"><?= $banner->subtitulo ?></div>
-                                <?php if (!empty($banner->link)): ?>
-                                    <a
-                                        href="<?php echo (strstr($banner->link,'http')) ? $banner->link : site_url($banner->link); ?>"
-                                        <?= $banner->target_blank == 1 ? 'target="_blank"' : '' ?>
-                                        class="btn btn-more animated fadeIn delay-4 btn-18"
-                                        >
-                                        Saiba mais
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                <?php endif ?>
+                                
                             </div>
+                            <?php if (!empty($banner->link)): ?>
+                                </a>
+                            <?php endif ?>
                         </div>
                     <?php endforeach ?>
                 </div>
