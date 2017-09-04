@@ -81,6 +81,7 @@
             <div class="social">
                 <a href="https://www.facebook.com/Grupo-MTC-268424656942036/?hc_ref=SEARCH&fref=nf" target="_blank"><i class="fa fa-facebook"></i></a>
                 <a href="https://www.linkedin.com/company/grupomtc" target="_blank"><i class="fa fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/mtcgrupo/" target="_blank"><i class="fa fa-instagram"></i></a>
             </div>
             <div class="menu-responsive"><span class="fa fa-bars"></span></div>
             <div class="clearfix"></div>

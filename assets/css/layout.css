@@ -601,7 +601,8 @@ body {
 
 #header .social{
   float: left;
-  width: 75px;
+  /*width: 75px;*/
+  width: 100px;
   padding-top: 30px;
   text-align: right;
 }
@@ -617,7 +618,8 @@ body.page-header-scroll #wrapper .header-wrapper #header .social a:hover{
 .top-header .social a,
 #header .social a,
 body.page-header-scroll #wrapper .header-wrapper #header .social a{
-  width: 25px;
+  /*width: 25px;*/
+  width: 17px;
   height: 25px;
   line-height: 25px;
   margin-right: 5px;
