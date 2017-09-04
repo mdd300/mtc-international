@@ -12,6 +12,16 @@
   *      @link http://kcfinder.sunhater.com
   */
 
+ob_start();
+include('ci/index.php');
+ob_end_clean();
+$CI =& get_instance();
+$CI->load->library('session'); //if it's not autoloaded in your CI setup
+
+if (!$CI->session->userdata('asdf')) {
+  die('Faça login.');
+}
+
 require "core/bootstrap.php";
 $browser = "kcfinder\\browser"; // To execute core/bootstrap.php on older
 $browser = new $browser();      // PHP versions (even PHP 4)
