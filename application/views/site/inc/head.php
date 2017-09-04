@@ -2,6 +2,7 @@
     <title>MTC Log</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="yandex-verification" content="d2a44d502509289c" />
     
     <?php if (isset($title_meta) && $title_meta != ''): ?>
         <meta name="title" content="<?php echo $title_meta; ?>">
