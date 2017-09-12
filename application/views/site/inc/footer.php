@@ -18,7 +18,7 @@
                                         São Paulo/SP – CEP: 09930-580
                                     </a>
                                 </li>
-                                <li><a href="#"><i class="fa fa-phone fa-fw"></i>55 11 4092.7712 | 55 11 4092.7716 </a></li>
+                                <li><a href="#"><i class="fa fa-phone fa-fw"></i>55 11 4810.1174</a></li>
                                 <li><a href="mailto:comercial@mtclog.com.br"><i class="fa fa-envelope fa-fw"></i>comercial@mtclog.com.br</a></li>
                             </ul>
                         </div>

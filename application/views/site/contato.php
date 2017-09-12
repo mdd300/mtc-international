@@ -74,7 +74,6 @@
                                                     <a href="#">
                                                         <i class="fa fa-phone fa-fw"></i>
                                                         <div class="contact-info-box">
-                                                            <p><strong>Matriz</strong><br/>55 11 4092.7712 | 55 11 4092.7716</p>
                                                             <p><strong>Filial</strong><br/>55 11 4810.1174</p>    
                                                         </div>
                                                     </a>
