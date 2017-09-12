@@ -194,7 +194,7 @@ class Contato extends CI_Controller {
         $mensagem_cliente .= '<br>';
         $mensagem_cliente .= 'Em breve entraremos em contato.';
         $mensagem_cliente .= '<br>';
-        $mensagem_cliente .= 'Tels.: 55 11 3842-6300 | 55 11 3842-6701';    
+        $mensagem_cliente .= 'Tels.: 55 11 4810-1174';    
         $mensagem_cliente .= '<br>';
         $mensagem_cliente .= '<a href="http://grupomtc.com.br/">www.grupomtc.com.br</a>';
         $mensagem_cliente .= '</p>';
