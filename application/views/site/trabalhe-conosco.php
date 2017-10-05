@@ -68,7 +68,7 @@
                                                         <i class="fa fa-map-marker fa-fw"></i>
                                                         <div class="contact-info-box">
                                                             <p><strong>Matriz</strong><br/>Rua Serra da Borborema, 168 - Jardim Maria Tereza - São Paulo/SP<br>CEP: 09930-580</p>
-                                                            <p><strong>Filial</strong><br/>Av. Luis Merenda, 365 - Campanário - São Paulo<br/>CEP:09931-390</p>
+                                                            <p><strong>Filial</strong><br/>Rua Jose Martins Fernandes, S/Nº Galpão 17 / Galpão 18  - Parque Imigrantes - CLIR Batistini -  São Bernardo do Campo/SP<br/>CEP: 09843-400</p>
                                                         </div>
                                                     </a>
                                                 </li>
