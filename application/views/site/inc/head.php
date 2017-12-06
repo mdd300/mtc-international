@@ -28,7 +28,7 @@
     <link type="text/css" rel="stylesheet" href="assets/libs/animate.css/animate.css">
     <link type="text/css" rel="stylesheet" href="assets/css/core.css">
     <link type="text/css" rel="stylesheet" href="assets/css/vendor.css">
-    <?php if ($active == 'home'): ?>
+    <?php if ($active == 'home' || $active == 'operacoes'): ?>
         <link type="text/css" rel="stylesheet" href="assets/css/pages/index.css">
         <link type="text/css" rel="stylesheet" href="assets/css/pages/services.css">
     <?php endif ?>
