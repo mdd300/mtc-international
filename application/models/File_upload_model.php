@@ -3,11 +3,11 @@
 class File_upload_model extends CI_Model {
 
     function file_upload(
-        $field,         //arquivo
-        $path,          //a pastar, dentro de assets/uploads onde será feito o upload
-        $config = false,
-        $width = NULL,  //largura (opcional)
-        $height = NULL  //altura (opcional)
+        $field,                  //arquivo
+        $path,                  //a pastar, dentro de assets/uploads onde será feito o upload
+        $allowed_types = NULL, //tipos de arquivos aceitos
+        $width = NULL,        //largura (opcional)
+        $height = NULL       //altura (opcional)
         )
     {
         parent::__construct();
@@ -15,10 +15,15 @@ class File_upload_model extends CI_Model {
         $this->load->database();
         $this->load->library('image_lib');
 
-
         $dir = realpath('assets/uploads/' . $path);
         $config['upload_path'] = $dir;
-        $config['allowed_types'] = ($config) ? $config : 'gif|jpg|png';
+        if ($allowed_types == NULL) {
+            $config['allowed_types'] = 'gif|jpg|png';
+        }
+        else
+        {
+            $config['allowed_types'] = $allowed_types;
+        }
         $config['encrypt_name'] = TRUE;
         $config['maintain_ratio'] = TRUE;
         $config['max_size'] = '500000';
@@ -41,8 +46,13 @@ class File_upload_model extends CI_Model {
             $config_img['maintain_ratio'] = TRUE;
             $config_img['encrypt_name'] = TRUE;   
 
-            $config_img['width'] = $width;   //'270px'
-            $config_img['height'] = $height;   //'131px'
+            if(!is_null($width)){
+                $config_img['width'] = $width;   //'270px'
+            }
+            if(!is_null($width)){
+                $config_img['height'] = $height;   //'131px'
+            }
+            
             $this->image_lib->initialize($config_img);
 
             $config['source_image'] = $dir.'/'.$dados['file_name'];

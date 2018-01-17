@@ -33,6 +33,7 @@
         $('.dropdown a').unbind();
 
 
+        //Contact Form
         $('.submit-contact-form').click(function(event){
             event.preventDefault();
 
@@ -79,6 +80,66 @@
 		                    button.val(response.message).css({'color' : '#000', 'background-color' : 'transparent', 'border-color' :'#000'}).attr('disabled', 'disabled');
                 		}
                 	}
+                },
+                error: function(response){
+                    button.val('Ocorreu um erro no envio. Tente novamente mais tarde.').css({'color' : '#fff', 'background-color' : '#F85B5B', 'border-color' :'#F85B5B'}).attr('disabled', 'disabled');
+                }
+            });
+        });
+
+        //Work Here Form
+        $('.submit-work-form').click(function(event){
+            event.preventDefault();
+
+            var button = $(this);
+
+            var form = $('#form-contato-trabalho').get(0);
+
+            $.ajax({
+                url: button.closest('form').attr('action'),
+                type: 'POST',
+                data: new FormData(form),
+                async: false,
+                cache: false,
+                contentType: false,
+                processData: false,
+                dataType: 'JSON',
+                beforeSend: function(){
+                    button.val('Enviando...');
+                },
+                success: function(response){
+                    if(!response.status){
+                        if(button.closest('form').attr('id') == 'form-newsletter'){
+                            button.attr('disabled', 'disabled');
+                            $('#message_newsletter').text(response.message);
+                            setTimeout(function(){
+                                button.val('Enviar').removeAttr('disabled');
+                                $('#message_newsletter').text('');
+                            }, 2000);
+                        }else{
+                            button.val(response.message).css({'color' : '#fff', 'background-color' : '#F85B5B', 'border-color' :'#F85B5B'}).attr('disabled', 'disabled');
+
+                            setTimeout(function(){
+                                if(button.closest('form').attr('id') == 'form-consulta'){
+                                    button.val('Enviar').css({'color' : '#000', 'background-color' : '#ffffff', 'border-color' :'#000'}).removeAttr('disabled');
+                                }else{
+                                    button.val('Enviar').css({'color' : '#000', 'background-color' : 'transparent', 'border-color' :'#000'}).removeAttr('disabled');
+                                }
+                            }, 5000);
+                        }
+                    }else{
+                        if(button.closest('form').attr('id') == 'form-consulta'){
+                            button.val(response.message).css({'color' : '#000', 'background-color' : '#ffffff', 'border-color' :'#000'}).attr('disabled', 'disabled');
+                        }else if(button.closest('form').attr('id') == 'form-newsletter'){
+                            $('#message_newsletter').text(response.message);
+                            setTimeout(function(){
+                                button.val('Enviar').removeAttr('disabled');
+                                $('#message_newsletter').text('');
+                            }, 5000);
+                        }else{
+                            button.val(response.message).css({'color' : '#000', 'background-color' : 'transparent', 'border-color' :'#000'}).attr('disabled', 'disabled');
+                        }
+                    }
                 },
                 error: function(response){
                     button.val('Ocorreu um erro no envio. Tente novamente mais tarde.').css({'color' : '#fff', 'background-color' : '#F85B5B', 'border-color' :'#F85B5B'}).attr('disabled', 'disabled');

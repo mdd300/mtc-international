@@ -111,6 +111,18 @@ class Contato extends CI_Controller {
 
                 $origem = (isset($post['origem'])) ? $post['origem'] : 'Trabalhe Conosco';
 
+                $curriculo = $this->file_upload_model->file_upload(
+                    'curriculo',
+                    'curriculos',
+                    'pdf|doc|docx',
+                    NULL,
+                    NULL
+                );
+
+                if(!is_array($curriculo)){
+                    $post['curriculo'] = $curriculo;
+                }
+
                 if($this->contato_model->save_contact($post, $origem)){
 
                     $this->_send_notifications($post, 'Trabalhe Conosco');
@@ -126,24 +138,11 @@ class Contato extends CI_Controller {
         echo json_encode($return);
     }
 
-    
-
     private function _send_notifications($dados, $origem)
     {
-        if(isset($dados['curriculo'])){
-            $curriculo = $this->file_upload_model->file_upload(
-                'curriculo',
-                'curriculos',
-                'pdf|doc|docx',
-                NULL,
-                NULL
-            );            
-        }
 
         $this->load->library('email');
         
-        $dados = $this->input->post();
-
         $mensagem = "Nome: " . $dados['name'] . "<br />";
         $mensagem .= "E-mail: " . $dados['email'] . "<br />";
         
@@ -160,8 +159,8 @@ class Contato extends CI_Controller {
             $mensagem .= "Mensagem: " . $dados['message'] . "<br />";
         }
 
-        if (isset($curriculo) && !is_array($curriculo) ) {
-            $mensagem .= "<a href='" . base_url() . "assets/uploads/curriculos/" . $curriculo . "'>" . "Veja o currículo" . "</a>" . "<br />";
+        if (isset($dados['curriculo']) && !is_array($dados['curriculo']) ) {
+            $mensagem .= "<a href='" . base_url() . "assets/uploads/curriculos/" . $dados['curriculo'] . "'>" . "Veja o currículo" . "</a>" . "<br />";
         }
 
         $config['charset'] = 'utf-8';
@@ -173,7 +172,11 @@ class Contato extends CI_Controller {
         $this->email->initialize($config);
 
         $this->email->from('contato@mtclog.com.br', 'Grupo MTC');
-        $this->email->to('contato@mtclog.com.br','rodolfo@vioti.com.br');
+        if(isset($dados['curriculo'])){
+            $this->email->to('vanessa@mtctrat.com.br');
+        }else{
+            $this->email->to('contato@mtclog.com.br');
+        }
         $this->email->subject($subject);
         $this->email->message($mensagem);
         

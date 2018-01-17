@@ -41,7 +41,7 @@
                                 <div class="box mbn">
                                     <div class="box-heading">Envie seu currículo</div>
                                     <div class="box-body">
-                                        <form action="<?php echo site_url('contato/send_work'); ?>" id="form-contato" name="form_contato"  class="form-contact">
+                                        <form action="<?php echo site_url('contato/send_work'); ?>" id="form-contato-trabalho" name="form_contato"  class="form-contact">
                                             <div class="form-group"><label class="control-label mll">Nome <span class="required">*</span></label><input type="text" name="name" class="form-control"/></div>
                                             <div class="form-group"><label class="control-label mll">Email <span class="required">*</span></label><input type="email" name="email" class="form-control"/></div>
                                             <div class="form-group"><label class="control-label mll">Telefone</label><input type="text" name="phone" class="form-control"/></div>
@@ -53,7 +53,7 @@
                                                     <input type="checkbox" name="opt_in" id="opt_in"> Desejo receber os informativos da MTC Log
                                                 </label>
                                             </div>
-                                            <div class="form-group mtxxl text-center mbn"><input type="submit" value="Enviar" class="btn btn-outlined btn-primary submit-contact-form"/></div>
+                                            <div class="form-group mtxxl text-center mbn"><input type="submit" value="Enviar" class="btn btn-outlined btn-primary submit-work-form"/></div>
                                         </form>
                                     </div>
                                 </div>
