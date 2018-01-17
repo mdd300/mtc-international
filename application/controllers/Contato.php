@@ -168,12 +168,12 @@ class Contato extends CI_Controller {
         $config['wordwrap'] = TRUE;
         $config['mailtype'] = 'html';
 
-        $subject = ($dados['subject'] != '') ? $dados['subject'].' - '.$origem : $origem;
+        $subject = (isset($dados['subject']) && $dados['subject'] != '') ? $dados['subject'].' - '.$origem : $origem;
         
         $this->email->initialize($config);
 
         $this->email->from('contato@mtclog.com.br', 'Grupo MTC');
-        $this->email->to('contato@mtclog.com.br');
+        $this->email->to('contato@mtclog.com.br','rodolfo@vioti.com.br');
         $this->email->subject($subject);
         $this->email->message($mensagem);
         
