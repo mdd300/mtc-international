@@ -65,8 +65,18 @@
                                                     <a href="#">
                                                         <i class="fa fa-map-marker fa-fw"></i>
                                                         <div class="contact-info-box">
-                                                            <p><strong>Matriz</strong><br/>Rua Serra da Borborema, 168 - Jardim Maria Tereza - São Paulo/SP<br>CEP: 09930-580</p>
-                                                            <p><strong>Filial</strong><br/>Rua Jose Martins Fernandes, S/Nº Galpão 17 / Galpão 18  - Parque Imigrantes - CLIR Batistini -  São Bernardo do Campo/SP<br/>CEP: 09843-400</p>
+                                                            <p>
+                                                                <strong>MTC Log</strong>
+                                                                <br>
+                                                                Rua José Martins Fernandes, 601
+                                                                <br>
+                                                                CL Imigrantes – Galpão 16,17 e 18.
+                                                                <br>
+                                                                Bairro Batistini  São Bernando do Campo
+                                                                <br>
+                                                                
+                                                            </p>
+                                                            
                                                         </div>
                                                     </a>
                                                 </li>
