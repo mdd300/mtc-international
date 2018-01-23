@@ -166,6 +166,10 @@ class Contato extends CI_Controller {
         $config['charset'] = 'utf-8';
         $config['wordwrap'] = TRUE;
         $config['mailtype'] = 'html';
+        $config['smpt_host'] = 'ppmx.mailcorp.com.br.';
+        $config['smtp_user'] = 'comercial2@mtclog.com.br';
+        $config['smtp_pass'] = 'Mt6@@2k18';
+
 
         $subject = (isset($dados['subject']) && $dados['subject'] != '') ? $dados['subject'].' - '.$origem : $origem;
         
@@ -173,7 +177,7 @@ class Contato extends CI_Controller {
 
         $this->email->from('contato@mtclog.com.br', 'Grupo MTC');
         if(isset($dados['curriculo'])){
-            $this->email->to('vanessa@mtctrat.com.br');
+            $this->email->to('vanessa@grupomtc.com.br', 'eduardo@vioti.com.br', 'gleison@vioti.com.br');
         }else{
             $this->email->to('contato@mtclog.com.br');
         }
