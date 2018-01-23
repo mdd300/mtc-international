@@ -177,7 +177,7 @@ class Contato extends CI_Controller {
 
         $this->email->from('contato@mtclog.com.br', 'Grupo MTC');
         if(isset($dados['curriculo'])){
-            $this->email->to('vanessa@grupomtc.com.br', 'eduardo@vioti.com.br', 'gleison@vioti.com.br');
+            $this->email->to('vanessa@grupomtc.com.br');
         }else{
             $this->email->to('contato@mtclog.com.br');
         }
