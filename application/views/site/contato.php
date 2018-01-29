@@ -113,11 +113,11 @@
                 </div>
                 <script type="text/javascript">
                     function init_map() {
-                        var myOptions = {zoom: 12, scrollwheel: false, center: new google.maps.LatLng(-23.6716234, -46.6259868), mapTypeId: google.maps.MapTypeId.ROADMAP};
+                        var myOptions = {zoom: 12, scrollwheel: false, center: new google.maps.LatLng(-23.772443, -46.590876), mapTypeId: google.maps.MapTypeId.ROADMAP};
                         map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
-                        marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(-23.6716234, -46.6259868)});
+                        marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(-23.772443, -46.590876)});
                         infowindow = new google.maps.InfoWindow({content: 
-                            "<b>MTC Log</b><br>Rua Serra da Borborema 168,<br>Jardim Maria Tereza - São Paulo/SP"
+                            "<b>MTC Log</b><br>Rua José Martins Fernandes, 601<br>CL Imigrantes – Galpão 16,17 e 18.<br>Bairro Batistini São Bernando do Campo"
                         });
                         google.maps.event.addListener(marker, "click", function () {
                             infowindow.open(map, marker);
