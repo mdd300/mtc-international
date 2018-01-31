@@ -72,7 +72,7 @@
                                                                 <br>
                                                                 CL Imigrantes – Galpão 16,17 e 18.
                                                                 <br>
-                                                                Bairro Batistini  São Bernando do Campo
+                                                                Bairro Batistini  São Bernardo do Campo
                                                                 <br>
                                                                 
                                                             </p>
@@ -117,7 +117,7 @@
                         map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
                         marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(-23.772443, -46.590876)});
                         infowindow = new google.maps.InfoWindow({content: 
-                            "<b>MTC Log</b><br>Rua José Martins Fernandes, 601<br>CL Imigrantes – Galpão 16,17 e 18.<br>Bairro Batistini São Bernando do Campo"
+                            "<b>MTC Log</b><br>Rua José Martins Fernandes, 601<br>CL Imigrantes – Galpão 16,17 e 18.<br>Bairro Batistini São Bernardo do Campo"
                         });
                         google.maps.event.addListener(marker, "click", function () {
                             infowindow.open(map, marker);
