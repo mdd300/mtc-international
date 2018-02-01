@@ -38,7 +38,7 @@
                                                     <?php if($cliente->link): ?>
                                                         <a href="<?php echo $cliente->link ?>" target="_blank">
                                                     <?php endif ?>
-                                                        <img src="http://mtclog.com.br/assets/uploads/clientes/<?php echo $cliente->imagem ?>" alt="<?php echo $cliente->titulo?>" class="img-responsive">
+                                                        <img src="assets/uploads/clientes/<?php echo $cliente->imagem ?>" alt="<?php echo $cliente->titulo?>" class="img-responsive">
                                                     <?php if($cliente->link): ?>
                                                         </a>
                                                     <?php endif ?>

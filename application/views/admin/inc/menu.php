@@ -29,7 +29,6 @@ $tipo = $this->session->userdata('tipo');
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Textos <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="admin/clientes_descricao">Clientes</a></li>
                 <li><a href="admin/quem_somos">Quem Somos</a></li>
                 <li><a href="admin/missao_visao">Missão e Visão</a></li>
                 <li><a href="admin/tecnologia">Tecnologia</a></li>
