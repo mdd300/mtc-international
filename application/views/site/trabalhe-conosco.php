@@ -41,7 +41,7 @@
                                 <div class="box mbn">
                                     <div class="box-heading">Envie seu currículo</div>
                                     <div class="box-body">
-                                        <form action="<?php echo site_url('contato/send_work'); ?>" id="form-contato" name="form_contato"  class="form-contact">
+                                        <form action="<?php echo site_url('contato/send_work'); ?>" id="form-contato-trabalho" name="form_contato"  class="form-contact">
                                             <div class="form-group"><label class="control-label mll">Nome <span class="required">*</span></label><input type="text" name="name" class="form-control"/></div>
                                             <div class="form-group"><label class="control-label mll">Email <span class="required">*</span></label><input type="email" name="email" class="form-control"/></div>
                                             <div class="form-group"><label class="control-label mll">Telefone</label><input type="text" name="phone" class="form-control"/></div>
@@ -53,7 +53,7 @@
                                                     <input type="checkbox" name="opt_in" id="opt_in"> Desejo receber os informativos da MTC Log
                                                 </label>
                                             </div>
-                                            <div class="form-group mtxxl text-center mbn"><input type="submit" value="Enviar" class="btn btn-outlined btn-primary submit-contact-form"/></div>
+                                            <div class="form-group mtxxl text-center mbn"><input type="submit" value="Enviar" class="btn btn-outlined btn-primary submit-work-form"/></div>
                                         </form>
                                     </div>
                                 </div>
@@ -67,8 +67,8 @@
                                                     <a href="#">
                                                         <i class="fa fa-map-marker fa-fw"></i>
                                                         <div class="contact-info-box">
-                                                            <p><strong>Matriz</strong><br/>Rua Serra da Borborema, 168 - Jardim Maria Tereza - São Paulo/SP<br>CEP: 09930-580</p>
                                                             <p><strong>Filial</strong><br/>Rua Jose Martins Fernandes, S/Nº Galpão 17 / Galpão 18  - Parque Imigrantes - CLIR Batistini -  São Bernardo do Campo/SP<br/>CEP: 09843-400</p>
+                                                            <p><strong>Matriz</strong><br/>Rua Serra da Borborema, 168 - Jardim Maria Tereza - São Paulo/SP<br>CEP: 09930-580</p>
                                                         </div>
                                                     </a>
                                                 </li>
@@ -106,11 +106,11 @@
                 </div>
                 <script type="text/javascript">
                     function init_map() {
-                        var myOptions = {zoom: 12, scrollwheel: false, center: new google.maps.LatLng(-23.6716234, -46.6259868), mapTypeId: google.maps.MapTypeId.ROADMAP};
+                        var myOptions = {zoom: 12, scrollwheel: false, center: new google.maps.LatLng(-23.772443, -46.590876), mapTypeId: google.maps.MapTypeId.ROADMAP};
                         map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
-                        marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(-23.6716234, -46.6259868)});
+                        marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(-23.772443, -46.590876)});
                         infowindow = new google.maps.InfoWindow({content: 
-                            "<b>MTC Log</b><br>Rua Serra da Borborema 168,<br>Jardim Maria Tereza - São Paulo/SP"
+                            "<b>MTC Log</b><br>Rua José Martins Fernandes, 601<br>CL Imigrantes – Galpão 16,17 e 18.<br>Bairro Batistini São Bernardo do Campo"
                         });
                         google.maps.event.addListener(marker, "click", function () {
                             infowindow.open(map, marker);

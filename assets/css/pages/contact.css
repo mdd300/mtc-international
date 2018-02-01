@@ -22,7 +22,7 @@
 .contact-info-box{
   float: right;
   text-align: left;
-  width: 87%;
+  width: calc(100% - 60px);
   line-height: 16px;
   padding-top: 5px;
 }

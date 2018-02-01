@@ -67,7 +67,7 @@ class Clientes extends CI_Controller {
         if (!is_array($img_nome) && isset($img_nome)) {
             if (!is_array($img_nome)) {
                 @$imagem = $this->clientes_model->get_imagem_cliente($clienteID);
-                if (@$imagem) {
+                if (!empty($imagem)) {
                     unlink('assets/uploads/clientes/' . $imagem);
                 }
                 $data['imagem'] = $img_nome;
