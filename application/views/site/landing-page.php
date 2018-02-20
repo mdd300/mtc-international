@@ -56,6 +56,9 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="box">
+                                    <div class="row margin-bottom-md form-especialidades-listagem">                                 
+                                        <?php $this->load->view('site/form-leads', array('origem' => 'Landing Page: ' . $landing_page->titulo)); ?>                                                                                                                  
+                                    </div> 
                                     <div class="box-heading">Outros Links</div>
                                     <div class="box-body">
                                         <div class="box-body">
@@ -67,7 +70,12 @@
                                                         <div class="media">
                                                             <div class="media-body">
                                                                 <div class="media-heading">
-                                                                    <a href="<?= $landing_page_link->link ?>" <?= $landing_page_link->target_blank == 1 ? 'target="_blank"' : '' ?>" class="title"><?= $landing_page_link->titulo ?></a>
+                                                                    <a href="
+                                                                        <?= $landing_page_link->link ?>"
+                                                                        <?= $landing_page_link->target_blank == 1 ? 'target="_blank"' : '' ?>
+                                                                       class="title">
+                                                                       <?= $landing_page_link->titulo ?>
+                                                                    </a>
                                                                 </div>
                                                             </div>
                                                         </div>
