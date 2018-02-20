@@ -3,16 +3,26 @@
 class Contato_model extends CI_Model {
 
 	public function save_contact($dados, $origem)
-	{
-		return $this->db->insert('contato', array('nome' => $dados['name'], 
-												  'email' => $dados['email'],
-												  // 'telefone' => (isset($dados['telephone'])) ? $dados['telephone'] : null,
-												  'assunto' => (isset($dados['subject'])) ? $dados['subject'] : null,
-												  'mensagem' => (isset($dados['message'])) ? $dados['message'] : null,
-												  // 'tipo' => (isset($dados['tipo'])) ? $dados['tipo'] : null,
-												  'opt_in' => (isset($dados['opt_in'])) ? 1 : 0,
-												  'origem' => $origem));
-	}
+        {
+            return $this->db->insert('contato', array('nome' => $dados['name'], 
+                'email' => $dados['email'],
+                // 'telefone' => (isset($dados['telephone'])) ? $dados['telephone'] : null,
+                'assunto' => (isset($dados['subject'])) ? $dados['subject'] : null,
+                'mensagem' => (isset($dados['message'])) ? $dados['message'] : null,
+                // 'tipo' => (isset($dados['tipo'])) ? $dados['tipo'] : null,
+                'opt_in' => (isset($dados['opt_in'])) ? 1 : 0,
+                'origem' => $origem));
+        }
+
+        public function get_origens()
+        {
+            $this->db->distinct();
+            $this->db->select('origem');
+            $this->db->from('contato');
+            $origens = $this->db->get()->result();
+            return $origens;
+        }
+        
 
 	public function gerar_excel($params = array())
 	{
