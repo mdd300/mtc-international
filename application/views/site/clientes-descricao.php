@@ -32,8 +32,20 @@
                             <div class="col-md-12">
                                 <div class="news-detail">
                                     <div class="box clearfix mbxxl">
-                                        <h2><?= $clientes_descricao->titulo ?></h2>
-                                        <?= $clientes_descricao->texto ?>
+                                        <?php foreach($clientes as $cliente): ?>
+                                            <div class="col-md-3 col-sm-6 mbxxl text-center">
+                                                <div class="client-box">
+                                                    <?php if($cliente->link): ?>
+                                                        <a href="<?php echo $cliente->link ?>" target="_blank">
+                                                    <?php endif ?>
+                                                        <img src="assets/uploads/clientes/<?php echo $cliente->imagem ?>" alt="<?php echo $cliente->titulo?>" class="img-responsive">
+                                                    <?php if($cliente->link): ?>
+                                                        </a>
+                                                    <?php endif ?>
+                                                </div>
+                                            </div>
+                                        <?php endforeach ?>
+                                        
                                     </div>
                                 </div>
                             </div>

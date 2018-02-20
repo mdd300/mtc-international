@@ -553,6 +553,17 @@ body {
 }
 
 /*template adaptations*/
+
+
+.client-box {
+    text-align: center;
+    padding: 25px;
+}
+
+.client-box img {
+    display: inline-block;
+}
+
 .input-file{
   padding: 0px 20px !important;
 }
