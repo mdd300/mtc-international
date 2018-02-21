@@ -37,7 +37,7 @@
                                             <div class="box">
                                                 <div class="content">
                                                     <div class="title"><a href="<?= $landing_page->slug ?>"><?= $landing_page->titulo ?></a></div>
-                                                    <div class="desc">
+                                                    <div class="desc wysiwyg-editor-content">
                                                         <p><?php echo $landing_page->descricao; ?></p>
                                                     </div>
                                                     <div class="links-cloud">
