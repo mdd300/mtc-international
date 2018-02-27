@@ -728,6 +728,23 @@ body.page-header-scroll #wrapper .header-wrapper #header .social a{
   margin-bottom: 30px;
 }
 
+.wysiwyg-editor-content h1,
+.wysiwyg-editor-content h2,
+.wysiwyg-editor-content h3,
+.wysiwyg-editor-content h4,
+.wysiwyg-editor-content h5,
+.wysiwyg-editor-content h6
+{ 
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.wysiwyg-editor-content img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
 /* Page Header when scroll | #header-scroll */
 body.page-header-scroll #wrapper .header-wrapper #header {
   position: fixed;

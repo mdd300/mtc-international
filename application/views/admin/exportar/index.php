@@ -26,17 +26,22 @@
                 <div class="col-sm-12 col-xs-12 col-lg-12 form-group exportar-filtros">
                     <label>Opções: </label>
                     <div class="radio">
-                        <label for="contatos">
-                            <input type="radio" name="origem" id="contatos" value="Contato">
-                            Contato
+                        <label>
+                            <input type="radio" name="origem" id="todos" value="Todos">
+                            Todos
                         </label>
                     </div>
-                    <div class="radio">
-                        <label for="areas_atuacao">
-                            <input type="radio" name="origem" id="areas_atuacao" value="Serviços">
-                            Serviços
-                        </label>
-                    </div>                    
+
+                    <?php foreach ($origens as $origem) :?>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="origem" id="todos" value="<?php echo $origem->origem ?>">
+                                <?php echo $origem->origem ?>
+                            </label>
+                        </div>
+                    <?php endforeach ?>
+
+                    
                     <span class="validate_error"></span>
                     <span class="validate_success"></span>
                 </div>

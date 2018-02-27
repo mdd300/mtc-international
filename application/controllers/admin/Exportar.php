@@ -10,6 +10,7 @@ class Exportar extends CI_Controller {
 
 		$this->load->library('session');
 		$this->load->helper('url');
+		$this->load->helper('text');
 
 		$this->load->model('usuarios_model');
 		$this->load->model('contato_model');
@@ -22,7 +23,9 @@ class Exportar extends CI_Controller {
 				$usuarioID = $this->session->userdata('usuarioID');
 			}
 
-			$this->load->view('admin/exportar/index');
+                        $this->data['origens'] = $this->contato_model->get_origens();
+                        
+                        $this->load->view('admin/exportar/index', $this->data);
 
 		} else {
 			$this->load->view('admin/login/index', $this->data);
@@ -60,7 +63,12 @@ class Exportar extends CI_Controller {
 		//activate worksheet number 1
 		$this->excel->setActiveSheetIndex(0);
 		//name the worksheet
-		$this->excel->getActiveSheet()->setTitle(ucfirst($nome_planilha));
+
+                $nome_planilha = ellipsize($nome_planilha, 25, 1 ,'...');
+                $nome_planilha = UrlAmigavel($nome_planilha);
+                
+                
+		$this->excel->getActiveSheet()->setTitle(UrlAmigavel($nome_planilha));
 
 		//set cell A1 content with some text
 		$this->excel->getActiveSheet()->setCellValue('A1', 'Nome');
@@ -118,9 +126,7 @@ class Exportar extends CI_Controller {
 		$this->excel->getActiveSheet()->getPageSetup()->setFitToWidth(1);
 		$this->excel->getActiveSheet()->getPageSetup()->setFitToHeight(0);
 
-		$hash = md5(date('U') . uniqid(rand(), true) . 'just_some_random_name').'_'.$nome_planilha;
-        $newName = $hash;
-
+                $newName = date('Y-m-d-H:i:s') . '-' . $nome_planilha;
 		$filename = $newName.'.xlsx'; //save our workbook as this file name
 		
 		header('Content-Type: application/vnd.ms-excel'); //mime type
