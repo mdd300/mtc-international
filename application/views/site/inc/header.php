@@ -27,7 +27,7 @@
                 <ul class="list-unstyled list-inline">
                     <!-- use active class on li to mark itens on menu as active -->
                     <li><a href="<?= base_url() ?>"><i class="fa fa-home"></i></a></li>
-                    <li>
+                    <li class="dropdown">
                         <a
                             href="<?php echo site_url('quem-somos'); ?>"
                             data-hover="dropdown"
@@ -40,7 +40,7 @@
                             <li><a href="sustentabilidade">Sustentabilidade</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="dropdown">
                         <a
                             href="<?php echo site_url('servicos'); ?>"
                             data-hover="dropdown"
@@ -63,14 +63,9 @@
                     <!-- <li><a href="areas-de-atuacao">Áreas de Atuação</a></li> -->
                     <li><a href="clientes">Clientes</a></li>
                     <li><a href="noticias">Notícias</a></li>
-                    <li>
-                        <a
-                            href="#"
-                            data-hover="dropdown"
-                            class="data-toggle">
-                                Contato<span class="arrow fa fa-angle-down"></span>
-                        </a>
-                        <ul class="dropdown-menu">
+                    <li class="dropdown">
+                        <a href="#" data-hover="dropdown" class="data-toggle">Contato<span class="arrow fa fa-angle-down"></span></a>
+                        <ul class="dropdown-menu multi-level">
                             <li><a href="contato">Contato/Localização</a></li>
                             <li><a href="trabalhe-conosco">Trabalhe Conosco</a></li>
                             <li><a href="area-cliente">Área do Cliente</a></li>

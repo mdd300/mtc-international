@@ -7,30 +7,29 @@
 <script src="assets/js/layout.js"></script>
 
 <?php if ($active == 'home'): ?>
-	<script src="assets/plugins/jquery.dotdotdot.min.js"></script>
-    <!--LOADING SCRIPTS FOR PAGE-->
-    <script src="assets/js/jquery.appear.js"></script>
-    <script src="assets/js/pages/index.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('.destaque-resumo').each(function(){
-				$(this).dotdotdot({
-					ellipsis	: '... ',
-					wrap		: 'word',
-					height		: 80,
-				});
-			});
-			$( ".carousel-highlights .item.active" ).each(function( index ) {
-			    if(index != 0){
-			        $(this).removeClass('active');
-			    }
-			});
-		});
+<script src="assets/plugins/jquery.dotdotdot.min.js"></script>
+<!--LOADING SCRIPTS FOR PAGE-->
+<script src="assets/js/jquery.appear.js"></script>
+<script src="assets/js/pages/index.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.destaque-resumo').each(function(){
+        $(this).dotdotdot({
+        ellipsis	: '... ',
+            wrap		: 'word',
+            height		: 80,
+        });
+    });
+    $( ".carousel-highlights .item.active" ).each(function( index ) {
+        if(index != 0){
+            $(this).removeClass('active');
+        }
+    });
+});
 	</script>
 <?php endif ?>
 <script type="text/javascript">
     $(document).ready(function(){
-        $('.dropdown a').unbind();
 
 
         //Contact Form
