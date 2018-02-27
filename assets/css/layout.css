@@ -1156,4 +1156,10 @@ body.page-header-scroll #wrapper .header-wrapper #header .menu > ul > li > a spa
   #wrapper #main #content #section-news .container .section-content .box .box-body .list-most-commented .media {
     width: 100%;
   }
+  #wrapper .header-bg-wrapper #header-bg .header-bg-content {
+      padding-top: 70px;
+  }
+  #wrapper .header-bg-wrapper #header-bg .header-bg-content .title {
+      font-size: 15px;
+  }
 }
