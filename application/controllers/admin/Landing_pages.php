@@ -47,9 +47,6 @@ class Landing_pages extends CI_Controller {
 	function salvar() {
 		$data = $_POST;
 		
-		$tag = $data['tag'];
-		unset($data['tag']);
-
 		$img_nome = $this->landing_pages_model->upload_foto_pequena('imagem');
 		if (!is_array($img_nome) && isset($img_nome)) {
 				$data['imagem'] = $img_nome;
@@ -62,11 +59,6 @@ class Landing_pages extends CI_Controller {
 
 		$this->db->insert('landing_pages', $data);
 		$id = $this->db->insert_id();
-
-		for ($i=0; $i < count($tag); $i++) { 
-			$tagID = $this->tags_model->salva_tags($tag[$i], 'landing_page');
-			$this->tags_model->salva_relationship($tagID, $id, 'landing_page');
-		}
 
 		redirect('admin/landing_pages', 'location');
 	}

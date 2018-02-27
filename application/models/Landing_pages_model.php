@@ -138,8 +138,8 @@ class Landing_pages_model extends CI_Model {
 			$config_img['maintain_ratio'] = TRUE;
 			$config_img['encrypt_name'] = TRUE;   
 
-			$config_img['width'] = 750;
-			$config_img['height'] = 372;
+			$config_img['width'] = 785;
+			$config_img['height'] = 250;
 
 			$this->image_lib->initialize($config_img);
 

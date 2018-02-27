@@ -37,6 +37,9 @@
                                             <div class="box">
                                                 <div class="content">
                                                     <div class="title"><a href="<?= $landing_page->slug ?>"><?= $landing_page->titulo ?></a></div>
+                                                    <?php if(!empty($landing_page->imagem2)): ?>
+                                                        <img src="assets/uploads/landing_pages/<?php echo $landing_page->imagem2 ?>" alt="<?php echo $landing_page->titulo ?>">
+                                                    <?php endif ?>
                                                     <div class="desc wysiwyg-editor-content">
                                                         <p><?php echo $landing_page->descricao; ?></p>
                                                     </div>

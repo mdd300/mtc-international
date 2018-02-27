@@ -61,6 +61,18 @@
 	<textarea id="descricao" name="descricao"><?= @$landing_page->descricao ?></textarea>
 </div>
 
+
+<?php if (!empty($landing_page->imagem2)): ?>
+    <div class="form-group">
+        <img src="<?= base_url(); ?>assets/uploads/landing_pages/<?= @$landing_page->imagem2; ?>" width="300px">
+    </div>
+<?php endif ?>
+
+<div class="form-group">
+    <label for="imagem2">Imagem principal (785x250px): </label>
+    <input name="imagem2" id="imagem2" type="file">
+</div>
+
 <?php if (!empty($landing_page->imagem)): ?>
 	<div class="form-group">
 		<img src="<?= base_url(); ?>assets/uploads/landing_pages/<?= @$landing_page->imagem; ?>" width="300px">
