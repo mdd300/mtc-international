@@ -16,7 +16,7 @@
             <div class="form-group"><label class="control-label mll">Mensagem <span class="required">*</span></label><textarea rows="8" name="message" class="form-control" required="true"></textarea></div>
             <div class="form-group checkbox">
                 <label for="opt_in">
-                    <input type="checkbox" name="opt_in" id="opt_in"> Desejo receber os informativos da MTC Log
+                    <input type="checkbox" name="opt_in" id="opt_in" checked> Desejo receber os informativos da MTC Trat
                 </label>
             </div>
             <div class="form-group submit">
