@@ -1037,7 +1037,7 @@ body.page-header-scroll #wrapper .header-wrapper #header .menu > ul > li > a spa
   .wysiwyg-editor-content h4,
   .wysiwyg-editor-content h5,
   .wysiwyg-editor-content h6 {
-      font-size: 15px;
+      font-size: 20px;
   }
 }
 @media screen and (max-width: 480px) {
