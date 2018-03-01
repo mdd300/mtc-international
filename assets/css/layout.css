@@ -1031,6 +1031,14 @@ body.page-header-scroll #wrapper .header-wrapper #header .menu > ul > li > a spa
   .section .section-heading .title {
     font-size: 22px;
   }
+  .wysiwyg-editor-content h1,
+  .wysiwyg-editor-content h2,
+  .wysiwyg-editor-content h3,
+  .wysiwyg-editor-content h4,
+  .wysiwyg-editor-content h5,
+  .wysiwyg-editor-content h6 {
+      font-size: 15px;
+  }
 }
 @media screen and (max-width: 480px) {
   #wrapper .header-wrapper #header {
@@ -1160,14 +1168,6 @@ body.page-header-scroll #wrapper .header-wrapper #header .menu > ul > li > a spa
       padding-top: 70px;
   }
   #wrapper .header-bg-wrapper #header-bg .header-bg-content .title {
-      font-size: 15px;
-  }
-  .wysiwyg-editor-content h1,
-  .wysiwyg-editor-content h2,
-  .wysiwyg-editor-content h3,
-  .wysiwyg-editor-content h4,
-  .wysiwyg-editor-content h5,
-  .wysiwyg-editor-content h6 {
       font-size: 15px;
   }
 }
