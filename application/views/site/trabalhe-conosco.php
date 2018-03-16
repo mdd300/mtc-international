@@ -42,6 +42,7 @@
                                     <div class="box-heading">Envie seu currículo</div>
                                     <div class="box-body">
                                         <form action="<?php echo site_url('contato/send_work'); ?>" id="form-contato-trabalho" name="form_contato"  class="form-contact">
+                                            <input type="hidden" name="origem" value="Trabalhe Conosco"/>
                                             <div class="form-group"><label class="control-label mll">Nome <span class="required">*</span></label><input type="text" name="name" class="form-control"/></div>
                                             <div class="form-group"><label class="control-label mll">Email <span class="required">*</span></label><input type="email" name="email" class="form-control"/></div>
                                             <div class="form-group"><label class="control-label mll">Telefone</label><input type="text" name="phone" class="form-control"/></div>

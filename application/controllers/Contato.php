@@ -7,6 +7,7 @@ class Contato extends CI_Controller {
 		parent::__construct();
 		
         $this->load->library('email');
+        $this->load->library('mailchimp');
         $this->load->helper('email');
         
         $this->load->model('contato_model');
@@ -75,6 +76,17 @@ class Contato extends CI_Controller {
             if($this->form_validation->run()){
 
                 $origem = (isset($post['origem'])) ? $post['origem'] : 'Contato';
+                
+                if(isset($post['opt_in'])) {
+                    $this->mailchimp->call('POST', 'lists/03cf57ca3d/members', [
+                        'email_address' => $post['email'],
+                        'merge_fields'  => [
+                            'FNAME'     => $post['name'],
+                            'ORIGIN'    => $origem
+                        ],
+                        'status'        => 'subscribed'
+                    ]);
+                }
 
                 if($this->contato_model->save_contact($post, $origem)){
 
@@ -121,6 +133,17 @@ class Contato extends CI_Controller {
 
                 if(!is_array($curriculo)){
                     $post['curriculo'] = $curriculo;
+                }
+                
+                if(isset($post['opt_in'])) {
+                    $this->mailchimp->call('POST', 'lists/03cf57ca3d/members', [
+                        'email_address' => $post['email'],
+                        'merge_fields'  => [
+                            'FNAME'     => $post['name'],
+                            'ORIGIN'    => $origem
+                        ],
+                        'status'        => 'subscribed'
+                    ]);
                 }
 
                 if($this->contato_model->save_contact($post, $origem)){
@@ -224,6 +247,10 @@ class Contato extends CI_Controller {
             $this->form_validation->set_rules('email', 'Email', 'trim|valid_email|required');
 
             if($this->form_validation->run()){
+                $this->mailchimp->call('POST', 'lists/03cf57ca3d/members', [
+                    'email_address' => $post['email'],
+                    'status'        => 'subscribed'
+                ]);
                 if($this->contato_model->save_newsletter($post)){
                     $return = array('status' => true, 'class' => 'success', 'message' => 'E-mail cadastrado com sucesso!');
                 }else{
