@@ -76,11 +76,9 @@ $(document).ready(function(){
                     }else{
                         if(button.closest('form').attr('id') == 'contact-form'){
                             gtag('config', 'UA-102326112-1', {'page_path': virtualPage});
-                            console.log('1')
                             button.val(response.message).css({'color' : '#000', 'background-color' : '#ffffff', 'border-color' :'#000'}).attr('disabled', 'disabled');
                         }else if(button.closest('form').attr('id') == 'form-newsletter'){
                             $('#message_newsletter').text(response.message);
-                            console.log('2')
                             gtag('config', 'UA-102326112-1', {'page_path': 'news-' + virtualPage});
                             setTimeout(function(){
                                 button.val('Enviar').removeAttr('disabled');
