@@ -38,47 +38,58 @@ $(document).ready(function(){
 
             var button = $(this);
 
+            var lastUrlPart = document.URL.split('/').pop();
+            var virtualPage = 'success-' + lastUrlPart;
+
+            if(lastUrlPart === '') {
+                virtualPage = 'success-home';
+            }
+
             $.ajax({
-                url: button.closest('form').attr('action'),
+            url: button.closest('form').attr('action'),
                 type: 'POST',
                 data: button.closest('form').serialize(),
                 dataType: 'JSON',
                 beforeSend: function(){
                     button.val('Enviando...');
-			    },
+                },
                 success: function(response){
-                	if(!response.status){
-	                    if(button.closest('form').attr('id') == 'form-newsletter'){
-		                    button.attr('disabled', 'disabled');
-                			$('#message_newsletter').text(response.message);
-							setTimeout(function(){
-			                    button.val('Enviar').removeAttr('disabled');
-	                			$('#message_newsletter').text('');
-							}, 2000);
-                		}else{
-		                    button.val(response.message).css({'color' : '#fff', 'background-color' : '#F85B5B', 'border-color' :'#F85B5B'}).attr('disabled', 'disabled');
+                    if(!response.status){
+                        if(button.closest('form').attr('id') == 'form-newsletter'){
+                            button.attr('disabled', 'disabled');
+                            $('#message_newsletter').text(response.message);
+                            setTimeout(function(){
+                                button.val('Enviar').removeAttr('disabled');
+                                $('#message_newsletter').text('');
+                            }, 2000);
+                        }else{
+                            button.val(response.message).css({'color' : '#fff', 'background-color' : '#F85B5B', 'border-color' :'#F85B5B'}).attr('disabled', 'disabled');
 
-							setTimeout(function(){
-		                		if(button.closest('form').attr('id') == 'form-consulta'){
-				                    button.val('Enviar').css({'color' : '#000', 'background-color' : '#ffffff', 'border-color' :'#000'}).removeAttr('disabled');
-		                		}else{
-				                    button.val('Enviar').css({'color' : '#000', 'background-color' : 'transparent', 'border-color' :'#000'}).removeAttr('disabled');
-		                		}
-							}, 5000);
-                		}
-                	}else{
-                		if(button.closest('form').attr('id') == 'form-consulta'){
-		                    button.val(response.message).css({'color' : '#000', 'background-color' : '#ffffff', 'border-color' :'#000'}).attr('disabled', 'disabled');
-                		}else if(button.closest('form').attr('id') == 'form-newsletter'){
-                			$('#message_newsletter').text(response.message);
-							setTimeout(function(){
-			                    button.val('Enviar').removeAttr('disabled');
-	                			$('#message_newsletter').text('');
-							}, 5000);
-                		}else{
-		                    button.val(response.message).css({'color' : '#000', 'background-color' : 'transparent', 'border-color' :'#000'}).attr('disabled', 'disabled');
-                		}
-                	}
+                            setTimeout(function(){
+                                if(button.closest('form').attr('id') == 'contact-form'){
+                                    button.val('Enviar').css({'color' : '#000', 'background-color' : '#ffffff', 'border-color' :'#000'}).removeAttr('disabled');
+                                }else{
+                                    button.val('Enviar').css({'color' : '#000', 'background-color' : 'transparent', 'border-color' :'#000'}).removeAttr('disabled');
+                                }
+                            }, 5000);
+                        }
+                    }else{
+                        if(button.closest('form').attr('id') == 'contact-form'){
+                            gtag('config', 'UA-102326112-1', {'page_path': virtualPage});
+                            console.log('1')
+                            button.val(response.message).css({'color' : '#000', 'background-color' : '#ffffff', 'border-color' :'#000'}).attr('disabled', 'disabled');
+                        }else if(button.closest('form').attr('id') == 'form-newsletter'){
+                            $('#message_newsletter').text(response.message);
+                            console.log('2')
+                            gtag('config', 'UA-102326112-1', {'page_path': 'news-' + virtualPage});
+                            setTimeout(function(){
+                                button.val('Enviar').removeAttr('disabled');
+                                $('#message_newsletter').text('');
+                            }, 5000);
+                        }else{
+                            button.val(response.message).css({'color' : '#000', 'background-color' : 'transparent', 'border-color' :'#000'}).attr('disabled', 'disabled');
+                        }
+                    }
                 },
                 error: function(response){
                     button.val('Ocorreu um erro no envio. Tente novamente mais tarde.').css({'color' : '#fff', 'background-color' : '#F85B5B', 'border-color' :'#F85B5B'}).attr('disabled', 'disabled');
@@ -119,7 +130,7 @@ $(document).ready(function(){
                             button.val(response.message).css({'color' : '#fff', 'background-color' : '#F85B5B', 'border-color' :'#F85B5B'}).attr('disabled', 'disabled');
 
                             setTimeout(function(){
-                                if(button.closest('form').attr('id') == 'form-consulta'){
+                                if(button.closest('form').attr('id') == 'contact-form'){
                                     button.val('Enviar').css({'color' : '#000', 'background-color' : '#ffffff', 'border-color' :'#000'}).removeAttr('disabled');
                                 }else{
                                     button.val('Enviar').css({'color' : '#000', 'background-color' : 'transparent', 'border-color' :'#000'}).removeAttr('disabled');
@@ -127,7 +138,7 @@ $(document).ready(function(){
                             }, 5000);
                         }
                     }else{
-                        if(button.closest('form').attr('id') == 'form-consulta'){
+                        if(button.closest('form').attr('id') == 'contact-form'){
                             button.val(response.message).css({'color' : '#000', 'background-color' : '#ffffff', 'border-color' :'#000'}).attr('disabled', 'disabled');
                         }else if(button.closest('form').attr('id') == 'form-newsletter'){
                             $('#message_newsletter').text(response.message);
@@ -151,13 +162,14 @@ $(document).ready(function(){
 <!--CORE JAVASCRIPT-->
 <script src="assets/js/main.js"></script>
 <script src="assets/js/layout.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-102326112-1"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  ga('create', 'UA-102326112-1', 'auto');
-  ga('send', 'pageview');
-
+    gtag('config', 'UA-102326112-1');
 </script>
+
+

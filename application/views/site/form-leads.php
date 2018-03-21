@@ -1,7 +1,7 @@
 <div class="box mbn">
     <div class="box-heading">Fale Conosco</div>
     <div class="box-body">
-        <form action="<?php echo site_url('contato/send_contact'); ?>" id="form-exames-especialidades" name="form_contato" class="form-contact">
+        <form action="<?php echo site_url('contato/send_contact'); ?>" id="contact-form" name="form_contato" class="form-contact">
             <input type="hidden" name="origem" value="<?php echo $origem; ?>"/>
             <div class="form-group"><label class="control-label mll">Nome <span class="required">*</span></label><input type="text" name="name" class="form-control" required="true"/></div>
             <div class="form-group"><label class="control-label mll">Email <span class="required">*</span></label><input type="text" name="email" class="form-control" required="true"/></div>
