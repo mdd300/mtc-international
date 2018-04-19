@@ -41,7 +41,9 @@ class Landing_pages extends CI_Controller {
         $data['topo'] = $data['topo']->imagem;
         $data['areas_de_atuacao'] = $this->areas_de_atuacao_model->get_areas_de_atuacao(); 
         $data['servicos_menu'] = $this->servicos_model->get_servicos(); 
-        
+
+        $data['title'] = $data['landing_page']->title;
+
         $this->load->view('site/landing-page', $data);
     }
 }

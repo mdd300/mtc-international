@@ -1,5 +1,9 @@
 <head>
-    <title>MTC Log</title>
+    <?php if (!empty($title)): ?>
+        <title><?php echo $title; ?></title>
+    <?php else: ?>
+        <title>MTC TRAT</title>
+    <?php endif; ?>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="yandex-verification" content="d2a44d502509289c" />
