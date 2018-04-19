@@ -2,7 +2,7 @@
     <?php if (!empty($title)): ?>
         <title><?php echo $title; ?></title>
     <?php else: ?>
-        <title>MTC TRAT</title>
+        <title>MTC LOG</title>
     <?php endif; ?>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
