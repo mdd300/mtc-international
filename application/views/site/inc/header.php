@@ -22,7 +22,7 @@
     </div> -->
     <div id="header">
         <div class="container">
-            <div class="logo"><a href="<?= base_url() ?>"><img src="assets/images/logo.png" alt="" class="img-responsive"/></a></div>
+            <div class="logo"><a href="<?= base_url() ?>"><img src="assets/images/logo.png" alt="MTC Tools" class="img-responsive"/></a></div>
             <nav class="menu">
                 <ul class="list-unstyled list-inline">
                     <!-- use active class on li to mark itens on menu as active -->
