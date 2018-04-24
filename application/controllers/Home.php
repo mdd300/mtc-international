@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Home extends MY_Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -15,27 +15,27 @@ class Home extends CI_Controller {
 	
 	public function index()
 	{
-		$data['active']   = 'home';
-		$data['banners']  = $this->banners_model->get_banners(1);
+		$this->data['active']   = 'home';
+		$this->data['banners']  = $this->banners_model->get_banners(1);
 
-		$data['servicos_menu'] = $this->servicos_model->get_servicos(
+		$this->data['servicos_menu'] = $this->servicos_model->get_servicos(
 			$texto = "",
-			$data_de = NULL,
-			$data_ate = NULL,
+			$this->data_de = NULL,
+			$this->data_ate = NULL,
 			$limit = 9
 		);
 
-		$data['clientes'] = $this->clientes_model->get_clientes();
-		$data['clientes'] = array_chunk($data['clientes'], 4);
+		$this->data['clientes'] = $this->clientes_model->get_clientes();
+		$this->data['clientes'] = array_chunk($this->data['clientes'], 4);
 		
-		$data['servicos'] = $this->servicos_model->get_servicos();
+		$this->data['servicos'] = $this->servicos_model->get_servicos();
 		
-		$data['operacoes'] = $this->operacoes_model->get_operacoes();
+		$this->data['operacoes'] = $this->operacoes_model->get_operacoes();
 
-		$data['noticias'] = $this->noticias_model->get_noticias(
+		$this->data['noticias'] = $this->noticias_model->get_noticias(
 			$texto = '',
-			$data_de = NULL,
-			$data_ate = NULL,
+			$this->data_de = NULL,
+			$this->data_ate = NULL,
 			$limit = 2,
 			$offset = NULL,
 			$count = NULL,
@@ -44,6 +44,6 @@ class Home extends CI_Controller {
 			$order_by = NULL
 		);
 
-		$this->load->view('site/index', $data);
+		$this->load->view('site/index', $this->data);
 	}
 }

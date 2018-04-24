@@ -63,6 +63,18 @@
                     <!-- <li><a href="areas-de-atuacao">Áreas de Atuação</a></li> -->
                     <li><a href="clientes">Clientes</a></li>
                     <li><a href="noticias">Notícias</a></li>
+                    <li class="hidden-sm">
+                        <a
+                            data-hover="dropdown"
+                            class="data-toggle">
+                            Informações<span class="arrow fa fa-angle-down"></span>
+                        </a>
+                        <ul class="dropdown-menu mega-menu">
+                            <?php foreach ($landing_pages_menu as $item): ?>
+                            <li><a href="<?= $item->slug ?>"><?php echo $item->titulo ?></a></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </li>
                     <li class="dropdown">
                         <a href="#" data-hover="dropdown" class="data-toggle">Contato<span class="arrow fa fa-angle-down"></span></a>
                         <ul class="dropdown-menu multi-level">

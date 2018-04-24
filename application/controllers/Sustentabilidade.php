@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Sustentabilidade extends CI_Controller {
+class Sustentabilidade extends MY_Controller {
 
     public function __construct() {
         parent::__construct();
@@ -10,19 +10,19 @@ class Sustentabilidade extends CI_Controller {
     }
 
     public function index() {
-        $data['active'] = 'sustentabilidade';
-        $data['servicos_menu'] = $this->servicos_model->get_servicos();
+        $this->data['active'] = 'sustentabilidade';
+        $this->data['servicos_menu'] = $this->servicos_model->get_servicos();
         
-        $data['sustentabilidade'] = $this->sustentabilidade_model->get_sustentabilidade_site();
+        $this->data['sustentabilidade'] = $this->sustentabilidade_model->get_sustentabilidade_site();
 
-        $data['sustentabilidade'] || show_404();
+        $this->data['sustentabilidade'] || show_404();
 
-        $data['description'] = $data['sustentabilidade']->description;
+        $this->data['description'] = $this->data['sustentabilidade']->description;
 
         //menu & topo
-        $data['topo'] = $this->topos_model->get_topo($data['active']);
-        $data['topo'] = $data['topo']->imagem;
+        $this->data['topo'] = $this->topos_model->get_topo($this->data['active']);
+        $this->data['topo'] = $this->data['topo']->imagem;
 
-        $this->load->view('site/sustentabilidade', $data);
+        $this->load->view('site/sustentabilidade', $this->data);
     }
 }

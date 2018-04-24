@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Contato extends CI_Controller {
+class Contato extends MY_Controller {
 
 	public function __construct()
     {
@@ -18,32 +18,32 @@ class Contato extends CI_Controller {
 
 	public function index()
     {
-        $data['active'] = 'contato';
+        $this->data['active'] = 'contato';
 
-        $data['description'] = 'LOGÍSTICA PARA E-COMMERCE - Operações Logísticas Internas e externas.';
-        $data['title_meta'] = 'MTC LOG - Logística Reversa, implementação de WMS, transporte, serviços técnicos, reengenharia de embalagens de exportação e muito mais.';
+        $this->data['description'] = 'LOGÍSTICA PARA E-COMMERCE - Operações Logísticas Internas e externas.';
+        $this->data['title_meta'] = 'MTC LOG - Logística Reversa, implementação de WMS, transporte, serviços técnicos, reengenharia de embalagens de exportação e muito mais.';
         
         //menu & topo
-        $data['topo'] = $this->topos_model->get_topo($data['active']);
-        $data['topo'] = $data['topo']->imagem;
-        $data['servicos_menu'] = $this->servicos_model->get_servicos(); 
+        $this->data['topo'] = $this->topos_model->get_topo($this->data['active']);
+        $this->data['topo'] = $this->data['topo']->imagem;
+        $this->data['servicos_menu'] = $this->servicos_model->get_servicos(); 
         
-        $this->load->view('site/contato', $data);
+        $this->load->view('site/contato', $this->data);
     }
 
     public function trabalhe_conosco()
     {
-        $data['active'] = 'trabalhe-conosco';
+        $this->data['active'] = 'trabalhe-conosco';
 
-        $data['description'] = 'LOGÍSTICA PARA E-COMMERCE - Operações Logísticas Internas e externas.';
-        $data['title_meta'] = 'MTC LOG - Logística Reversa, implementação de WMS, transporte, serviços técnicos, reengenharia de embalagens de exportação e muito mais.';
+        $this->data['description'] = 'LOGÍSTICA PARA E-COMMERCE - Operações Logísticas Internas e externas.';
+        $this->data['title_meta'] = 'MTC LOG - Logística Reversa, implementação de WMS, transporte, serviços técnicos, reengenharia de embalagens de exportação e muito mais.';
         
         //menu & topo
-        $data['topo'] = $this->topos_model->get_topo($data['active']);
-        $data['topo'] = $data['topo']->imagem;
-        $data['servicos_menu'] = $this->servicos_model->get_servicos(); 
+        $this->data['topo'] = $this->topos_model->get_topo($this->data['active']);
+        $this->data['topo'] = $this->data['topo']->imagem;
+        $this->data['servicos_menu'] = $this->servicos_model->get_servicos(); 
         
-        $this->load->view('site/trabalhe-conosco', $data);
+        $this->load->view('site/trabalhe-conosco', $this->data);
     }
 
     public function area_cliente()

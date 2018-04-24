@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Noticias extends CI_Controller {
+class Noticias extends MY_Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -12,12 +12,12 @@ class Noticias extends CI_Controller {
 
 	public function index() {
     
-	    $data['active'] = 'noticias';
+	    $this->data['active'] = 'noticias';
 
         //pagination
         $limit = 6;
         $offset = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-        $data["noticias"] = $this->noticias_model->get_noticias(NULL, NULL, NULL, $limit, $offset, NULL);
+        $this->data["noticias"] = $this->noticias_model->get_noticias(NULL, NULL, NULL, $limit, $offset, NULL);
         $total_noticias = $this->noticias_model->get_noticias(NULL, NULL, NULL, $limit, $offset, TRUE);
         $config = array();
         $config["base_url"] = base_url() . "noticias/index";
@@ -46,32 +46,32 @@ class Noticias extends CI_Controller {
         $config['prev_tag_close'] = '</li>';
         $this->pagination->initialize($config);
 
-        $data["links"] = $this->pagination->create_links();
-        $data["total_noticias"] = $total_noticias;
+        $this->data["links"] = $this->pagination->create_links();
+        $this->data["total_noticias"] = $total_noticias;
 
-        $data['description'] = 'LOGÍSTICA PARA E-COMMERCE - Operações Logísticas Internas e externas.';
-        $data['title_meta'] = 'MTC LOG - Logística Reversa, implementação de WMS, transporte, serviços técnicos, reengenharia de embalagens de exportação e muito mais.';
+        $this->data['description'] = 'LOGÍSTICA PARA E-COMMERCE - Operações Logísticas Internas e externas.';
+        $this->data['title_meta'] = 'MTC LOG - Logística Reversa, implementação de WMS, transporte, serviços técnicos, reengenharia de embalagens de exportação e muito mais.';
 
         //menu & topo
-        $data['topo'] = $this->topos_model->get_topo($data['active']);
-        $data['topo'] = $data['topo']->imagem;
-        $data['servicos_menu'] = $this->servicos_model->get_servicos();
+        $this->data['topo'] = $this->topos_model->get_topo($this->data['active']);
+        $this->data['topo'] = $this->data['topo']->imagem;
+        $this->data['servicos_menu'] = $this->servicos_model->get_servicos();
                 
-        $this->load->view('site/noticias', $data);
+        $this->load->view('site/noticias', $this->data);
     }
 
     public function pesquisa($slug = false) {
 
         $slug || show_404();
     
-        $data['active'] = 'noticia';
+        $this->data['active'] = 'noticia';
 
         //pagination
         $limit = 6;
         $offset = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
-        $data["noticias"] = $this->noticias_model->get_noticias(NULL, NULL, NULL, $limit, $offset, NULL, NULL, NULL, NULL, $slug);
+        $this->data["noticias"] = $this->noticias_model->get_noticias(NULL, NULL, NULL, $limit, $offset, NULL, NULL, NULL, NULL, $slug);
 
-        $data['noticias'] || show_404();
+        $this->data['noticias'] || show_404();
         
         $total_noticias = $this->noticias_model->get_noticias(NULL, NULL, NULL, $limit, $offset, TRUE, NULL, NULL, NULL, $slug);
         $config = array();
@@ -101,49 +101,49 @@ class Noticias extends CI_Controller {
         $config['prev_tag_close'] = '</li>';
         $this->pagination->initialize($config);
 
-        $data["links"] = $this->pagination->create_links();
-        $data["total_noticias"] = $total_noticias;
+        $this->data["links"] = $this->pagination->create_links();
+        $this->data["total_noticias"] = $total_noticias;
 
-        $data['description'] = 'LOGÍSTICA PARA E-COMMERCE - Operações Logísticas Internas e externas.';
-        $data['title_meta'] = 'MTC LOG - Logística Reversa, implementação de WMS, transporte, serviços técnicos, reengenharia de embalagens de exportação e muito mais.';
+        $this->data['description'] = 'LOGÍSTICA PARA E-COMMERCE - Operações Logísticas Internas e externas.';
+        $this->data['title_meta'] = 'MTC LOG - Logística Reversa, implementação de WMS, transporte, serviços técnicos, reengenharia de embalagens de exportação e muito mais.';
 
         //menu & topo
-        $data['topo'] = $this->topos_model->get_topo($data['active']);
-        $data['topo'] = $data['topo']->imagem;
-        $data['servicos_menu'] = $this->servicos_model->get_servicos();
+        $this->data['topo'] = $this->topos_model->get_topo($this->data['active']);
+        $this->data['topo'] = $this->data['topo']->imagem;
+        $this->data['servicos_menu'] = $this->servicos_model->get_servicos();
                 
-        $this->load->view('site/noticias', $data);
+        $this->load->view('site/noticias', $this->data);
     }
 
     public function show($slug = false)
     {
         $slug || show_404();
 
-        $data['active']   = 'noticia';
-        $data['noticia']  = $this->noticias_model->get_noticia_slug($slug);
+        $this->data['active']   = 'noticia';
+        $this->data['noticia']  = $this->noticias_model->get_noticia_slug($slug);
         
-        $data['noticia'] || show_404();
+        $this->data['noticia'] || show_404();
 
-        $data['description'] = $data['noticia']->description;
-        $data['title_meta'] = $data['noticia']->title;
+        $this->data['description'] = $this->data['noticia']->description;
+        $this->data['title_meta'] = $this->data['noticia']->title;
 
-        $data['mais_noticias'] = $this->noticias_model->get_noticias(
+        $this->data['mais_noticias'] = $this->noticias_model->get_noticias(
             $texto = "",
-            $data_de = NULL,
-            $data_ate = NULL,
+            $this->data_de = NULL,
+            $this->data_ate = NULL,
             $limit = 4,
             $offset = NULL,
             $count = NULL,
-            $menos_estaID = $data['noticia']->noticiaID,
+            $menos_estaID = $this->data['noticia']->noticiaID,
             $order = NULL,
             $order_by = NULL
         );
 
         //menu & topo
-        $data['topo'] = $this->topos_model->get_topo($data['active']);
-        $data['topo'] = $data['topo']->imagem;
-        $data['servicos_menu'] = $this->servicos_model->get_servicos();
+        $this->data['topo'] = $this->topos_model->get_topo($this->data['active']);
+        $this->data['topo'] = $this->data['topo']->imagem;
+        $this->data['servicos_menu'] = $this->servicos_model->get_servicos();
         
-        $this->load->view('site/noticia', $data);
+        $this->load->view('site/noticia', $this->data);
     }
 }

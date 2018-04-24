@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Landing_pages extends CI_Controller {
+class Landing_pages extends MY_Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -13,20 +13,20 @@ class Landing_pages extends CI_Controller {
 
 	public function index($slug)
     {
-        $data['active']   = 'landing-pages';
+        $this->data['active']   = 'landing-pages';
 
-        $data['landing_page']  = $this->landing_pages_model->get_landing_page_slug($slug);
+        $this->data['landing_page']  = $this->landing_pages_model->get_landing_page_slug($slug);
 
-        $data['landing_page'] || show_404();
+        $this->data['landing_page'] || show_404();
 
-        $id = $data['landing_page']->id;
+        $id = $this->data['landing_page']->id;
         
-        $data['description'] = $data['landing_page']->description;
+        $this->data['description'] = $this->data['landing_page']->description;
 
-        $data['landing_pages'] = $this->landing_pages_model->get_landing_pages(
+        $this->data['landing_pages'] = $this->landing_pages_model->get_landing_pages(
             $texto = "",
-            $data_de = NULL,
-            $data_ate = NULL,
+            $this->data_de = NULL,
+            $this->data_ate = NULL,
             $limit = NULL,
             $offset = NULL,
             $count = NULL,
@@ -34,16 +34,16 @@ class Landing_pages extends CI_Controller {
             $order = NULL,
             $order_by = NULL
         );
-        $data['landing_page_links'] = $this->landing_pages_model->get_landing_page_links($id);
+        $this->data['landing_page_links'] = $this->landing_pages_model->get_landing_page_links($id);
 
         //menu & topo
-        $data['topo'] = $this->topos_model->get_topo($data['active']);
-        $data['topo'] = $data['topo']->imagem;
-        $data['areas_de_atuacao'] = $this->areas_de_atuacao_model->get_areas_de_atuacao(); 
-        $data['servicos_menu'] = $this->servicos_model->get_servicos(); 
+        $this->data['topo'] = $this->topos_model->get_topo($this->data['active']);
+        $this->data['topo'] = $this->data['topo']->imagem;
+        $this->data['areas_de_atuacao'] = $this->areas_de_atuacao_model->get_areas_de_atuacao(); 
+        $this->data['servicos_menu'] = $this->servicos_model->get_servicos(); 
 
-        $data['title'] = $data['landing_page']->title;
+        $this->data['title'] = $this->data['landing_page']->title;
 
-        $this->load->view('site/landing-page', $data);
+        $this->load->view('site/landing-page', $this->data);
     }
 }

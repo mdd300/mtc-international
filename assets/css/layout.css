@@ -188,7 +188,7 @@ body {
   /*color: #5d5e5e;*/
   color: #000;
   padding: 10px;
-  margin: 0 7px;
+  margin: 0;
   border-radius: 9999px;
   transition: border 0.3s;
   font-size: 15px;
@@ -647,6 +647,21 @@ body.page-header-scroll #wrapper .header-wrapper #header .social a{
   transition: all 0.2s;
 }
 
+/* mega menu */
+.mega-menu {
+    left: -800px;
+    /* display: block; */
+    width: 1140px;
+}
+.mega-menu li {
+    float: left;
+    width: 375px;
+    overflow: hidden;
+}
+
+.mega-menu li a{
+    font-size: 11px !important;
+}
 .agende-sua-consulta-container {
   background: #5ca5dd;
 }
@@ -784,6 +799,27 @@ body.page-header-scroll #wrapper .header-wrapper #header .menu > ul > li > a spa
 
   .top-header address ul li:before {
     display: none;
+  }
+
+  #wrapper .header-wrapper #header .menu > ul > li {
+      padding: 0 8px;
+  }
+
+  .mega-menu {
+      left: -730px;
+      width: 940px;
+  }
+
+  .mega-menu li {
+    width: 305px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .mega-menu li a {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
   }
 
   #wrapper .header-wrapper #header .container {
@@ -939,6 +975,10 @@ body.page-header-scroll #wrapper .header-wrapper #header .menu > ul > li > a spa
   .container #header .logo img {
     max-width: 160px;
     margin: 10px 0;
+  }
+
+  .hidden-sm {
+    display: none !important;
   }
 
   #wrapper .header-wrapper #header .social {
