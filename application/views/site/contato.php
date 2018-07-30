@@ -54,9 +54,11 @@
                                                                 <br>
                                                                 Rua José Martins Fernandes, 601
                                                                 <br>
-                                                                CL Imigrantes – Galpão 16,17 e 18.
+                                                                CL Imigrantes – Galpão 15,16,17 e 18.
                                                                 <br>
                                                                 Bairro Batistini  São Bernardo do Campo
+                                                                <br>
+                                                                CEP:09843-400
                                                                 <br>
                                                                 
                                                             </p>
