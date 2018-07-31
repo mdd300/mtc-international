@@ -28,7 +28,9 @@
     </script>
 
 <script>
-    // Fill in your MailChimp popup settings below.
+    $(document).ready(function(){
+
+        // Fill in your MailChimp popup settings below.
     // These can be found in the original popup script from MailChimp.
     var mailchimpConfig = {
         baseUrl: 'mc.us12.list-manage.com',
@@ -50,6 +52,7 @@
         $(window).load(function () {
             document.body.appendChild(chimpPopup);
         });
+    });
 
     });
 </script>
