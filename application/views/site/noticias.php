@@ -72,5 +72,31 @@
     <?php $this->load->view('site/inc/footer.php'); ?>
 </div>
     <?php $this->load->view('site/inc/scripts.php'); ?>
+<script>
+    // Fill in your MailChimp popup settings below.
+    // These can be found in the original popup script from MailChimp.
+    var mailchimpConfig = {
+        baseUrl: 'mc.us12.list-manage.com',
+        uuid: '51b7183d29e9bafa8875af40b',
+        lid: '862e5062ea'
+    };
+
+    // No edits below this line are required
+    var chimpPopupLoader = document.createElement("script");
+    chimpPopupLoader.src = '//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js';
+    chimpPopupLoader.setAttribute('data-dojo-config', 'usePlainJson: true, isDebug: false');
+
+    var chimpPopup = document.createElement("script");
+    chimpPopup.appendChild(document.createTextNode('require(["mojo/signup-forms/Loader"], function (L) { L.start({"baseUrl": "' +  mailchimpConfig.baseUrl + '", "uuid": "' + mailchimpConfig.uuid + '", "lid": "' + mailchimpConfig.lid + '"})});'));
+
+    jQuery(function ($) {
+        document.body.appendChild(chimpPopupLoader);
+
+        $(window).load(function () {
+            document.body.appendChild(chimpPopup);
+        });
+
+    });
+</script>
 </body>
 </html>
