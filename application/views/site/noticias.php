@@ -71,6 +71,6 @@
     </div>
     <?php $this->load->view('site/inc/footer.php'); ?>
 </div>
-    <?php $this->load->view('site/inc/scripts_not.php'); ?>
+    <?php $this->load->view('site/inc/scripts.php'); ?>
 </body>
 </html>
