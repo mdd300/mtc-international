@@ -28,7 +28,6 @@
     </script>
 
 <script>
-    $(document).ready(function(){
 
         // Fill in your MailChimp popup settings below.
     // These can be found in the original popup script from MailChimp.
@@ -54,7 +53,6 @@
         });
     });
 
-    });
 </script>
 <script type="text/javascript">
     $(document).ready(function(){
