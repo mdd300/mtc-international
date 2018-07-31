@@ -6,6 +6,7 @@
 <script src="assets/js/respond.min.js"></script>
 <script src="assets/js/layout.js"></script>
 
+<?php if ($active == 'home'): ?>
 <script src="assets/plugins/jquery.dotdotdot.min.js"></script>
 <!--LOADING SCRIPTS FOR PAGE-->
 <script src="assets/js/jquery.appear.js"></script>
@@ -52,6 +53,7 @@ $(document).ready(function(){
 
     });
 </script>
+<?php endif ?>
 <script type="text/javascript">
     $(document).ready(function(){
 
