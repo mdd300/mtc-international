@@ -46,7 +46,7 @@
                                         <div class="contact-infos">
                                             <ul class="list-unstyled contact-info-list">
                                                 <li>
-                                                    <a href="#">
+                                                    <a href="https://maps.google.com/?q=Rua José Martins Fernandes, 601 CL Imigrantes">
                                                         <i class="fa fa-map-marker fa-fw"></i>
                                                         <div class="contact-info-box">
                                                             <p>
@@ -67,7 +67,7 @@
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">
+                                                    <a href="tel:4810-1174<">
                                                         <i class="fa fa-phone fa-fw"></i>
                                                         <div class="contact-info-box">
                                                             <p><strong>Filial</strong><br/>55 11 4810.1174</p>    
@@ -75,7 +75,7 @@
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">
+                                                    <a href="mailto:comercial@mtclog.com.br">
                                                         <i class="fa fa-envelope fa-fw"></i>
                                                         <div class="contact-info-box">comercial@mtclog.com.br</div>
                                                     </a>

@@ -65,13 +65,14 @@
                                         <div class="contact-infos">
                                             <ul class="list-unstyled contact-info-list">
                                                 <li>
-                                                    <a href="#">
                                                         <i class="fa fa-map-marker fa-fw"></i>
                                                         <div class="contact-info-box">
                                                             <p>
                                                                 <strong>Filial</strong>
                                                                 <br>
+                                                    <a href="https://maps.google.com/?q=Rua José Martins Fernandes, 601 CL Imigrantes">
                                                                 Rua José Martins Fernandes, 601
+                                                                
                                                                 <br>
                                                                 CL Imigrantes – Galpão 15,16,17 e 18.
                                                                 <br>
@@ -79,22 +80,22 @@
                                                                 <br>
                                                                 CEP:09843-400
                                                                 <br>
+                                                                </a>
                                                             </p>
-                                                            <p><strong>Matriz</strong><br/>Rua Serra da Borborema, 168 - Jardim Maria Tereza - São Paulo/SP<br>CEP: 09930-580</p>
+                                                            <p><strong>Matriz</strong><br/><a href="https://maps.google.com/?q=Rua Serra da Borborema, 168 - Jardim Maria Tereza - São Paulo/SP">
+                                                         Rua Serra da Borborema, 168 - Jardim Maria Tereza - São Paulo/SP<br>CEP: 09930-580</a></p>
                                                         </div>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">
                                                         <i class="fa fa-phone fa-fw"></i>
                                                         <div class="contact-info-box">
-                                                            <p><strong>Matriz</strong><br/>55 11 4092.7712 | 55 11 4092.7716</p>
-                                                            <p><strong>Filial</strong><br/>55 11 4810.1174</p>    
+                                                            <p><strong>Matriz</strong><br/><a href="tel:4092-7712">55 11 4092.7712</a> | <a href="tel:4092-7716">55 11 4092.7716</a></p>
+                                                            <p><strong>Filial</strong><br/><a href="tel:4810-1174">55 11 4810.1174</a></p>    
                                                         </div>
-                                                    </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">
+                                                    <a href="mailto:comercial@mtclog.com.br">
                                                         <i class="fa fa-envelope fa-fw"></i>
                                                         <div class="contact-info-box">comercial@mtclog.com.br</div>
                                                     </a>
