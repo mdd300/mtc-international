@@ -50,7 +50,7 @@
                                                         <i class="fa fa-map-marker fa-fw"></i>
                                                         <div class="contact-info-box">
                                                             <p>
-                                                                <strong>MTC Log</strong>
+                                                                <strong>MTC International</strong>
                                                                 <br>
                                                                 Rua José Martins Fernandes, 601
                                                                 <br>

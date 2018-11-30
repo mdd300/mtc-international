@@ -7,7 +7,7 @@
                     <div class="col-md-4 prl col-sm-4">
                         <div class="logo"><a href="http://grupomtc.com.br"><img src="assets/images/logo-footer.png" alt="MTC Log" class="img-responsive"/></a></div>
                         <div class="about-us">
-                            <h4>MTC Log</h4>
+                            <h4>MTC International</h4>
                         </div>
                         <div class="contact-info">
                             <ul class="list-unstyled mbn">
@@ -56,7 +56,7 @@
                     </div>
                     <div class="col-md-4 pll col-sm-4">
                         <div class="newsletter">
-                            <div class="heading">COMUNICADOS MTC LOG</div>
+                            <div class="heading">COMUNICADOS MTC INTERNATIONAL</div>
                             <div class="content"><p class="mbl">Cadastre seu email no campo abaixo e receba novidades e promoções sobre o mundo logístico.</p>
                                 <form action="<?php echo site_url('contato/send_newsletter'); ?>" method="POST" id="form-newsletter">
                                     <div class="input-group input-newsletter">

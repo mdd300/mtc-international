@@ -2,7 +2,7 @@
     <?php if (!empty($title)): ?>
         <title><?php echo $title; ?></title>
     <?php else: ?>
-        <title>MTC LOG</title>
+        <title>MTC INTERNATIONAL</title>
     <?php endif; ?>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@
     <?php if (isset($description) && $description != ''): ?>
         <meta name="description" content="<?= $description ?>">
     <?php else: ?>
-        <meta name="description" content="MTC LOG - Logística Reversa, implementação de WMS, transporte, serviços técnicos, reengenharia de embalagens de exportação e muito mais.">
+        <meta name="description" content="MTC INTERNATIONAL - Logística Reversa, implementação de WMS, transporte, serviços técnicos, reengenharia de embalagens de exportação e muito mais.">
     <?php endif ?>
     
     <meta name="keywords" content="operações, logísticas, internas, externas, armazéns, reversa, wms, transporte, serviços, técnicos, reengenharia, embalagens, sub-montagem, consultoria, locação, e-commerce, outbound, armazenagem.">
