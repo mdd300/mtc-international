@@ -14,7 +14,7 @@
         
         <!-- Main Content -->
         <div class="container">
-            <h1>Tecnologia</h1>
+            <h1>O que fazemos</h1>
             <?php $this->load->view('admin/inc/messages') ?>
 
             <form method="post" action="admin/tecnologia/atualizar" id="form_tecnologia" enctype="multipart/form-data">

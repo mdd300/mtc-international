@@ -14,9 +14,9 @@
                 <div class="header-bg-content">
                     <ol class="breadcrumb">
                         <li><a href="<?= base_url() ?>">Home</a></li>
-                        <li class="active"><a href="missao-visao">Missão e Visão</a></li>
+                        <li class="active"><a href="missao-visao">O que fazemos</a></li>
                     </ol>
-                    <h2 class="title">Missão e Visão</h2>
+                    <h2 class="title">O que fazemos</h2>
                 </div>
             </div>
         </div>

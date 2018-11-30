@@ -15,7 +15,7 @@
         <!-- Main Content -->
         <div class="container">
             <div id="main">
-                <h1>Tecnologia</h1>
+                <h1>O que fazemos</h1>
 
                 <?php $this->load->view('admin/inc/messages') ?>
                 <table class="table table-striped middle-vertical-align">
