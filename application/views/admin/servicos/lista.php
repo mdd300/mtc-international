@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Serviços</h1>
+                <h1>Quem somos</h1>
 
                 <?php $this->load->view('admin/inc/messages') ?>
 
